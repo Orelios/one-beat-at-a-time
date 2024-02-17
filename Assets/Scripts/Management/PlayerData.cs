@@ -6,6 +6,7 @@ using SimpleJSON;
 
 public class PlayerData : Singleton<PlayerData>
 {
+    public bool isRhythmScene = false;
     public float mentalHealth;
     public float maxMentalHealth;
     public float productivity;
@@ -58,10 +59,39 @@ public class PlayerData : Singleton<PlayerData>
         ProductivityBar.Instance.UpdateBar();
     }
 
+    public void SaveStats()
+    {
+        JSONObject playerDataJson = new JSONObject();
+        playerDataJson.Add("keyMentalHealth", mentalHealth);
+        playerDataJson.Add("keyProductivity", productivity);
+        playerDataJson.Add("keyAcademics", academics);
+        playerDataJson.Add("keyTimeRemaining", timeRemaining);
+
+        //SAVE JSON IN COMPUTER
+        string path = Application.persistentDataPath + "/PlayerDataSave.json";
+        File.WriteAllText(path, playerDataJson.ToString());
+    }
+
+    public void LoadStats()
+    {
+        string path = Application.persistentDataPath + "/PlayerDataSave.json";
+        string jsonString = File.ReadAllText(path);
+        JSONObject playerDataJson = (JSONObject)JSON.Parse(jsonString);
+
+        //SET VALUES
+        mentalHealth = playerDataJson["keyMentalHealth"];
+        productivity = playerDataJson["keyProductivity"];
+        academics = playerDataJson["keyAcademics"];
+        timeRemaining = playerDataJson["keyTimeRemaining"];
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (isRhythmScene == true)
+        {
+            LoadStats();
+        }
     }
 
     // Update is called once per frame

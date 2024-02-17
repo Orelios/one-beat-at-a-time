@@ -928,12 +928,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPresist: 0
+  isRhythmScene: 1
   mentalHealth: 0
   maxMentalHealth: 0
   productivity: 0
   maxProductivity: 0
   academics: 0
   maxAcademics: 0
+  timeRemaining: 0
 --- !u!114 &594793349
 MonoBehaviour:
   m_ObjectHideFlags: 0
