@@ -18,6 +18,6 @@ public class EndRhythmScreen : Singleton<EndRhythmScreen>
         PlayerData.Instance.timeRemaining += GetComponent<ManagementModifier>().changeInTimeRemaining;
 
         //After enabling children wherein PlayerData values are changed, save new values to JSON
-        PlayerData.Instance.SaveStats();
+        PlayerData.Instance.Save();
     }
 }

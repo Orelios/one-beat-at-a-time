@@ -6,7 +6,6 @@ using SimpleJSON;
 
 public class PlayerData : Singleton<PlayerData>
 {
-    public bool isRhythmScene = false;
     public bool isNewGame = false;
     public float mentalHealth;
     public float maxMentalHealth;
@@ -60,32 +59,6 @@ public class PlayerData : Singleton<PlayerData>
         ProductivityBar.Instance.UpdateBar();
     }
 
-    public void SaveStats()
-    {
-        JSONObject playerDataJson = new JSONObject();
-        playerDataJson.Add("keyMentalHealth", mentalHealth);
-        playerDataJson.Add("keyProductivity", productivity);
-        playerDataJson.Add("keyAcademics", academics);
-        playerDataJson.Add("keyTimeRemaining", timeRemaining);
-
-        //SAVE JSON IN COMPUTER
-        string path = Application.persistentDataPath + "/PlayerDataSave.json";
-        File.WriteAllText(path, playerDataJson.ToString());
-    }
-
-    public void LoadStats()
-    {
-        string path = Application.persistentDataPath + "/PlayerDataSave.json";
-        string jsonString = File.ReadAllText(path);
-        JSONObject playerDataJson = (JSONObject)JSON.Parse(jsonString);
-
-        //SET VALUES
-        mentalHealth = playerDataJson["keyMentalHealth"];
-        productivity = playerDataJson["keyProductivity"];
-        academics = playerDataJson["keyAcademics"];
-        timeRemaining = playerDataJson["keyTimeRemaining"];
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -93,12 +66,7 @@ public class PlayerData : Singleton<PlayerData>
         {
             //no loading
         }
-
-        if (isRhythmScene == true)
-        {
-            LoadStats();
-        }
-        else //returning to school/home scene
+        else
         {
             Load();
         }
@@ -107,7 +75,6 @@ public class PlayerData : Singleton<PlayerData>
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.K)) Save();
-        //if (Input.GetKeyDown(KeyCode.L)) Load();
+
     }
 }
