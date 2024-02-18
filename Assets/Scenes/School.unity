@@ -958,12 +958,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPresist: 0
+  isRhythmScene: 0
   mentalHealth: 100
   maxMentalHealth: 100
   productivity: 0
   maxProductivity: 100
   academics: 0
   maxAcademics: 500
+  timeRemaining: 0
 --- !u!1 &983870850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,8 +1869,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab87daa3713ca074c84a2cc9cb3e6c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeInMentalHealth: -5
-  changeInProfuctivity: 10
+  changeInMentalHealth: 10
+  changeInProductivity: 0
   changeInTimeRemaining: -1
 --- !u!1 &2082757693
 GameObject:

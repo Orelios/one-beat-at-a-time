@@ -5,7 +5,7 @@ using UnityEngine;
 public class ManagementModifier : MonoBehaviour
 {
     public float changeInMentalHealth;
-    public float changeInProfuctivity;
+    public float changeInProductivity;
     public float changeInTimeRemaining;
 
     void Start()
