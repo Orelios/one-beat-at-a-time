@@ -18,6 +18,6 @@ public class EndRhythmMentalHealth : MonoBehaviour
         text.text = "Mental Health: " + currentMentalHealth + " + " + valueToAdd + " = " + (currentMentalHealth+ valueToAdd);
 
         //change PlayerData value
-        PlayerData.Instance.mentalHealth = currentMentalHealth + valueToAdd;
+        PlayerData.Instance.AddMentalHealth(valueToAdd);
     }
 }

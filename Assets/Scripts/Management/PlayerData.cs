@@ -77,4 +77,31 @@ public class PlayerData : Singleton<PlayerData>
     {
 
     }
+
+    public void AddMentalHealth(float x)
+    {
+        mentalHealth += x;
+        if (mentalHealth > maxMentalHealth)
+        {
+            mentalHealth = maxMentalHealth;
+        }
+    }
+
+    public void AddProductivity(float y)
+    {
+        productivity += y;
+        if (productivity > maxProductivity)
+        {
+            productivity = maxProductivity;
+        }
+    }
+
+    public void AddTimeRemaining(float z)
+    {
+        timeRemaining += z;
+        if (timeRemaining < 0)
+        {
+            timeRemaining = 0;
+        }
+    }
 }

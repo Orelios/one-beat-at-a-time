@@ -18,6 +18,6 @@ public class EndRhythmProductivity : MonoBehaviour
         text.text = "Productivity: " + currentProductivity + " + " + valueToAdd + " = " + (currentProductivity + valueToAdd);
 
         //change PlayerData value
-        PlayerData.Instance.productivity = currentProductivity + valueToAdd;
+        PlayerData.Instance.AddProductivity(valueToAdd);
     }
 }
