@@ -83,7 +83,7 @@ public class GameTimer : MonoBehaviour
     public void StopGameTimer()
     {
         isGameTimerRunning = false;
-        BeatManager.Instance.GetComponent<AudioSource>().Stop();
+        EndRhythmScreen.Instance.StopGame();
     }
 
     public void RestartGameTimer()
