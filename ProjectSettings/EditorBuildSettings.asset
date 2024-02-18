@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/old/Von_JSON.unity
-    guid: 6b03e2074f04e2b419851e50e1756353
+    path: Assets/Scenes/School.unity
+    guid: 03234e22c152a884ab3eac0e774da17c
   - enabled: 1
-    path: Assets/Scenes/old/Rhythm.unity
-    guid: 1dc10b3901c9c5848aec01f94c66cfde
+    path: Assets/Scenes/Rhythm 1.unity
+    guid: 43419065db7492c489bfa859e9f6e513
   m_configObjects: {}

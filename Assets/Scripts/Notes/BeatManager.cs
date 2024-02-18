@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events; 
 
-public class BeatManager : MonoBehaviour
+public class BeatManager : Singleton<BeatManager>
 {
     [SerializeField] private float stressedSpeed = 2.0f;
     [SerializeField] private float _bpm;

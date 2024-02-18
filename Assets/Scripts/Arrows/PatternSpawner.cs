@@ -39,7 +39,7 @@ public class PatternSpawner : MonoBehaviour
                     = null; 
             }
             readyToChangePattern = false;
-            //finishActivity(); 
+            BeatManager.Instance.GetComponent<AudioSource>().Stop();
         }
 
     }
