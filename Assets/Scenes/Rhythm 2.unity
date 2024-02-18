@@ -987,7 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1110aefc1124f4da66b6ed084f4134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notes: {fileID: 3292572031985399609, guid: a727264f58db5724a82e8e8017ab9dee, type: 3}
+  notes: {fileID: 3292572031985399609, guid: f14e36bfb2558f94cb4da6601d1f8e9e, type: 3}
 --- !u!212 &623519667
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1903,9 +1903,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _patterns:
-  - {fileID: 11400000, guid: 0c651553940758c4b904338a4f160164, type: 2}
-  - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
-  - {fileID: 11400000, guid: 0c651553940758c4b904338a4f160164, type: 2}
+  - {fileID: 11400000, guid: bac37f8d32f90634d9b51dcf44614039, type: 2}
+  - {fileID: 11400000, guid: 3010765fbcb9fa644af92818409e9553, type: 2}
+  - {fileID: 11400000, guid: d64e7b8e1a669cd4db7ab74e1c100efb, type: 2}
   - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
   - {fileID: 11400000, guid: 0c651553940758c4b904338a4f160164, type: 2}
   arrowInputs: 00000000000000000000000000000000
@@ -2049,11 +2049,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _patterns:
-  - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
-  - {fileID: 11400000, guid: 0c651553940758c4b904338a4f160164, type: 2}
-  - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
-  - {fileID: 11400000, guid: 0c651553940758c4b904338a4f160164, type: 2}
-  - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
+  - {fileID: 11400000, guid: 0078085eb249fa94f82755f93194a837, type: 2}
+  - {fileID: 11400000, guid: 4a2453262b29ba94f98a08678e72f665, type: 2}
+  - {fileID: 11400000, guid: c4f87a84f80559f4d8ecacb6c5fe582a, type: 2}
+  - {fileID: 11400000, guid: d3d4d1caab11ec0449ae3d4902baaa6d, type: 2}
+  - {fileID: 11400000, guid: 4b98b2999f08d5948a9b48f52d95f41a, type: 2}
   arrowInputs: 00000000000000000000000000000000
 --- !u!114 &1205574053
 MonoBehaviour:
@@ -3164,7 +3164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPresist: 0
   stressedSpeed: 2
-  _bpm: 96
+  _bpm: 90
   _audioSource: {fileID: 1969774609}
   _intervals:
   - _steps: 0.5
@@ -3193,9 +3193,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 051bae509b179d84fb4a5d004d852a59, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9ae825668775e0545b2bae55445cd507, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.243
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 0
   Mute: 0
