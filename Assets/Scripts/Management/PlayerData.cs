@@ -85,6 +85,10 @@ public class PlayerData : Singleton<PlayerData>
         {
             mentalHealth = maxMentalHealth;
         }
+        if (mentalHealth < 0)
+        {
+            mentalHealth = 0;
+        }
     }
 
     public void AddProductivity(float y)
@@ -93,6 +97,10 @@ public class PlayerData : Singleton<PlayerData>
         if (productivity > maxProductivity)
         {
             productivity = maxProductivity;
+        }
+        if (productivity < 0)
+        {
+            productivity = 0;
         }
     }
 
