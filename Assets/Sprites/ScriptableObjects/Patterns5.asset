@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 184b985180442fc4da086c4184b598fb, type: 3}
-  m_Name: Patterns3
+  m_Name: Patterns5
   m_EditorClassIdentifier: 
-  arrowsPattern: 04000000010000000300000002000000
+  arrowsPattern: 04000000010000000200000003000000
   iconPatterns:
   - {fileID: 2949801525751285593, guid: d91439ccad0246a4ba1e47bf636584c8, type: 3}
   - {fileID: 993467990488675014, guid: a49fbf21b4c87fe4b993ee4b6c729f79, type: 3}
-  - {fileID: 8898107367501966900, guid: 514c71a9a3b914a41ae9b5194229a49e, type: 3}
   - {fileID: 3247810977917698542, guid: 537b19e6f2155924cbc4d038ae189c16, type: 3}
+  - {fileID: 8898107367501966900, guid: 514c71a9a3b914a41ae9b5194229a49e, type: 3}

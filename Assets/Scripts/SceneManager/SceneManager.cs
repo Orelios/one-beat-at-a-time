@@ -25,6 +25,10 @@ public class ScreenManager : MonoBehaviour
     {
         SceneManager.LoadScene(endScreen);
     }
+    public void LoadLevel(int levelNumber)
+    {
+        SceneManager.LoadScene(levelNumber); 
+    }
     public void ExitGame()
     {
         Application.Quit();
