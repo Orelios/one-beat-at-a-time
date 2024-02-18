@@ -22,6 +22,9 @@ public class PlayerData : Singleton<PlayerData>
         playerDataJson.Add("keyProductivity", productivity);
         playerDataJson.Add("keyAcademics", academics);
         playerDataJson.Add("keyTimeRemaining", timeRemaining);
+        playerDataJson.Add("keyMaxMentalHealth", maxMentalHealth);
+        playerDataJson.Add("keyMaxProductivity", maxProductivity);
+        playerDataJson.Add("keyMaxAcademics", maxAcademics);
 
         //POSITION
         JSONArray position = new JSONArray();
@@ -46,6 +49,9 @@ public class PlayerData : Singleton<PlayerData>
         productivity = playerDataJson["keyProductivity"];
         academics = playerDataJson["keyAcademics"];
         timeRemaining = playerDataJson["keyTimeRemaining"];
+        maxMentalHealth = playerDataJson["keyMaxMentalHealth"];
+        maxProductivity = playerDataJson["keyMaxProductivity"];
+        maxAcademics = playerDataJson["keyMaxAcademics"];
 
         //POSITION
         transform.position = new Vector3(
