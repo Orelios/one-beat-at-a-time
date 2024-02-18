@@ -15,9 +15,11 @@ public class EndRhythmProductivity : MonoBehaviour
         text = GetComponent<TextMeshProUGUI>();
         currentProductivity = PlayerData.Instance.productivity;
         valueToAdd = EndRhythmScreen.Instance.GetComponent<ManagementModifier>().changeInProductivity / (EndRhythmScreen.Instance.successPercent / 100);
-        text.text = "Productivity: " + currentProductivity + " + " + valueToAdd + " = " + (currentProductivity + valueToAdd);
-
         //change PlayerData value
-        PlayerData.Instance.productivity = currentProductivity + valueToAdd;
+        PlayerData.Instance.AddProductivity(valueToAdd);
+
+        text.text = "Productivity: " + currentProductivity + " + " + valueToAdd + " = " + PlayerData.Instance.productivity;
+
+        
     }
 }

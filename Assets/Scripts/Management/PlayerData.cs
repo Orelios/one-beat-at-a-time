@@ -22,6 +22,9 @@ public class PlayerData : Singleton<PlayerData>
         playerDataJson.Add("keyProductivity", productivity);
         playerDataJson.Add("keyAcademics", academics);
         playerDataJson.Add("keyTimeRemaining", timeRemaining);
+        playerDataJson.Add("keyMaxMentalHealth", maxMentalHealth);
+        playerDataJson.Add("keyMaxProductivity", maxProductivity);
+        playerDataJson.Add("keyMaxAcademics", maxAcademics);
 
         //POSITION
         JSONArray position = new JSONArray();
@@ -46,6 +49,9 @@ public class PlayerData : Singleton<PlayerData>
         productivity = playerDataJson["keyProductivity"];
         academics = playerDataJson["keyAcademics"];
         timeRemaining = playerDataJson["keyTimeRemaining"];
+        maxMentalHealth = playerDataJson["keyMaxMentalHealth"];
+        maxProductivity = playerDataJson["keyMaxProductivity"];
+        maxAcademics = playerDataJson["keyMaxAcademics"];
 
         //POSITION
         transform.position = new Vector3(
@@ -76,5 +82,40 @@ public class PlayerData : Singleton<PlayerData>
     void Update()
     {
 
+    }
+
+    public void AddMentalHealth(float x)
+    {
+        mentalHealth += x;
+        if (mentalHealth > maxMentalHealth)
+        {
+            mentalHealth = maxMentalHealth;
+        }
+        if (mentalHealth < 0)
+        {
+            mentalHealth = 0;
+        }
+    }
+
+    public void AddProductivity(float y)
+    {
+        productivity += y;
+        if (productivity > maxProductivity)
+        {
+            productivity = maxProductivity;
+        }
+        if (productivity < 0)
+        {
+            productivity = 0;
+        }
+    }
+
+    public void AddTimeRemaining(float z)
+    {
+        timeRemaining += z;
+        if (timeRemaining < 0)
+        {
+            timeRemaining = 0;
+        }
     }
 }

@@ -15,9 +15,11 @@ public class EndRhythmMentalHealth : MonoBehaviour
         text = GetComponent<TextMeshProUGUI>();
         currentMentalHealth = PlayerData.Instance.mentalHealth;
         valueToAdd = EndRhythmScreen.Instance.GetComponent<ManagementModifier>().changeInMentalHealth / (EndRhythmScreen.Instance.successPercent / 100);
-        text.text = "Mental Health: " + currentMentalHealth + " + " + valueToAdd + " = " + (currentMentalHealth+ valueToAdd);
-
         //change PlayerData value
-        PlayerData.Instance.mentalHealth = currentMentalHealth + valueToAdd;
+        PlayerData.Instance.AddMentalHealth(valueToAdd);
+
+        text.text = "Mental Health: " + currentMentalHealth + " + " + valueToAdd + " = " + PlayerData.Instance.mentalHealth;
+
+        
     }
 }

@@ -15,7 +15,7 @@ public class EndRhythmScreen : Singleton<EndRhythmScreen>
         gameObject.transform.GetChild(3).gameObject.SetActive(true);
 
         //ADD the (negative) value of changeInTimeRemaining from ManagementModifier to PlayerData timeRemaining
-        PlayerData.Instance.timeRemaining += GetComponent<ManagementModifier>().changeInTimeRemaining;
+        PlayerData.Instance.AddTimeRemaining(GetComponent<ManagementModifier>().changeInTimeRemaining);
 
         //After enabling children wherein PlayerData values are changed, save new values to JSON
         PlayerData.Instance.Save();
