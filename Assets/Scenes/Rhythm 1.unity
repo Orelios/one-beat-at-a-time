@@ -155,7 +155,7 @@ MonoBehaviour:
   seconds: 0
   minutes: 0
   isGameTimerRunning: 1
-  initialSeconds: 10
+  initialSeconds: 1
   initialMinutes: 0
 --- !u!4 &33816660
 Transform:
@@ -1462,6 +1462,7 @@ GameObject:
   - component: {fileID: 1010703582}
   - component: {fileID: 1010703584}
   - component: {fileID: 1010703583}
+  - component: {fileID: 1010703585}
   m_Layer: 5
   m_Name: EndScreen_MentalHealth
   m_TagString: Untagged
@@ -1571,7 +1572,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -106.301796, w: 0}
+  m_margin: {x: 0, y: 0, z: -270.06934, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1585,6 +1586,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010703581}
   m_CullTransparentMesh: 1
+--- !u!114 &1010703585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010703581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2649bcc3b6439f4fa44c06cee0bb297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1023545253
 GameObject:
   m_ObjectHideFlags: 0

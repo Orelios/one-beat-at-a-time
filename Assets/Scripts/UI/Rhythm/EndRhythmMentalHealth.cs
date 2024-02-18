@@ -6,13 +6,15 @@ using TMPro;
 public class EndRhythmMentalHealth : MonoBehaviour
 {
     private float currentMentalHealth;
+    private float valueToAdd;
 
     TextMeshProUGUI text;
 
     void OnEnable()
     {
+        text = GetComponent<TextMeshProUGUI>();
         currentMentalHealth = PlayerData.Instance.mentalHealth;
-        float valueToAdd = EndRhythmScreen.Instance.GetComponent<ManagementModifier>().changeInMentalHealth / (EndRhythmScreen.Instance.successPercent / 100);
+        valueToAdd = EndRhythmScreen.Instance.GetComponent<ManagementModifier>().changeInMentalHealth / (EndRhythmScreen.Instance.successPercent / 100);
         text.text = "Mental Health: " + currentMentalHealth + " + " + valueToAdd;
     }
 }
