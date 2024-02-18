@@ -12,6 +12,7 @@ public class EndRhythmScreen : Singleton<EndRhythmScreen>
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
         gameObject.transform.GetChild(1).gameObject.SetActive(true);
         gameObject.transform.GetChild(2).gameObject.SetActive(true);
+        gameObject.transform.GetChild(3).gameObject.SetActive(true);
 
         //ADD the (negative) value of changeInTimeRemaining from ManagementModifier to PlayerData timeRemaining
         PlayerData.Instance.timeRemaining += GetComponent<ManagementModifier>().changeInTimeRemaining;
