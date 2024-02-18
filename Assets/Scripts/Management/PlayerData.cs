@@ -7,6 +7,7 @@ using SimpleJSON;
 public class PlayerData : Singleton<PlayerData>
 {
     public bool isRhythmScene = false;
+    public bool isNewGame = false;
     public float mentalHealth;
     public float maxMentalHealth;
     public float productivity;
@@ -88,9 +89,18 @@ public class PlayerData : Singleton<PlayerData>
     // Start is called before the first frame update
     void Start()
     {
+        if (isNewGame == true)
+        {
+            //no loading
+        }
+
         if (isRhythmScene == true)
         {
             LoadStats();
+        }
+        else //returning to school/home scene
+        {
+            Load();
         }
     }
 
