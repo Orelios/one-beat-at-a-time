@@ -33,13 +33,14 @@ public class PatternSpawner : MonoBehaviour
         }
         else //if pattern list finished
         {
+            //nullify all sprites
             for (int i = 0; i < _patterns[lengthChecker - 1].iconPatterns.Length; i++)
             {
                 gameObject.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite
                     = null; 
             }
             readyToChangePattern = false;
-            BeatManager.Instance.GetComponent<AudioSource>().Stop(); //end audio
+            EndRhythmScreen.Instance.StopGame(); //call EndScreen to stop game
         }
 
     }
