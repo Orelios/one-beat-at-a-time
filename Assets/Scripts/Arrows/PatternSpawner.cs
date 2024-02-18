@@ -31,7 +31,7 @@ public class PatternSpawner : MonoBehaviour
             lengthChecker++;
             readyToChangePattern = false;
         }
-        else
+        else //if pattern list finished
         {
             for (int i = 0; i < _patterns[lengthChecker - 1].iconPatterns.Length; i++)
             {
@@ -39,7 +39,7 @@ public class PatternSpawner : MonoBehaviour
                     = null; 
             }
             readyToChangePattern = false;
-            //finishActivity(); 
+            BeatManager.Instance.GetComponent<AudioSource>().Stop(); //end audio
         }
 
     }
