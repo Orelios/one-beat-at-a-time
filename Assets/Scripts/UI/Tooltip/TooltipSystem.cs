@@ -6,8 +6,9 @@ public class TooltipSystem : Singleton<TooltipSystem>
 {
     public Tooltip tooltip;
 
-    public void Show()
+    public void Show(string content, string header = "")
     {
+        tooltip.SetText(content, header);
         tooltip.gameObject.SetActive(true);
     }
 
