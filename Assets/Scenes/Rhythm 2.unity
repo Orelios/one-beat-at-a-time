@@ -759,7 +759,7 @@ Transform:
   m_GameObject: {fileID: 424524762}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: -20, z: 90}
+  m_LocalPosition: {x: -15, y: -30, z: 90}
   m_LocalScale: {x: 5, y: 25, z: 3.2057111}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -961,8 +961,8 @@ Transform:
   m_GameObject: {fileID: 623519664}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15, y: -20, z: 90}
-  m_LocalScale: {x: 10, y: 30, z: 3.2057111}
+  m_LocalPosition: {x: 15, y: -30, z: 90}
+  m_LocalScale: {x: 2, y: 30, z: 3.2057111}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1110aefc1124f4da66b6ed084f4134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notes: {fileID: 3292572031985399609, guid: 8d25e95543ba0934d9ecde53a2ae6b92, type: 3}
+  notes: {fileID: 3292572031985399609, guid: f14e36bfb2558f94cb4da6601d1f8e9e, type: 3}
 --- !u!212 &623519667
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3065,7 +3065,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 90}
-  m_LocalScale: {x: 3.2057111, y: 3.2057111, z: 3.2057111}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 89879153}
@@ -3156,7 +3156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPresist: 0
   stressedSpeed: 2
-  _bpm: 80
+  _bpm: 90
   _audioSource: {fileID: 1969774609}
   _intervals:
   - _steps: 0.5
@@ -3185,7 +3185,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 88a2924e8541f5e4fb67047673f95ecf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9ae825668775e0545b2bae55445cd507, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.02
   m_Pitch: 1
