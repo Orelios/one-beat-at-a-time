@@ -5,6 +5,7 @@ using UnityEngine;
 public class TooltipSystem : Singleton<TooltipSystem>
 {
     public Tooltip tooltip;
+    public float delayTooltip = 0.5f;
 
     public void Show(string content, string header = "")
     {
