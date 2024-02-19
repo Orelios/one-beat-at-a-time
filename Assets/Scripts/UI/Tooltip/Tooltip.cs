@@ -12,6 +12,17 @@ public class Tooltip : MonoBehaviour
     public LayoutElement layoutElement;
     public int characterWrapLimit;
 
+    #region Anchor tooltip dynamically part1
+    //NOTE: if dynamic anchor is not desired and instead, tooltip is to be anchored to tip of mouse,
+    //set Tooltip.RectTransform.Pivot x=0, y=1
+    public RectTransform rectTransform;
+
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
+    #endregion
+
     public void SetText(string content, string header = "")
     {
         #region Check Header
@@ -56,6 +67,12 @@ public class Tooltip : MonoBehaviour
         #region Tooltip follows mouse position
         Vector2 mousePosition = Input.mousePosition;
         transform.position = mousePosition;
+        #endregion
+
+        #region Anchor tooltip dynamically part2
+        float pivotX = mousePosition.x / Screen.width;
+        float pivotY = mousePosition.y / Screen.height;
+        rectTransform.pivot = new Vector2(pivotX, pivotY);
         #endregion
     }
 }
