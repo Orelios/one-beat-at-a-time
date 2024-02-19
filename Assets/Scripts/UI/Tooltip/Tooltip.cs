@@ -40,18 +40,17 @@ public class Tooltip : MonoBehaviour
         contentField.text = content;
 
         //can move #region Tooltip Length here if length is final (TooltipCanvas > Tooltip.LayoutElement.PreferredWidth)
-        /*
         #region Tooltip Length
         int headerLength = headerField.text.Length;
         int contentLength = contentField.text.Length;
 
         layoutElement.enabled = (headerLength > characterWrapLimit || contentLength > characterWrapLimit) ? true : false;
         #endregion
-        */
     }
 
     private void Update()
     {
+        /*
         #region Tooltip Length
         if (Application.isEditor) //remove this if statement if moved to SetText()
         {
@@ -63,6 +62,7 @@ public class Tooltip : MonoBehaviour
             layoutElement.enabled = (headerLength > characterWrapLimit || contentLength > characterWrapLimit) ? true : false;
         }
         #endregion
+        */
 
         #region Tooltip follows mouse position
         Vector2 mousePosition = Input.mousePosition;
