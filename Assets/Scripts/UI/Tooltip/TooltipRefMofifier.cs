@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class TooltipRefMofifier : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public ManagementModifier modifier;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GetComponent<TooltipTrigger>().header = gameObject.name;
+        GetComponent<TooltipTrigger>().content = "Mental Health + " + modifier.changeInMentalHealth + 
+            "\nProductivity + " + modifier.changeInProductivity + 
+            "\nTime " + modifier.changeInTimeRemaining;
     }
 }
