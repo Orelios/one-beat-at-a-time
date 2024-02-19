@@ -52,5 +52,10 @@ public class Tooltip : MonoBehaviour
             layoutElement.enabled = (headerLength > characterWrapLimit || contentLength > characterWrapLimit) ? true : false;
         }
         #endregion
+
+        #region Tooltip follows mouse position
+        Vector2 mousePosition = Input.mousePosition;
+        transform.position = mousePosition;
+        #endregion
     }
 }
