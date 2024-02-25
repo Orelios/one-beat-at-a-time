@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class RhythmStats : MonoBehaviour
 {
-    [SerializeField] private StatsScriptableObjects stats;
+    public StatsScriptableObjects stats;
 }

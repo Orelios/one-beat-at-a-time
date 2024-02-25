@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 285846616}
   - component: {fileID: 285846615}
   - component: {fileID: 285846617}
-  - component: {fileID: 285846618}
+  - component: {fileID: 285846619}
   m_Layer: 5
   m_Name: Task 3
   m_TagString: Untagged
@@ -756,7 +756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   header: 
   content: 
---- !u!114 &285846618
+--- !u!114 &285846619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -765,10 +765,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 285846613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5ba3fd2f5e05b843811e9bb84fb4b4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e6d3393580f37f4784b61c1568ddb8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifier: {fileID: 1037761865}
+  _statsRef: {fileID: 1037761870}
 --- !u!1 &324693528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,8 +1833,8 @@ GameObject:
   - component: {fileID: 1037761868}
   - component: {fileID: 1037761867}
   - component: {fileID: 1037761866}
-  - component: {fileID: 1037761865}
   - component: {fileID: 1037761864}
+  - component: {fileID: 1037761870}
   m_Layer: 6
   m_Name: Door 3
   m_TagString: object
@@ -1855,21 +1855,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNumber: 3
---- !u!114 &1037761865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037761863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab87daa3713ca074c84a2cc9cb3e6c09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeInMentalHealth: -10
-  changeInProductivity: 20
-  changeInTimeRemaining: -3
 --- !u!65 &1037761866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1956,6 +1941,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1037761870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037761863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457629ec2f2da094e99a77c6d3c48632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 1a84c89bc14433a419eac7b1a553b8ee, type: 2}
 --- !u!1 &1113845297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,8 +1966,8 @@ GameObject:
   - component: {fileID: 1113845302}
   - component: {fileID: 1113845301}
   - component: {fileID: 1113845300}
-  - component: {fileID: 1113845299}
   - component: {fileID: 1113845298}
+  - component: {fileID: 1113845304}
   m_Layer: 6
   m_Name: Door 2
   m_TagString: object
@@ -1990,21 +1988,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNumber: 2
---- !u!114 &1113845299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113845297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab87daa3713ca074c84a2cc9cb3e6c09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeInMentalHealth: -5
-  changeInProductivity: 10
-  changeInTimeRemaining: -1
 --- !u!65 &1113845300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2091,6 +2074,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1113845304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113845297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457629ec2f2da094e99a77c6d3c48632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 6a3316df5deb1544abc8821c4478e7ee, type: 2}
 --- !u!1 &1135035993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,7 +2676,7 @@ GameObject:
   - component: {fileID: 1557090111}
   - component: {fileID: 1557090110}
   - component: {fileID: 1557090112}
-  - component: {fileID: 1557090113}
+  - component: {fileID: 1557090114}
   m_Layer: 5
   m_Name: Task 2
   m_TagString: Untagged
@@ -2818,7 +2814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   header: 
   content: 
---- !u!114 &1557090113
+--- !u!114 &1557090114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2827,10 +2823,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1557090108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5ba3fd2f5e05b843811e9bb84fb4b4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e6d3393580f37f4784b61c1568ddb8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifier: {fileID: 1113845299}
+  _statsRef: {fileID: 1113845304}
 --- !u!1 &1644192243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,7 +2922,7 @@ GameObject:
   - component: {fileID: 1654568185}
   - component: {fileID: 1654568184}
   - component: {fileID: 1654568186}
-  - component: {fileID: 1654568187}
+  - component: {fileID: 1654568188}
   m_Layer: 5
   m_Name: Task 1
   m_TagString: Untagged
@@ -3064,7 +3060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   header: 
   content: 
---- !u!114 &1654568187
+--- !u!114 &1654568188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3073,10 +3069,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1654568182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5ba3fd2f5e05b843811e9bb84fb4b4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e6d3393580f37f4784b61c1568ddb8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifier: {fileID: 1881755841}
+  _statsRef: {fileID: 1881755843}
 --- !u!1 &1787916161
 GameObject:
   m_ObjectHideFlags: 0
@@ -3195,7 +3191,6 @@ GameObject:
   - component: {fileID: 1881755839}
   - component: {fileID: 1881755838}
   - component: {fileID: 1881755837}
-  - component: {fileID: 1881755841}
   - component: {fileID: 1881755842}
   - component: {fileID: 1881755843}
   m_Layer: 6
@@ -3291,21 +3286,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1881755841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881755836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab87daa3713ca074c84a2cc9cb3e6c09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeInMentalHealth: 10
-  changeInProductivity: 0
-  changeInTimeRemaining: -1
 --- !u!114 &1881755842
 MonoBehaviour:
   m_ObjectHideFlags: 0
