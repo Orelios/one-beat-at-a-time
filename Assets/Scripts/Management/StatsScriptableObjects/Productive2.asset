@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3004c59827c774e8f498f6ec3d8c4f, type: 3}
   m_Name: Productive2
   m_EditorClassIdentifier: 
-  mentalHealthChange: 0
-  productivityChange: 0
-  timeChange: 0
+  mentalHealthChange: -10
+  productivityChange: 20
+  timeChange: -3
