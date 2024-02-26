@@ -420,6 +420,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac94182cd48c55b42b8e24ecb383f590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1256813096 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4663948981523589173, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
+  m_PrefabInstance: {fileID: 1667281474}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac94182cd48c55b42b8e24ecb383f590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1598100873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1102,7 @@ PrefabInstance:
     - target: {fileID: 5525400947680745274, guid: 71b3991f43450694385a314258b66a95, type: 3}
       propertyPath: patternSpawner.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1256813096}
     - target: {fileID: 6489416436695079827, guid: 71b3991f43450694385a314258b66a95, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
