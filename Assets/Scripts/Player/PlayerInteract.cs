@@ -22,6 +22,7 @@ public class PlayerInteract : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "object")
         {
             ConfirmationScreen.Instance.EnableChildren();
+            ConfirmName.Instance.SetAsReference(other.gameObject);
             ConfirmDetails.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
             //scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
             //PlayerData.Instance.Save();
