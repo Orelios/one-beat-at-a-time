@@ -16,6 +16,13 @@ public class ConfirmName : Singleton<ConfirmName>
     public void SetAsReference(GameObject x)
     {
         confirmRef = x.GetComponent<RhythmStats>();
-        text.text = confirmRef.stats.activityName;
+        if (string.IsNullOrEmpty(confirmRef.stats.activityName))
+        {
+            text.text = confirmRef.stats.name;
+        }
+        else
+        {
+            text.text = confirmRef.stats.activityName;
+        }
     }
 }
