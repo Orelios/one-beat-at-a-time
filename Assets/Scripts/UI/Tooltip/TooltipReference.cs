@@ -10,13 +10,13 @@ public class TooltipReference : MonoBehaviour
     void Start()
     {
         #region Header
-        if (_statsRef.stats.activityName != null)
+        if (string.IsNullOrEmpty(_statsRef.stats.activityName))
         {
-            GetComponent<TooltipTrigger>().header = _statsRef.stats.activityName;
+            GetComponent<TooltipTrigger>().header = _statsRef.stats.name;
         }
         else
         {
-            GetComponent<TooltipTrigger>().header = gameObject.name;
+            GetComponent<TooltipTrigger>().header = _statsRef.stats.activityName;
         }
         #endregion
         #region Content
