@@ -17,7 +17,7 @@ public class PlayerInteract : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("stay"); 
+        //Debug.Log("stay"); 
         popupPlayerInteractText.enabled = true;
         if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "object")
         {
