@@ -21,9 +21,10 @@ public class PlayerInteract : MonoBehaviour
         popupPlayerInteractText.enabled = true;
         if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "object")
         {
-            scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber); 
-            //scene.LoadMainScene();
-            PlayerData.Instance.Save();
+            ConfirmationScreen.Instance.EnableChildren();
+            ConfirmDetails.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
+            //scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+            //PlayerData.Instance.Save();
         }
     }
     
