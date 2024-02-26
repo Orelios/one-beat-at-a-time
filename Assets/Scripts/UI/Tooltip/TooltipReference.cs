@@ -9,11 +9,21 @@ public class TooltipReference : MonoBehaviour
 
     void Start()
     {
-        //_statsRef = door.GetComponent<StatsScriptableObjects>();
-        GetComponent<TooltipTrigger>().header = gameObject.name;
+        #region Header
+        if (_statsRef.stats.activityName != null)
+        {
+            GetComponent<TooltipTrigger>().header = _statsRef.stats.activityName;
+        }
+        else
+        {
+            GetComponent<TooltipTrigger>().header = gameObject.name;
+        }
+        #endregion
+        #region Content
         GetComponent<TooltipTrigger>().content = "Mental Health" + ShowMentalHealthChange() +
             "\nProductivity" + ShowProductivityChange() +
             "\nTime" + ShowTimeChange();
+        #endregion
     }
 
     /*
