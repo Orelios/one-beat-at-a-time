@@ -1231,7 +1231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8682949935178692145, guid: 71b3991f43450694385a314258b66a95, type: 3}
       propertyPath: m_Name
-      value: PlayerInputPatterns (1)
+      value: PlayerInputPatterns
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
