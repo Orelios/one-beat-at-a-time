@@ -24,6 +24,6 @@ public class ProductivityBar : Singleton<ProductivityBar>
 
     public void UpdateBar()
     {
-        image.fillAmount = PlayerData.Instance.productivity / PlayerData.Instance.maxProductivity;
+        //image.fillAmount = PlayerData.Instance.productivity / PlayerData.Instance.maxProductivity;
     }
 }

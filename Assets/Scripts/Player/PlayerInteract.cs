@@ -28,6 +28,11 @@ public class PlayerInteract : MonoBehaviour
             //scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
             //PlayerData.Instance.Save();
         }
+        else if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "Teleport")
+        {
+            scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+            PlayerData.Instance.Save();
+        }
     }
     
     private void OnTriggerExit(Collider other)
