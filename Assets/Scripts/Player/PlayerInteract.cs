@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private TMP_Text popupPlayerInteractText; 
-    [SerializeField] private ScreenManager scene;
+    public ScreenManager scene;
     private void Start()
     {
         popupPlayerInteractText.enabled = false; 
@@ -17,13 +17,16 @@ public class PlayerInteract : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("stay"); 
+        //Debug.Log("stay"); 
         popupPlayerInteractText.enabled = true;
         if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "object")
         {
-            scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber); 
-            //scene.LoadMainScene();
-            PlayerData.Instance.Save();
+            ConfirmationScreen.Instance.EnableChildren();
+            ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
+            ConfirmDetails.Instance.SetAsReference(other.gameObject);
+            ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
+            //scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+            //PlayerData.Instance.Save();
         }
     }
     
@@ -31,5 +34,4 @@ public class PlayerInteract : MonoBehaviour
     {
         popupPlayerInteractText.enabled = false;
     }
-
 }
