@@ -25,6 +25,7 @@ public class PlayerArrowInput : MonoBehaviour
                     SendPlayerArrowInput(Arrows.Up);
                     detector.DestroyNote();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Up);
+                    IndicatorColor.Instance.ChangeIndicatorColor();
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
@@ -32,6 +33,7 @@ public class PlayerArrowInput : MonoBehaviour
                     SendPlayerArrowInput(Arrows.Down);
                     detector.DestroyNote();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Down);
+                    IndicatorColor.Instance.ChangeIndicatorColor();
                 }
                 else if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
@@ -39,6 +41,7 @@ public class PlayerArrowInput : MonoBehaviour
                     SendPlayerArrowInput(Arrows.Left);
                     detector.DestroyNote();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Left);
+                    IndicatorColor.Instance.ChangeIndicatorColor();
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
@@ -46,6 +49,7 @@ public class PlayerArrowInput : MonoBehaviour
                     SendPlayerArrowInput(Arrows.Right);
                     detector.DestroyNote();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Right);
+                    IndicatorColor.Instance.ChangeIndicatorColor();
                 }
                 //The key pressed was not an arrow key
                 else
