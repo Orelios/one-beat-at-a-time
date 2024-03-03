@@ -26,6 +26,7 @@ public class PlayerInteract : MonoBehaviour
             ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
             ConfirmDetails.Instance.SetAsReference(other.gameObject);
             ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
+            ConfirmButton.Instance.canConfirm = true;
             //scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
             //PlayerData.Instance.Save();
         }
@@ -39,6 +40,7 @@ public class PlayerInteract : MonoBehaviour
             ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
             ConfirmDetails.Instance.SetAsReference(other.gameObject);
             ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
+            ConfirmButton.Instance.canConfirm = true;
         }
         else if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "Teleport")
         {
@@ -52,6 +54,7 @@ public class PlayerInteract : MonoBehaviour
         popupPlayerInteractText.enabled = false;
         if (other.gameObject.tag == "object")
         {
+            ConfirmButton.Instance.canConfirm = false;
             ConfirmationScreen.Instance.DisableChildren();
         }
     }
