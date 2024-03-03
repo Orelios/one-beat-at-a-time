@@ -8,6 +8,9 @@ TagManager:
   - object
   - Teleport
   - ActivityIndicator
+  - TimingEarly
+  - TimingPerfect
+  - TimingLate
   layers:
   - Default
   - TransparentFX
