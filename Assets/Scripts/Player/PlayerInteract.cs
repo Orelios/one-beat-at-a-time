@@ -15,7 +15,8 @@ public class PlayerInteract : MonoBehaviour
     private void Update()
     {
     }
-    private void OnTriggerStay(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("stay"); 
         //popupPlayerInteractText.enabled = true;
@@ -28,13 +29,24 @@ public class PlayerInteract : MonoBehaviour
             //scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
             //PlayerData.Instance.Save();
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "object")
+        {
+            ConfirmationScreen.Instance.EnableChildren();
+            ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
+            ConfirmDetails.Instance.SetAsReference(other.gameObject);
+            ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
+        }
         else if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "Teleport")
         {
             scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
             PlayerData.Instance.Save();
         }
     }
-    
+
     private void OnTriggerExit(Collider other)
     {
         popupPlayerInteractText.enabled = false;
