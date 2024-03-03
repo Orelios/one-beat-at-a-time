@@ -16,7 +16,7 @@ public class PlayerInteract : MonoBehaviour
     {
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         //Debug.Log("stay"); 
         popupPlayerInteractText.enabled = true;
@@ -25,22 +25,15 @@ public class PlayerInteract : MonoBehaviour
             ConfirmationScreen.Instance.EnableChildren();
             ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
             ConfirmDetails.Instance.SetAsReference(other.gameObject);
-            ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
-            ConfirmButton.Instance.canConfirm = true;
+            if (Input.GetKey(KeyCode.E))
+            {
+                scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                PlayerData.Instance.Save();
+            }
+            //ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
+            //ConfirmButton.Instance.canConfirm = true;
             //scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
             //PlayerData.Instance.Save();
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "object")
-        {
-            ConfirmationScreen.Instance.EnableChildren();
-            ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
-            ConfirmDetails.Instance.SetAsReference(other.gameObject);
-            ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
-            ConfirmButton.Instance.canConfirm = true;
         }
         else if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "Teleport")
         {
@@ -49,12 +42,26 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
+    /*
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "object")
+        {
+            ConfirmationScreen.Instance.EnableChildren();
+            ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
+            ConfirmDetails.Instance.SetAsReference(other.gameObject);
+            //ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
+            //ConfirmButton.Instance.canConfirm = true;
+        }
+    }
+    */
+
     private void OnTriggerExit(Collider other)
     {
         popupPlayerInteractText.enabled = false;
         if (other.gameObject.tag == "object")
         {
-            ConfirmButton.Instance.canConfirm = false;
+            //ConfirmButton.Instance.canConfirm = false;
             ConfirmationScreen.Instance.DisableChildren();
         }
     }
