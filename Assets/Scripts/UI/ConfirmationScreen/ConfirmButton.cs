@@ -18,4 +18,14 @@ public class ConfirmButton : Singleton<ConfirmButton>
         PlayerData.Instance.Save();
     }
 
+    private void Update()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                ConfirmActivity();
+            }
+        }
+    }
 }
