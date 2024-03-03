@@ -23,30 +23,39 @@ public class PlayerArrowInput : MonoBehaviour
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Up);
+                    IndicatorColor.Instance.ChangeIndicatorColor();
+                    IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Up);
                     detector.DestroyNote();
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Down);
+                    IndicatorColor.Instance.ChangeIndicatorColor();
+                    IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Down);
                     detector.DestroyNote();
                 }
                 else if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Left);
+                    IndicatorColor.Instance.ChangeIndicatorColor();
+                    IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Left);
                     detector.DestroyNote();
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Right);
+                    IndicatorColor.Instance.ChangeIndicatorColor();
+                    IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Right);
                     detector.DestroyNote();
                 }
                 //The key pressed was not an arrow key
                 else
                 {
                     //fuction to indicate wrong key pressed
+                    IndicatorImage.Instance.ChangeIndicatorImage(Arrows.None);
                 }
             }
         }

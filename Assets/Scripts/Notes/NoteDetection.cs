@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteDetection : MonoBehaviour
+public class NoteDetection : Singleton<NoteDetection>
 {
-    GameObject noteInDetector = null;
+    public GameObject noteInDetector = null;
     public bool _readyToChangePattern = true;
 
     private void Update()
@@ -24,7 +24,7 @@ public class NoteDetection : MonoBehaviour
             Player.Instance.canPress = true;
         }
     }
-   
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Notes")
