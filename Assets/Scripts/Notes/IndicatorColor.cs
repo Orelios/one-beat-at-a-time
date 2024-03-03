@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IndicatorColor : Singleton<IndicatorColor>
 {
+    public float returnDelay;
     public void ChangeIndicatorColor()
     {
         if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
@@ -18,5 +19,12 @@ public class IndicatorColor : Singleton<IndicatorColor>
         {
             GetComponent<SpriteRenderer>().color = Color.blue;
         }
+        StartCoroutine(RetrunToOriginal());
+    }
+
+    private IEnumerator RetrunToOriginal()
+    {
+        yield return new WaitForSeconds(returnDelay);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

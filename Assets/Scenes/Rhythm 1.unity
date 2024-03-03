@@ -931,8 +931,9 @@ GameObject:
   - component: {fileID: 525389386}
   - component: {fileID: 525389387}
   - component: {fileID: 525389388}
+  - component: {fileID: 525389389}
   m_Layer: 0
-  m_Name: Color
+  m_Name: IndicatorColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1022,6 +1023,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPresist: 0
+  returnDelay: 0.5
+--- !u!114 &525389389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525389385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2553eaefd623324f86927a4b133a2e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _useTestBeat: 0
+  _pulseSize: 1.15
+  _returnSpeed: 5
 --- !u!114 &623519666 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1494035509798577656, guid: bd6f8f013766f904b95a2628f87d6abb, type: 3}
@@ -1300,11 +1317,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1733684795}
-  - {fileID: 525389386}
   - {fileID: 42261300}
   - {fileID: 276223973}
   - {fileID: 1141558483}
   - {fileID: 106842341}
+  - {fileID: 525389386}
   - {fileID: 486746624}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1781,10 +1798,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
+      propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
@@ -1796,7 +1817,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 486746625}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
+      propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 525389389}
+    - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
+      propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
@@ -1804,11 +1833,23 @@ PrefabInstance:
       value: Pulse
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
+      propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Pulse
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PulseToTheBeat, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
+      propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PulseToTheBeat, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
+      propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6436109805886221512, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
