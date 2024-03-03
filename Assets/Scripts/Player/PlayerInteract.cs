@@ -19,7 +19,7 @@ public class PlayerInteract : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("stay"); 
-        //popupPlayerInteractText.enabled = true;
+        popupPlayerInteractText.enabled = true;
         if (other.gameObject.tag == "object")
         {
             ConfirmationScreen.Instance.EnableChildren();
