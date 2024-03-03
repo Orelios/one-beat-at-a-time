@@ -18,8 +18,8 @@ public class PlayerInteract : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         //Debug.Log("stay"); 
-        popupPlayerInteractText.enabled = true;
-        if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "object")
+        //popupPlayerInteractText.enabled = true;
+        if (other.gameObject.tag == "object")
         {
             ConfirmationScreen.Instance.EnableChildren();
             ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
@@ -38,5 +38,9 @@ public class PlayerInteract : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         popupPlayerInteractText.enabled = false;
+        if (other.gameObject.tag == "object")
+        {
+            ConfirmationScreen.Instance.DisableChildren();
+        }
     }
 }
