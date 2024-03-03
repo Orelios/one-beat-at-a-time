@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class IndicatorImage : Singleton<IndicatorImage>
 {
+    public float returnDelay;
     public Sprite[] images;
     void Start()
     {
-        //GetComponent<SpriteRenderer>().sprite
+        
     }
 
     // Update is called once per frame
@@ -34,8 +35,15 @@ public class IndicatorImage : Singleton<IndicatorImage>
                 GetComponent<SpriteRenderer>().sprite = images[3];
                 break;
             case Arrows.Right:
-                GetComponent<Image>().sprite = images[4];
+                GetComponent<SpriteRenderer>().sprite = images[4];
                 break;
         }
+        StartCoroutine(RetrunToOriginal());
+    }
+
+    private IEnumerator RetrunToOriginal()
+    {
+        yield return new WaitForSeconds(returnDelay);
+        GetComponent<SpriteRenderer>().sprite = images[0];
     }
 }
