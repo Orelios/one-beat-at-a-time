@@ -22,16 +22,16 @@ public class IndicatorImage : Singleton<IndicatorImage>
         switch (arrow)
         {
             case Arrows.None:
-                GetComponent<Image>().sprite = images[0];
+                GetComponent<SpriteRenderer>().sprite = images[0];
                 break;
             case Arrows.Up:
-                GetComponent<Image>().sprite = images[1];
+                GetComponent<SpriteRenderer>().sprite = images[1];
                 break;
             case Arrows.Down:
-                GetComponent<Image>().sprite = images[2];
+                GetComponent<SpriteRenderer>().sprite = images[2];
                 break;
             case Arrows.Left:
-                GetComponent<Image>().sprite = images[3];
+                GetComponent<SpriteRenderer>().sprite = images[3];
                 break;
             case Arrows.Right:
                 GetComponent<Image>().sprite = images[4];
