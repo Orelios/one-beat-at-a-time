@@ -6,6 +6,7 @@ public class CloseButton : MonoBehaviour
 {
     public void CloseConfirmationScreen()
     {
+        ConfirmButton.Instance.canConfirm = false;
         ConfirmationScreen.Instance.DisableChildren();
     }
 }
