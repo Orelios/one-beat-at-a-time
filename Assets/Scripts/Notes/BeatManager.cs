@@ -5,11 +5,18 @@ using UnityEngine.Events;
 
 public class BeatManager : Singleton<BeatManager>
 {
+    [SerializeField] private float timeDelay;
     [SerializeField] private float stressedSpeed = 2.0f;
     [SerializeField] private float _bpm;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private Intervals[] _intervals;
 
+    private void OnAwake()
+    {
+        _audioSource.time = timeDelay;
+        _audioSource.Play();
+    }
+    
     private void Update()
     {
         foreach(Intervals interval in _intervals)
