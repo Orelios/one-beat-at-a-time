@@ -967,7 +967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _useTestBeat: 0
-  _pulseSize: 1.15
+  _pulseSize: 1.5
   _returnSpeed: 5
 --- !u!114 &512547409
 MonoBehaviour:
