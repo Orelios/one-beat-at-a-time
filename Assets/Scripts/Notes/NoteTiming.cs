@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NoteTiming : MonoBehaviour
 {
-    public int timingValue;
+    public int timingValue = 1;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
