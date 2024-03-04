@@ -352,7 +352,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 124084466826666995, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
       propertyPath: m_Name
-      value: PatternSpawner (1)
+      value: PatternSpawner2
       objectReference: {fileID: 0}
     - target: {fileID: 4663948981523589173, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
       propertyPath: _patterns.Array.data[0]
@@ -469,7 +469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8220169844136048047, guid: 34b48cddb9016ce47b4830d509411857, type: 3}
       propertyPath: m_Name
-      value: Timer (1)
+      value: Timer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -588,7 +588,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6763086569216368755, guid: da3a32a8e87a22f419204ffb8763ad90, type: 3}
       propertyPath: m_Name
-      value: NoteDetector (1)
+      value: NoteDetector
       objectReference: {fileID: 0}
     - target: {fileID: 7189104196410063325, guid: da3a32a8e87a22f419204ffb8763ad90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -792,7 +792,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 124084466826666995, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
       propertyPath: m_Name
-      value: PatternSpawner
+      value: PatternSpawner1
       objectReference: {fileID: 0}
     - target: {fileID: 4663948981523589173, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
       propertyPath: _patterns.Array.data[0]
@@ -909,7 +909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8181250182442923205, guid: 35a78aec7becdda43b15d636308d62db, type: 3}
       propertyPath: m_Name
-      value: SceneManager (1)
+      value: SceneManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1069,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440502250155128084, guid: fecfc52edc5f723479a7d3c61bc499c1, type: 3}
       propertyPath: m_Name
-      value: MentalHealth (1)
+      value: MentalHealth
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1161,7 +1161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907072084718782280, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: m_Name
-      value: BeatManager (1)
+      value: BeatManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1296,7 +1296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7707026253511714000, guid: bd6f8f013766f904b95a2628f87d6abb, type: 3}
       propertyPath: m_Name
-      value: NoteSpawner (1)
+      value: NoteSpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

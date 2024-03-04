@@ -555,7 +555,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 124084466826666995, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
       propertyPath: m_Name
-      value: PatternSpawner (1)
+      value: PatternSpawner2
       objectReference: {fileID: 0}
     - target: {fileID: 4663948981523589173, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
       propertyPath: _patterns.Array.data[0]
@@ -1354,7 +1354,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 124084466826666995, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
       propertyPath: m_Name
-      value: PatternSpawner
+      value: PatternSpawner1
       objectReference: {fileID: 0}
     - target: {fileID: 4663948981523589173, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
       propertyPath: _patterns.Array.data[0]
