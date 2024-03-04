@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class BeatManager : Singleton<BeatManager>
 {
-    [SerializeField] private float timeDelay;
+    [SerializeField] private float startTime;
     [SerializeField] private float stressedSpeed = 2.0f;
     [SerializeField] private float _bpm;
     [SerializeField] private AudioSource _audioSource;
@@ -13,7 +13,7 @@ public class BeatManager : Singleton<BeatManager>
 
     private void OnAwake()
     {
-        _audioSource.time = timeDelay;
+        _audioSource.time = startTime;
         _audioSource.Play();
     }
     
