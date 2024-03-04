@@ -11,6 +11,8 @@ TagManager:
   - TimingEarly
   - TimingPerfect
   - TimingLate
+  - 1
+  - 2
   layers:
   - Default
   - TransparentFX
