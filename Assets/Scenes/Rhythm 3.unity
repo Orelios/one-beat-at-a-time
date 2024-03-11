@@ -498,7 +498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4147638435685419719, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 4147638435685419719, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -658,13 +658,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1636901849687579945, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
+      propertyPath: _pulseSize
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636901849687579945, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
+      propertyPath: _returnSpeed
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4299773942537297328, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
       propertyPath: m_Name
       value: Detector
       objectReference: {fileID: 0}
     - target: {fileID: 5597883062498858535, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: -1.91
       objectReference: {fileID: 0}
     - target: {fileID: 5597883062498858535, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
       propertyPath: m_LocalPosition.y
@@ -701,6 +709,14 @@ PrefabInstance:
     - target: {fileID: 5597883062498858535, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422512249906286582, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
+      propertyPath: _pulseSize
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422512249906286582, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
+      propertyPath: _returnSpeed
+      value: 1.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1205,6 +1221,10 @@ PrefabInstance:
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: stressedSpeed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
+      propertyPath: _intervals.Array.data[0]._steps
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.size

@@ -447,13 +447,21 @@ PrefabInstance:
       propertyPath: aboveImageIndicator.Array.data[3]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2945073728915731936, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
+      propertyPath: _pulseSize
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945073728915731936, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
+      propertyPath: _returnSpeed
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4147638435685419719, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.91
       objectReference: {fileID: 0}
     - target: {fileID: 4147638435685419719, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 4147638435685419719, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -928,6 +936,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1636901849687579945, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
+      propertyPath: _pulseSize
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636901849687579945, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
+      propertyPath: _returnSpeed
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4299773942537297328, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
       propertyPath: m_Name
       value: Detector
