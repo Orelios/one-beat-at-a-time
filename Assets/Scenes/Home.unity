@@ -420,7 +420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fb965eefde83a40937627ca94bf650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: Go to School?
+  overworldName: School
+  overworldDetails: Go to School?
 --- !u!1 &739581998
 GameObject:
   m_ObjectHideFlags: 0

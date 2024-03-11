@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class OverworldDoor : MonoBehaviour
 {
-    public string text;
+    public string overworldName;
+    public string overworldDetails;
 }

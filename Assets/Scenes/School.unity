@@ -935,7 +935,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fb965eefde83a40937627ca94bf650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: Go Home?
+  overworldName: Home
+  overworldDetails: Go Home?
 --- !u!1001 &1628610508
 PrefabInstance:
   m_ObjectHideFlags: 0
