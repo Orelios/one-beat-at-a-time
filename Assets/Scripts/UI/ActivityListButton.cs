@@ -12,6 +12,14 @@ public class ActivityListButton : MonoBehaviour
         indicators.AddRange(GameObject.FindGameObjectsWithTag("ActivityIndicator"));
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ToggleActivityList();
+        }
+    }
+
     public void ToggleActivityList()
     {
         if (activityList.activeInHierarchy)
