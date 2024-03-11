@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraPlayerChecker : MonoBehaviour
 {
-    public ObjectFader[] objects; 
+    public GameObject objects; 
     private ObjectFader _fader; 
 
     void Update()
@@ -39,9 +39,9 @@ public class CameraPlayerChecker : MonoBehaviour
                     }
                     else
                     {
-                        for(int j =0; j<objects.Length; j++)
+                        for(int j =0; j < objects.transform.childCount; j++)
                         {
-                            objects[j].ResetFade();
+                            objects.transform.GetChild(j).GetComponent<ObjectFader>().ResetFade(); 
                         }
                     }                    
                 }
