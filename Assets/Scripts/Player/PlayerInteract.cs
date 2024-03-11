@@ -35,13 +35,6 @@ public class PlayerInteract : MonoBehaviour
             //scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
             //PlayerData.Instance.Save();
         }
-        /*
-        else if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "Teleport")
-        {
-            scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
-            PlayerData.Instance.Save();
-        }
-        */
     }
 
     /*
@@ -61,7 +54,7 @@ public class PlayerInteract : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         popupPlayerInteractText.enabled = false;
-        if (other.gameObject.tag == "object")
+        if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport")
         {
             //ConfirmButton.Instance.canConfirm = false;
             ConfirmationScreen.Instance.DisableChildren();
