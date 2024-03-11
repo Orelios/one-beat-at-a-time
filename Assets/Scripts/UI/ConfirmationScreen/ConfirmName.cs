@@ -15,14 +15,21 @@ public class ConfirmName : Singleton<ConfirmName>
 
     public void SetAsReference(GameObject x)
     {
-        confirmRef = x.GetComponent<RhythmStats>();
-        if (string.IsNullOrEmpty(confirmRef.stats.activityName))
+        if (x.tag == "object")
         {
-            text.text = confirmRef.stats.name;
+            confirmRef = x.GetComponent<RhythmStats>();
+            if (string.IsNullOrEmpty(confirmRef.stats.activityName))
+            {
+                text.text = confirmRef.stats.name;
+            }
+            else
+            {
+                text.text = confirmRef.stats.activityName;
+            }
         }
-        else
+        else if (x.tag == "Teleport")
         {
-            text.text = confirmRef.stats.activityName;
+            text.text = x.GetComponent<OverworldDoor>().overworldName;
         }
     }
 }

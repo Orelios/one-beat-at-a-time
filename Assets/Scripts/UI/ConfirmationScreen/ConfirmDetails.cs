@@ -15,10 +15,17 @@ public class ConfirmDetails : Singleton<ConfirmDetails>
 
     public void SetAsReference(GameObject x)
     {
-        confirmRef = x.GetComponent<RhythmStats>();
-        text.text = "Mental Health " + PlusOrMinusMentalHealth() + " " + Mathf.Abs(confirmRef.stats.mentalHealthChange) +
-            "\nProductivity " + PlusOrMinusProductivity() + " " + Mathf.Abs(confirmRef.stats.productivityChange) +
-            "\nTime - " + Mathf.Abs(confirmRef.stats.timeChange);
+        if (x.tag == "object")
+        {
+            confirmRef = x.GetComponent<RhythmStats>();
+            text.text = "Mental Health " + PlusOrMinusMentalHealth() + " " + Mathf.Abs(confirmRef.stats.mentalHealthChange) +
+                "\nProductivity " + PlusOrMinusProductivity() + " " + Mathf.Abs(confirmRef.stats.productivityChange) +
+                "\nTime - " + Mathf.Abs(confirmRef.stats.timeChange);
+        }
+        else if (x.tag == "Teleport") //"overworld" door to home/school
+        {
+            text.text = x.GetComponent<OverworldDoor>().overworldDetails;
+        }
     }
 
     public string PlusOrMinusMentalHealth()
