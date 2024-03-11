@@ -66,7 +66,7 @@ public class PlayerData : Singleton<PlayerData>
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (isNewGame == true)
         {
