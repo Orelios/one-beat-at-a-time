@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e635ccf6f7366498cb86c399b7304b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteSpeed: 162
+  noteSpeed: 108
   despawnTimer: 7
 --- !u!114 &-6798470897885906808
 MonoBehaviour:
