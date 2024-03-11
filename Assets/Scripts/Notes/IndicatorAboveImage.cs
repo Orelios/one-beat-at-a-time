@@ -6,6 +6,10 @@ public class IndicatorAboveImage : Singleton<IndicatorAboveImage>
 {
     public Sprite[] aboveImageIndicator; 
     public float returnDelay;
+    public void Start()
+    {
+        GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[3];
+    }
     public void ChangeAboveIndicatorImage()
     {
         if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
@@ -31,6 +35,5 @@ public class IndicatorAboveImage : Singleton<IndicatorAboveImage>
         yield return new WaitForSeconds(returnDelay);
         GetComponent<SpriteRenderer>().color = Color.white;
         GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[3];
-
     }
 }
