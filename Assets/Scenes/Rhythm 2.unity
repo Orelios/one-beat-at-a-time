@@ -1431,6 +1431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ImageAboveIndicator
       objectReference: {fileID: 0}
+    - target: {fileID: 1676019080704358050, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
+      propertyPath: aboveImageIndicator.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2945073728915731936, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
       propertyPath: _pulseSize
       value: 1.75

@@ -492,6 +492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ImageAboveIndicator
       objectReference: {fileID: 0}
+    - target: {fileID: 1676019080704358050, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
+      propertyPath: aboveImageIndicator.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4147638435685419719, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.91
