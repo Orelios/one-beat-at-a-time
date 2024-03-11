@@ -23,6 +23,7 @@ public class PlayerArrowInput : MonoBehaviour
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Up);
+                    IndicatorAboveImage.Instance.ChangeAboveIndicatorImage(); 
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Up);
                     detector.DestroyNote();
@@ -31,6 +32,7 @@ public class PlayerArrowInput : MonoBehaviour
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Down);
+                    IndicatorAboveImage.Instance.ChangeAboveIndicatorImage();
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Down);
                     detector.DestroyNote();
@@ -39,6 +41,7 @@ public class PlayerArrowInput : MonoBehaviour
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Left);
+                    IndicatorAboveImage.Instance.ChangeAboveIndicatorImage();
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Left);
                     detector.DestroyNote();
@@ -47,6 +50,7 @@ public class PlayerArrowInput : MonoBehaviour
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Right);
+                    IndicatorAboveImage.Instance.ChangeAboveIndicatorImage();
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Right);
                     detector.DestroyNote();
