@@ -13,7 +13,7 @@ public class PlayerData : Singleton<PlayerData>
     public float maxProductivity;
     public float academics;
     public float maxAcademics;
-    public float timeRemaining;
+    public float timeSlot;
 
     public void Save()
     {
@@ -21,7 +21,7 @@ public class PlayerData : Singleton<PlayerData>
         playerDataJson.Add("keyMentalHealth", mentalHealth);
         playerDataJson.Add("keyProductivity", productivity);
         playerDataJson.Add("keyAcademics", academics);
-        playerDataJson.Add("keyTimeRemaining", timeRemaining);
+        playerDataJson.Add("keyTimeRemaining", timeSlot);
         playerDataJson.Add("keyMaxMentalHealth", maxMentalHealth);
         playerDataJson.Add("keyMaxProductivity", maxProductivity);
         playerDataJson.Add("keyMaxAcademics", maxAcademics);
@@ -48,7 +48,7 @@ public class PlayerData : Singleton<PlayerData>
         mentalHealth = playerDataJson["keyMentalHealth"];
         productivity = playerDataJson["keyProductivity"];
         academics = playerDataJson["keyAcademics"];
-        timeRemaining = playerDataJson["keyTimeRemaining"];
+        timeSlot = playerDataJson["keyTimeRemaining"];
         maxMentalHealth = playerDataJson["keyMaxMentalHealth"];
         maxProductivity = playerDataJson["keyMaxProductivity"];
         maxAcademics = playerDataJson["keyMaxAcademics"];
@@ -110,12 +110,12 @@ public class PlayerData : Singleton<PlayerData>
         }
     }
 
-    public void AddTimeRemaining(float z)
+    public void AddTimeSlot(float z)
     {
-        timeRemaining += z;
-        if (timeRemaining < 0)
+        timeSlot += z;
+        if (timeSlot < 0)
         {
-            timeRemaining = 0;
+            timeSlot = 0;
         }
     }
 }
