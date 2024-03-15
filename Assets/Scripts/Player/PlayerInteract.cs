@@ -27,12 +27,12 @@ public class PlayerInteract : MonoBehaviour
             ConfirmDetails.Instance.SetAsReference(other.gameObject);
             if (Input.GetKey(KeyCode.E))
             {
-                if (PlayerData.Instance.timeSlot >= Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
+                if (PlayerData.Instance.timeslot >= Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
                 {
                     scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
                     PlayerData.Instance.Save();
                 }
-                else if (PlayerData.Instance.timeSlot < Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
+                else if (PlayerData.Instance.timeslot < Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
                 {
                     Debug.Log("Not enough time slots");
                     //show message of insufficient time slots
