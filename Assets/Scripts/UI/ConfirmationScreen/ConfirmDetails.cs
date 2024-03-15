@@ -27,12 +27,12 @@ public class ConfirmDetails : Singleton<ConfirmDetails>
             if (PlayerData.Instance.timeslot > 0)
             {
                 text.text = x.GetComponent<OverworldDoor>().overworldDetails +
-                    "\n You still have remaining Timeslots left";
+                    "\nYou still have remaining Timeslots left";
             }
             if (PlayerData.Instance.timeslot <= 0)
             {
                 text.text = x.GetComponent<OverworldDoor>().overworldDetails +
-                    "\n No more Timeslots remaining";
+                    "\nNo more Timeslots remaining";
             }
             
         }
