@@ -15,4 +15,4 @@ MonoBehaviour:
   activityName: Exam
   mentalHealthChange: -10
   productivityChange: 20
-  timeChange: -3
+  timeChange: -1
