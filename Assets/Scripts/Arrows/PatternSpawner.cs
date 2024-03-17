@@ -52,27 +52,24 @@ public class PatternSpawner : MonoBehaviour
         if (arrows == Arrows.Up)
         {
             InputArrowSpriteChanger(playerArrowInputCount, 0, Arrows.Up);
-            playerArrowInputCount += playerInputCount;
+            //playerArrowInputCount += playerInputCount;
         }
         else if (arrows == Arrows.Left)
         {
             InputArrowSpriteChanger(playerArrowInputCount, 2, Arrows.Left);
-            playerArrowInputCount += playerInputCount;
+            //playerArrowInputCount += playerInputCount;
         }
         else if (arrows == Arrows.Right)
         {
             InputArrowSpriteChanger(playerArrowInputCount, 3, Arrows.Right);
-            playerArrowInputCount += playerInputCount;
+            //playerArrowInputCount += playerInputCount;
         }
         else if (arrows == Arrows.Down)
         {
             InputArrowSpriteChanger(playerArrowInputCount, 1, Arrows.Down);
-            playerArrowInputCount += playerInputCount;
+            //playerArrowInputCount += playerInputCount;
         }
-        if (playerArrowInputCount == 4)
-        {
-            CheckPattern();
-        }
+        CheckPattern(); 
 
     }
     public void CheckPattern()
@@ -81,6 +78,7 @@ public class PatternSpawner : MonoBehaviour
         //This will also clear the player inputs and reset PlayerArrowInputCount to 0 again
         //This will also take in the function SpawnPatterns()
         //This will also make the readyToChangePattern = true 
+        /*
         for (int i = 0; i < 4; i++)
         {
             if (arrowInputs[i] == _patterns[lengthChecker].arrowsPattern[i])
@@ -89,7 +87,19 @@ public class PatternSpawner : MonoBehaviour
                 //Debug.Log(numOfCorrectPatterns);
             }
         }
-        //Debug.Log(numOfCorrectPatterns);
+        */
+        //Checks if player
+        if(arrowInputs[playerArrowInputCount] == _patterns[lengthChecker].arrowsPattern[playerArrowInputCount])
+        {
+            checkTimingValue(); 
+            playerArrowInputCount++; 
+        }
+        else
+        {
+            resetWrongPlayerArrowInput(); 
+        }
+
+        //To revamp as well dont make it dependent on if numOfCorrectPatterns == 4
         if (numOfCorrectPatterns == 4)
         {
             numOfCorrectPatterns = 0;
@@ -121,11 +131,34 @@ public class PatternSpawner : MonoBehaviour
             arrowInputs[i] = Arrows.None;
         }
     }
+    public void resetWrongPlayerArrowInput()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            arrowInputs[i] = Arrows.None;
+        }
+    }
     public void InputArrowSpriteChanger(int playerArrowInputCounter, int arrowSprite, Arrows arrow)
     {
         PlayerInputPattern.Instance.gameObject.transform.GetChild(playerArrowInputCounter).GetComponent<SpriteRenderer>().sprite =
                 PlayerInputPattern.Instance.playerInputPattens[arrowSprite].GetComponent<SpriteRenderer>().sprite;
 
         arrowInputs[playerArrowInputCounter] = arrow;
+    }
+
+    public void checkTimingValue()
+    {
+        if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
+        {
+            GetComponent<ProgressBarManipulator>().AddSmall();
+        }
+        else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 2)
+        {
+            GetComponent<ProgressBarManipulator>().AddMedium();
+        }
+        else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 3)
+        {
+            GetComponent<ProgressBarManipulator>().AddSmall();
+        }
     }
 }
