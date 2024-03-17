@@ -35,8 +35,8 @@ public class ProgressBar : MonoBehaviour
         else
         {
             progress -= Time.deltaTime * progressDecPerSec;
-            image.fillAmount = progress / maxProgress;
         }
+        image.fillAmount = progress / maxProgress;
     }
 
     public void AddProgressSmall()
