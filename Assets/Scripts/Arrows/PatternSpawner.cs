@@ -69,10 +69,10 @@ public class PatternSpawner : MonoBehaviour
             InputArrowSpriteChanger(playerArrowInputCount, 1, Arrows.Down);
             //playerArrowInputCount += playerInputCount;
         }
-        CheckPattern(); 
+        CheckPattern(playerInputCount); 
 
     }
-    public void CheckPattern()
+    public void CheckPattern(int playerInputCount)
     {
         //This will check if you had inputed the right pattern
         //This will also clear the player inputs and reset PlayerArrowInputCount to 0 again
@@ -91,16 +91,18 @@ public class PatternSpawner : MonoBehaviour
         //Checks if player
         if(arrowInputs[playerArrowInputCount] == _patterns[lengthChecker].arrowsPattern[playerArrowInputCount])
         {
-            checkTimingValue(); 
-            playerArrowInputCount++; 
+            PlayerInputPattern.Instance.reset -= 1; 
+            checkTimingValue();
+            playerArrowInputCount += playerInputCount; 
         }
         else
         {
-            resetWrongPlayerArrowInput(); 
+            PlayerInputPattern.Instance.reset += 1;
+            playerArrowInputCount += playerInputCount;
+            //resetWrongPlayerArrowInput(); 
         }
-
         //To revamp as well dont make it dependent on if numOfCorrectPatterns == 4
-        if (numOfCorrectPatterns == 4)
+        if (playerArrowInputCount == 4)
         {
             numOfCorrectPatterns = 0;
             playerArrowInputCount = 0;
@@ -117,8 +119,8 @@ public class PatternSpawner : MonoBehaviour
         {
             numOfCorrectPatterns = 0;
             readyToChangePattern = false;
-            playerArrowInputCount = 0;
-            resetPlayerArrowInput();
+            //playerArrowInputCount = 0;
+            //resetPlayerArrowInput();
         }
     }
     public void resetPlayerArrowInput()
@@ -150,15 +152,15 @@ public class PatternSpawner : MonoBehaviour
     {
         if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
         {
-            GetComponent<ProgressBarManipulator>().AddSmall();
+            PlayerInputPattern.Instance.GetComponent<ProgressBarManipulator>().AddSmall();
         }
         else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 2)
         {
-            GetComponent<ProgressBarManipulator>().AddMedium();
+            PlayerInputPattern.Instance.GetComponent<ProgressBarManipulator>().AddMedium();
         }
         else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 3)
         {
-            GetComponent<ProgressBarManipulator>().AddSmall();
+            PlayerInputPattern.Instance.GetComponent<ProgressBarManipulator>().AddSmall();
         }
     }
 }
