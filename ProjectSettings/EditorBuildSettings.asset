@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/old/School.unity
-    guid: 03234e22c152a884ab3eac0e774da17c
+    path: Assets/Scenes/Saturday-1.unity
+    guid: 563df92379427694d899ea71d6240482
+  - enabled: 1
+    path: Assets/Scenes/Saturday-2.unity
+    guid: 596b08c0f9b93a54ba9499d007d6e26a
+  - enabled: 1
+    path: Assets/Scenes/Saturday-3.unity
+    guid: c4bf0d84c9eab814b89be394b9e58024
   - enabled: 1
     path: Assets/Scenes/Rhythm 1.unity
     guid: 252733886930fb54ba3248e2112b0cc1
@@ -17,7 +23,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rhythm 3.unity
     guid: 6a06bc67eabbf01438a1c6c1164d460f
-  - enabled: 1
-    path: Assets/Scenes/old/Home.unity
-    guid: be458f1582e9a2141b1f5580657db33c
   m_configObjects: {}
