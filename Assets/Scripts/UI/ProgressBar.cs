@@ -23,18 +23,15 @@ public class ProgressBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        progress -= Time.deltaTime * progressDecPerSec;
         if (progress <= 0)
         {
             progress = 0.0f;
         }
-        else if (progress >= 100)
+        if (progress >= 100)
         {
             progress = 100.0f;
             //EndRhythmScreen.Instance.StopGame();
-        }
-        else
-        {
-            progress -= Time.deltaTime * progressDecPerSec;
         }
         image.fillAmount = progress / maxProgress;
     }
