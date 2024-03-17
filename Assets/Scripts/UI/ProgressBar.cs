@@ -65,4 +65,9 @@ public class ProgressBar : MonoBehaviour
     {
         progress -= large;
     }
+
+    public float GetProgress()
+    {
+        return progress;
+    }
 }
