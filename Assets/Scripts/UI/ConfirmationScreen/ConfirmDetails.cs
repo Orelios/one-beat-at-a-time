@@ -24,7 +24,17 @@ public class ConfirmDetails : Singleton<ConfirmDetails>
         }
         else if (x.tag == "Teleport") //"overworld" door to home/school
         {
-            text.text = x.GetComponent<OverworldDoor>().overworldDetails;
+            if (PlayerData.Instance.timeslot > 0)
+            {
+                text.text = x.GetComponent<OverworldDoor>().overworldDetails +
+                    "\nYou still have remaining Timeslots left";
+            }
+            if (PlayerData.Instance.timeslot <= 0)
+            {
+                text.text = x.GetComponent<OverworldDoor>().overworldDetails +
+                    "\nNo more Timeslots remaining";
+            }
+            
         }
     }
 

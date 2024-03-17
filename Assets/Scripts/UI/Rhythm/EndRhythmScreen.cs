@@ -14,8 +14,8 @@ public class EndRhythmScreen : Singleton<EndRhythmScreen>
         gameObject.transform.GetChild(2).gameObject.SetActive(true);
         gameObject.transform.GetChild(3).gameObject.SetActive(true);
 
-        //ADD the (negative) value of timeChaneg from RhythmStats to PlayerData timeSlot
-        PlayerData.Instance.AddTimeSlot(GetComponent<RhythmStats>().stats.timeChange);
+        //ADD the (negative) value of timeChaneg from RhythmStats to PlayerData timeslot
+        PlayerData.Instance.AddTimeslot(GetComponent<RhythmStats>().stats.timeChange);
 
         //After enabling children wherein PlayerData values are changed, save new values to JSON
         PlayerData.Instance.Save();
