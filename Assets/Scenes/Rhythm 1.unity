@@ -347,7 +347,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6422512249906286582, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
   m_PrefabInstance: {fileID: 2696301303793852904}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1965594075}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2553eaefd623324f86927a4b133a2e5, type: 3}
@@ -582,6 +582,7 @@ GameObject:
   - component: {fileID: 1275084418}
   - component: {fileID: 1275084420}
   - component: {fileID: 1275084419}
+  - component: {fileID: 1275084421}
   m_Layer: 5
   m_Name: ProgressBar
   m_TagString: Untagged
@@ -646,6 +647,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275084417}
   m_CullTransparentMesh: 1
+--- !u!114 &1275084421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275084417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1281fd2f6b33c1f4dafcd0d02e80837a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxProgress: 100
+  progress: 0
+  progressDecPerSec: 1
+  small: 5
+  medium: 10
+  large: 15
 --- !u!1 &1447883583
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +920,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eacb036267cfc94084fdcbb8e9ec754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1965594075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6610789903704256993, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
+  m_PrefabInstance: {fileID: 2696301303793852904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1965594079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965594075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71462afb480540a41ad7092c06c75636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressBar: {fileID: 1275084421}
 --- !u!224 &2127327574 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4300179557232535266, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
@@ -1132,6 +1169,10 @@ PrefabInstance:
       propertyPath: _returnSpeed
       value: 1.75
       objectReference: {fileID: 0}
+    - target: {fileID: 3916031393901897003, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
+      propertyPath: manipulator
+      value: 
+      objectReference: {fileID: 1965594079}
     - target: {fileID: 4299773942537297328, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
       propertyPath: m_Name
       value: Detector
@@ -1179,7 +1220,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6610789903704256993, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1965594079}
   m_SourcePrefab: {fileID: 100100000, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
 --- !u!1001 &3099538443330988847
 PrefabInstance:
