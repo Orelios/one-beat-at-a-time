@@ -10,11 +10,12 @@ public class PlayAudio : MonoBehaviour
 
     void Update()
     {
-        //for (progressLevels )
+        float audioTime = GetComponentInParent<AudioSource>().time;
         for (int i = 0; i < audios.Length; i++)
         {
             if (progressBar.GetProgress() >= progressLevels[i] && !audios[i].isPlaying)
             {
+                audios[i].time = audioTime;
                 audios[i].Play();
             }
         }
