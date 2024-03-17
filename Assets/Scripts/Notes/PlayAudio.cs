@@ -18,6 +18,10 @@ public class PlayAudio : MonoBehaviour
                 audios[i].time = audioTime;
                 audios[i].Play();
             }
+            if (progressBar.GetProgress() < progressLevels[i] && audios[i].isPlaying)
+            {
+                audios[i].Stop();
+            }
         }
     }
 }
