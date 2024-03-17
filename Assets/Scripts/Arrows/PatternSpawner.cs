@@ -10,7 +10,7 @@ public class PatternSpawner : MonoBehaviour
     [System.NonSerialized] public bool readyToChangePattern = false;
     private int lengthChecker = 0;
     private int playerArrowInputCount = 0;
-    private int numOfCorrectPatterns = 0;
+    private int numOfCorrectArrows = 0;
     private GameObject playerInputPatterns;
 
     private void Awake()
@@ -24,7 +24,7 @@ public class PatternSpawner : MonoBehaviour
     }
     public void SpawnPatterns()
     {
-        Debug.Log(lengthChecker + " < " + _patterns.Length);
+        //Debug.Log(lengthChecker + " < " + _patterns.Length);
         if (readyToChangePattern == true && lengthChecker < _patterns.Length - 1)
         {
             lengthChecker++;
@@ -93,23 +93,25 @@ public class PatternSpawner : MonoBehaviour
         {
             PlayerInputPattern.Instance.reset -= 1; 
             checkTimingValue();
-            playerArrowInputCount += playerInputCount; 
+            playerArrowInputCount += playerInputCount;
+            numOfCorrectArrows += 1;
         }
         else
         {
             PlayerInputPattern.Instance.reset += 1;
             playerArrowInputCount += playerInputCount;
-            //resetWrongPlayerArrowInput(); 
+            resetWrongPlayerArrowInput(); 
         }
+        Debug.Log(PlayerInputPattern.Instance.reset);
         //To revamp as well dont make it dependent on if numOfCorrectPatterns == 4
-        if (playerArrowInputCount == 4)
+        if (numOfCorrectArrows == 4)//This is the one that is causing the problem
         {
-            numOfCorrectPatterns = 0;
-            playerArrowInputCount = 0;
             GetComponent<PulseToTheBeat>().Pulse();
 
             for (int i = 0; i < playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner.Length; i++)
             {
+                playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner[i].playerArrowInputCount = 0; 
+                playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner[i].numOfCorrectArrows = 0; 
                 playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner[i].readyToChangePattern = true;
                 playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner[i].SpawnPatterns();
                 playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner[i].resetPlayerArrowInput();
@@ -117,7 +119,7 @@ public class PatternSpawner : MonoBehaviour
         }
         else
         {
-            numOfCorrectPatterns = 0;
+            //numOfCorrectPatterns = 0;
             readyToChangePattern = false;
             //playerArrowInputCount = 0;
             //resetPlayerArrowInput();

@@ -10,7 +10,7 @@ public class PlayerInputPattern : Singleton<PlayerInputPattern>
 
     private void Update()
     {
-        if(reset <= 0)
+        if(reset <= 0 || reset > 2)
         {
             reset = 0; 
         }
@@ -22,6 +22,7 @@ public class PlayerInputPattern : Singleton<PlayerInputPattern>
                 gameObject.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite =
                    null;
             }
+            reset = 0;
         }
     }
 }
