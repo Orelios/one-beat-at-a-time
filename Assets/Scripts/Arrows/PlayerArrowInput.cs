@@ -69,7 +69,7 @@ public class PlayerArrowInput : MonoBehaviour
         arrows = arrow;
         for (int i = 0; i < patternSpawner.Length; i++)
         {
-            patternSpawner[i].PlayerArrowInputs(arrows, 1);
+            patternSpawner[i].PlayerArrowInputs(arrows);
         }
     }
 }
