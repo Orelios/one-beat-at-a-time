@@ -11,7 +11,6 @@ public class PatternSpawner : MonoBehaviour
     private int lengthChecker = 0;
     private int playerArrowInputCount = 0;
     private int numOfCorrectArrows = 0;
-    private GameObject playerInputPatterns;
 
     private void Awake()
     {
@@ -20,11 +19,9 @@ public class PatternSpawner : MonoBehaviour
             gameObject.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite
                 = _patterns[lengthChecker].iconPatterns[i].GetComponent<SpriteRenderer>().sprite;
         }
-        playerInputPatterns = GameObject.Find("PlayerInputPatterns");
     }
     public void SpawnPatterns()
     {
-        //Debug.Log(lengthChecker + " < " + _patterns.Length);
         if (readyToChangePattern == true && lengthChecker < _patterns.Length - 1)
         {
             lengthChecker++;
@@ -33,7 +30,6 @@ public class PatternSpawner : MonoBehaviour
                 gameObject.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite
                     = _patterns[lengthChecker].iconPatterns[i].GetComponent<SpriteRenderer>().sprite;
             }
-            //lengthChecker++;
             readyToChangePattern = false;
         }
         else
@@ -47,32 +43,36 @@ public class PatternSpawner : MonoBehaviour
             readyToChangePattern = false;
         }
     }
-    public void PlayerArrowInputs(Arrows arrows, int playerInputCount)
+    public void PlayerArrowInputs(Arrows arrows)
     {
         if (arrows == Arrows.Up)
         {
-            InputArrowSpriteChanger(playerArrowInputCount, 0, Arrows.Up);
-            //playerArrowInputCount += playerInputCount;
+            //InputArrowSpriteChanger(0, Arrows.Up);
+            arrowInputs[playerArrowInputCount] = arrows;
+            CheckPattern(0, arrows);
         }
         else if (arrows == Arrows.Left)
         {
-            InputArrowSpriteChanger(playerArrowInputCount, 2, Arrows.Left);
-            //playerArrowInputCount += playerInputCount;
+            //InputArrowSpriteChanger(2, Arrows.Left);
+            arrowInputs[playerArrowInputCount] = arrows;
+            CheckPattern(2, arrows);
         }
         else if (arrows == Arrows.Right)
         {
-            InputArrowSpriteChanger(playerArrowInputCount, 3, Arrows.Right);
-            //playerArrowInputCount += playerInputCount;
+            arrowInputs[playerArrowInputCount] = arrows;
+            CheckPattern(3, arrows);
+            //InputArrowSpriteChanger(3, Arrows.Right);
         }
         else if (arrows == Arrows.Down)
         {
-            InputArrowSpriteChanger(playerArrowInputCount, 1, Arrows.Down);
-            //playerArrowInputCount += playerInputCount;
+            arrowInputs[playerArrowInputCount] = arrows;
+            CheckPattern(1, arrows);
+            //InputArrowSpriteChanger(1, Arrows.Down);
         }
-        CheckPattern(playerInputCount); 
+        //CheckPattern(); 
 
     }
-    public void CheckPattern(int playerInputCount)
+    public void CheckPattern(int arrowSprite, Arrows arrow)
     {
         //This will check if you had inputed the right pattern
         //This will also clear the player inputs and reset PlayerArrowInputCount to 0 again
@@ -88,42 +88,38 @@ public class PatternSpawner : MonoBehaviour
             }
         }
         */
-        //Checks if player
-        if(arrowInputs[playerArrowInputCount] == _patterns[lengthChecker].arrowsPattern[playerArrowInputCount])
+        if (arrowInputs[playerArrowInputCount] == _patterns[lengthChecker].arrowsPattern[playerArrowInputCount])
         {
-            PlayerInputPattern.Instance.reset -= 1; 
+            PlayerInputPattern.Instance.reset -= 1;
             checkTimingValue();
-            playerArrowInputCount += playerInputCount;
+            InputArrowSpriteChanger(arrowSprite);
+            playerArrowInputCount += 1;
             numOfCorrectArrows += 1;
+            PlayerInputPattern.Instance.CheckPlayerInputSprites();
+        
         }
         else
         {
             PlayerInputPattern.Instance.reset += 1;
-            playerArrowInputCount += playerInputCount;
-            resetWrongPlayerArrowInput(); 
+            //playerArrowInputCount += 1;
+            playerArrowInputCount = 0;
+            numOfCorrectArrows = 0;
+            PlayerInputPattern.Instance.CheckPlayerInputSprites();
+            resetWrongPlayerArrowInput();
         }
-        Debug.Log(PlayerInputPattern.Instance.reset);
-        //To revamp as well dont make it dependent on if numOfCorrectPatterns == 4
-        if (numOfCorrectArrows == 4)//This is the one that is causing the problem
+        if (numOfCorrectArrows == 4)
         {
             GetComponent<PulseToTheBeat>().Pulse();
-
-            for (int i = 0; i < playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner.Length; i++)
+            for (int i = 0; i < PlayerInputPattern.Instance.GetComponent<PlayerArrowInput>().patternSpawner.Length; i++)
             {
-                playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner[i].playerArrowInputCount = 0; 
-                playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner[i].numOfCorrectArrows = 0; 
-                playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner[i].readyToChangePattern = true;
-                playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner[i].SpawnPatterns();
-                playerInputPatterns.GetComponent<PlayerArrowInput>().patternSpawner[i].resetPlayerArrowInput();
+                PlayerInputPattern.Instance.GetComponent<PlayerArrowInput>().patternSpawner[i].resetPlayerArrowInput();
+                PlayerInputPattern.Instance.GetComponent<PlayerArrowInput>().patternSpawner[i].playerArrowInputCount = 0;
+                PlayerInputPattern.Instance.GetComponent<PlayerArrowInput>().patternSpawner[i].numOfCorrectArrows = 0;
+                PlayerInputPattern.Instance.GetComponent<PlayerArrowInput>().patternSpawner[i].readyToChangePattern = true;
+                PlayerInputPattern.Instance.GetComponent<PlayerArrowInput>().patternSpawner[i].SpawnPatterns();
             }
         }
-        else
-        {
-            //numOfCorrectPatterns = 0;
-            readyToChangePattern = false;
-            //playerArrowInputCount = 0;
-            //resetPlayerArrowInput();
-        }
+
     }
     public void resetPlayerArrowInput()
     {
@@ -142,12 +138,10 @@ public class PatternSpawner : MonoBehaviour
             arrowInputs[i] = Arrows.None;
         }
     }
-    public void InputArrowSpriteChanger(int playerArrowInputCounter, int arrowSprite, Arrows arrow)
+    public void InputArrowSpriteChanger(int arrowSprite)
     {
-        PlayerInputPattern.Instance.gameObject.transform.GetChild(playerArrowInputCounter).GetComponent<SpriteRenderer>().sprite =
+        PlayerInputPattern.Instance.gameObject.transform.GetChild(playerArrowInputCount).GetComponent<SpriteRenderer>().sprite =
                 PlayerInputPattern.Instance.playerInputPattens[arrowSprite].GetComponent<SpriteRenderer>().sprite;
-
-        arrowInputs[playerArrowInputCounter] = arrow;
     }
 
     public void checkTimingValue()
