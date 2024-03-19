@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2975,7 +2975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82ff2dceddf674d9a23ac91dddbdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 1
+  sceneNumber: 2
 --- !u!65 &1266069620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3680,7 +3680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457629ec2f2da094e99a77c6d3c48632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: edee7212b1c389447b2add188ad0b62f, type: 2}
+  stats: {fileID: 11400000, guid: 6a3316df5deb1544abc8821c4478e7ee, type: 2}
 --- !u!114 &1749836358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3693,7 +3693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82ff2dceddf674d9a23ac91dddbdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 3
+  sceneNumber: 4
 --- !u!65 &1749836359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3713,8 +3713,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.730589, y: 4.305355, z: 7.0958276}
-  m_Center: {x: 2.5351686, y: -0.80757904, z: 2.0494263}
+  m_Size: {x: 4.6305375, y: 4.305355, z: 7.0958276}
+  m_Center: {x: -8.921048, y: -0.80757904, z: 2.0494263}
 --- !u!1001 &1767287380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4363,13 +4363,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082757693}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: -0.24699879, y: 3, z: -10}
+  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalPosition: {x: -0.5, y: 3.5, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
 --- !u!1001 &2106073157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4650,7 +4650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82ff2dceddf674d9a23ac91dddbdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 1
+  sceneNumber: 2
 --- !u!65 &2130655924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4670,8 +4670,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.589015, y: 3.3168964, z: 6.679313}
-  m_Center: {x: 3.746059, y: 1.6799998, z: -0.5112083}
+  m_Size: {x: 4.521232, y: 3.3168964, z: 6.679313}
+  m_Center: {x: -7.4394646, y: 1.6799998, z: -0.5112083}
 --- !u!1001 &5842282798338790672
 PrefabInstance:
   m_ObjectHideFlags: 0
