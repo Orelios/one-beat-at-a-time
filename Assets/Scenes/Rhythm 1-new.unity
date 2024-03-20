@@ -200,11 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPresist: 0
-  _pressedArrowSprites:
-  - {fileID: 21300000, guid: d8042749778fb2a4ba90b852941ee8ec, type: 3}
-  - {fileID: 21300000, guid: 5763eda0fc5f14f4d95889dce5e7409c, type: 3}
-  - {fileID: 21300000, guid: b0eedc4281ce3ca47870fd2538c65ecd, type: 3}
-  - {fileID: 21300000, guid: fd643816177737448bd9acaed0e7120a, type: 3}
+  _correctArrowSprites: []
+  _incorrectArrowSprites: []
   _arrowInputEnums: 00000000000000000000000000000000
   _patterns:
   - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
