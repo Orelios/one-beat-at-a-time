@@ -71,6 +71,7 @@ public class PlayerData : Singleton<PlayerData>
         if (isNewGame == true)
         {
             //no loading
+            Save();
         }
         else
         {

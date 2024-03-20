@@ -30,8 +30,8 @@ public class PlayerInteract : MonoBehaviour
                 if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot >= 
                     Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
                 {
-                    scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
                     PlayerData.Instance.Save();
+                    scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
                 }
                 else if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot < 
                     Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
@@ -42,8 +42,9 @@ public class PlayerInteract : MonoBehaviour
 
                 if(other.gameObject.tag == "Teleport")
                 {
-                    scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                    PlayerData.Instance.AddTimeslot(1);
                     PlayerData.Instance.Save();
+                    scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber); 
                 }
             }
             //ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());

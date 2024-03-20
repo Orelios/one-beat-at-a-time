@@ -712,7 +712,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 051bae509b179d84fb4a5d004d852a59, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1113,7 +1113,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 051bae509b179d84fb4a5d004d852a59, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1640,7 +1640,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3165588767056413447, guid: 34b48cddb9016ce47b4830d509411857, type: 3}
       propertyPath: initialSeconds
-      value: 1000
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5101325403300456859, guid: 34b48cddb9016ce47b4830d509411857, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1756,10 +1756,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 498694781}
     m_Modifications:
+    - target: {fileID: 110818928867295142, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880000047492286155, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1936913194725518983, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
       propertyPath: stats
       value: 
       objectReference: {fileID: 11400000, guid: edee7212b1c389447b2add188ad0b62f, type: 2}
+    - target: {fileID: 2430015154251536485, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3393893453447148120, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
       propertyPath: m_Name
       value: EndScreenRhythm
@@ -1848,6 +1860,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1932460138}
+    - target: {fileID: 7863670220817329861, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
+      propertyPath: m_text
+      value: Return Home
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477864603841001927, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 166.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954378773897572785, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1976,6 +2000,10 @@ PrefabInstance:
     - target: {fileID: 8181250182442923205, guid: 35a78aec7becdda43b15d636308d62db, type: 3}
       propertyPath: m_Name
       value: SceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949913259425656811, guid: 35a78aec7becdda43b15d636308d62db, type: 3}
+      propertyPath: introScreen
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

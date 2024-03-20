@@ -12,22 +12,27 @@ public class ScreenManager : MonoBehaviour
     public void LoadMainScene()
     {
         SceneManager.LoadScene(mainScene);
+        Time.timeScale = 1.0f;
     }
     public void LoadIntroScreen()
     {
         SceneManager.LoadScene(introScreen);
+        Time.timeScale = 1.0f;
     }
     public void LoadTitleScreen()
     {
         SceneManager.LoadScene(titleScreen);
+        Time.timeScale = 1.0f;
     }
     public void LoadEndScreen()
     {
         SceneManager.LoadScene(endScreen);
+        Time.timeScale = 1.0f;
     }
     public void LoadLevel(int levelNumber)
     {
-        SceneManager.LoadScene(levelNumber); 
+        SceneManager.LoadScene(levelNumber);
+        Time.timeScale = 1.0f;
     }
     public void ExitGame()
     {
