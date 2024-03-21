@@ -60,12 +60,11 @@ public class PatternManager : Singleton<PatternManager>
         }
         else //wrong arrow pressed, auto next pattern
         {
-            /*_patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
+            _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
                 = _incorrectArrowSprites[x]; //change current ARROW to wrong version
             _patternCurrent.GetComponent<PulseToTheBeat>().Pulse(); //pulse the pattern
             _arrowIndex = 0;
             NextPatternSequence(); //AFTER pulse finishes
-            */
         }
 
         if (_arrowIndex >= 4)
