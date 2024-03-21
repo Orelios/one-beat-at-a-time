@@ -7,8 +7,8 @@ public class MusicBar : MonoBehaviour
 {
     [SerializeField] private AudioSource beatManager; 
     Image image;
-    [SerializeField] private float maxProgress;
-    [SerializeField] private float progress;
+    private float maxProgress;
+    private float progress;
     private float progressIncPerSec = 1.0f;
 
     void Start()
