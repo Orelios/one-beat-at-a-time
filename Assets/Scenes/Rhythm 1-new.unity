@@ -206,6 +206,7 @@ MonoBehaviour:
   _patterns:
   - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
   - {fileID: 11400000, guid: 0c651553940758c4b904338a4f160164, type: 2}
+  _slideDuration: 0.5
 --- !u!114 &42261301 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4024464241736979262, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
@@ -1795,6 +1796,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatternSpawner2
       objectReference: {fileID: 0}
+    - target: {fileID: 124084466826666995, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4663948981523589173, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
       propertyPath: _patterns.Array.data[0]
       value: 
@@ -3137,6 +3142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerInputPatterns
       objectReference: {fileID: 0}
+    - target: {fileID: 8682949935178692145, guid: 71b3991f43450694385a314258b66a95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3217,6 +3226,10 @@ PrefabInstance:
     - target: {fileID: 124084466826666995, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
       propertyPath: m_Name
       value: PatternSpawner1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124084466826666995, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4663948981523589173, guid: 3fe8ec6dada27044e9af5602ae26493e, type: 3}
       propertyPath: _patterns.Array.data[0]

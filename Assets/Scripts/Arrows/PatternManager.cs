@@ -10,11 +10,21 @@ public class PatternManager : Singleton<PatternManager>
     [SerializeField] private PatternsScriptableObjects[] _patterns;
     private GameObject _patternCurrent, _patternPreview, _patternSliding;
     private int _patternIndex = 0, _arrowIndex = 0;
+    private Vector3 _slideStartPos, _slideEndPos;
+    private Vector3 _slideStartScale, _slideEndScale;
+    [SerializeField] private float _slideDuration = 0.5f;
+    private float _elapsedTime;
     void Awake()
     {
         _patternCurrent = this.gameObject.transform.GetChild(0).gameObject;
         _patternPreview = this.gameObject.transform.GetChild(1).gameObject;
         _patternSliding = this.gameObject.transform.GetChild(2).gameObject;
+
+        _slideStartPos = _patternPreview.transform.position;
+        _slideEndPos = _patternCurrent.transform.position;
+        _slideStartScale = _patternPreview.transform.localScale;
+        _slideEndScale = _patternCurrent.transform.localScale;
+
         for (int i = 0; i < _patterns[_patternIndex].iconPatterns.Length; i++)
         {
             _patternCurrent.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite
@@ -24,6 +34,7 @@ public class PatternManager : Singleton<PatternManager>
             _patternSliding.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite
                 = _patterns[_patternIndex + 1].iconPatterns[i].GetComponent<SpriteRenderer>().sprite;
         }
+        //StartCoroutine(Slide());
     }
 
     public void ReceivePlayerArrowInput(Arrows arrow, int x)
@@ -91,8 +102,17 @@ public class PatternManager : Singleton<PatternManager>
     private IEnumerator Slide()
     {
         //_patternSliding only - slide down and inc size
-        //when finished, must change position to original and change back to original size
-        yield return null;
+        _elapsedTime = 0;
+        while (_elapsedTime < _slideDuration)
+        {
+            _elapsedTime += Time.deltaTime;
+            float percentCompleted = _elapsedTime / _slideDuration;
+            _patternSliding.transform.position = Vector3.Lerp(_slideStartPos, _slideEndPos, percentCompleted);
+            _patternSliding.transform.localScale = Vector3.Lerp(_slideStartScale, _slideEndScale, percentCompleted);
+            //when finished, must change position to original and change back to original size
+            yield return null;
+        }
+        //Debug.Log("coroutine end");
     }
 
     public void NextPatternSequence()
