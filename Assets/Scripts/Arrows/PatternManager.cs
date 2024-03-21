@@ -58,6 +58,7 @@ public class PatternManager : Singleton<PatternManager>
             _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
                 = _correctArrowSprites[x];
             _arrowIndex += 1;
+            //Debug.Log("correct");
         }
         else //wrong arrow pressed, auto next pattern
         {
@@ -66,13 +67,16 @@ public class PatternManager : Singleton<PatternManager>
             StartCoroutine(Pulse(_patternCurrent)); //pulse the pattern
             _arrowIndex = 0;
             //NextPatternSequence is called after pulse finishes inside Pulse coroutine
+            //Debug.Log("incorrect");
         }
 
-        if (_arrowIndex >= 4)
+        if (_arrowIndex >= 3)
         {
             _arrowIndex = 0;
             _patternIndex += 1;
-            //NextPatternSequence();
+            StartCoroutine(Pulse(_patternCurrent));
+            //NextPatternSequence is called after pulse finishes inside Pulse coroutine
+            //Debug.Log("pattern complete");
         }
     }
 
