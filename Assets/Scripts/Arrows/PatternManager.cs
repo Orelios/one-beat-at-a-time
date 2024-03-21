@@ -58,7 +58,7 @@ public class PatternManager : Singleton<PatternManager>
             _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
                 = _correctArrowSprites[x];
             _arrowIndex += 1;
-            //Debug.Log("correct");
+            Debug.Log("correct");
         }
         else //wrong arrow pressed, auto next pattern
         {
@@ -67,16 +67,23 @@ public class PatternManager : Singleton<PatternManager>
             StartCoroutine(Pulse(_patternCurrent)); //pulse the pattern
             _arrowIndex = 0;
             //NextPatternSequence is called after pulse finishes inside Pulse coroutine
-            //Debug.Log("incorrect");
+            Debug.Log("incorrect");
         }
 
-        if (_arrowIndex >= 3)
+        if (_arrowIndex >= 4)
         {
-            _arrowIndex = 0;
-            _patternIndex += 1;
-            StartCoroutine(Pulse(_patternCurrent));
-            //NextPatternSequence is called after pulse finishes inside Pulse coroutine
-            //Debug.Log("pattern complete");
+            if (_patternIndex >= _patterns.Length - 1) //if last pattern and last arrow
+            {
+                LoopPatternArray();
+            }
+            else //last arrow but not last pattern
+            {
+                _arrowIndex = 0;
+                StartCoroutine(Pulse(_patternCurrent));
+                //NextPatternSequence is called after pulse finishes inside Pulse coroutine
+                Debug.Log("pattern complete");
+            }
+            
         }
     }
 
@@ -96,12 +103,25 @@ public class PatternManager : Singleton<PatternManager>
         }
         else if (pattern.gameObject.name == "PatternPreview" || (pattern.gameObject.name == "PatternSliding"))
         {
-            //uses _patterns[_patternIndex + 1] to show the "preview" pattern
-            for (int i = 0; i < _patterns[_patternIndex].iconPatterns.Length; i++)
+            if (_patternIndex < _patterns.Length - 1)
             {
-                pattern.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite
-                    = _patterns[_patternIndex + 1].iconPatterns[i].GetComponent<SpriteRenderer>().sprite;
+                //uses _patterns[_patternIndex + 1] to show the "preview" pattern
+                for (int i = 0; i < _patterns[_patternIndex].iconPatterns.Length; i++)
+                {
+                    pattern.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite
+                        = _patterns[_patternIndex + 1].iconPatterns[i].GetComponent<SpriteRenderer>().sprite;
+                }
             }
+            else
+            {
+                //uses _patterns[0] to show the first pattern as in a loop
+                for (int i = 0; i < _patterns[_patternIndex].iconPatterns.Length; i++)
+                {
+                    pattern.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite
+                        = _patterns[0].iconPatterns[i].GetComponent<SpriteRenderer>().sprite;
+                }
+            }
+            
         }
     }
 
@@ -122,7 +142,7 @@ public class PatternManager : Singleton<PatternManager>
 
     public void RemoveSprites(GameObject pattern)
     {
-        for (int i = 0; i < _patterns[_patternIndex].iconPatterns.Length; i++)
+        for (int i = 0; i < _patterns[0].iconPatterns.Length; i++) //uses _patterns[0] because _patternIndex is irrelevant, only needs iconPatterns.Length
         {
             pattern.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite = null;
         }
@@ -169,7 +189,7 @@ public class PatternManager : Singleton<PatternManager>
     {
         RemoveSprites(_patternCurrent);
         StartCoroutine(SlideSequenceVersion()); //slide down and inc size
-        _patternIndex += 1;
+        _patternIndex += 1; //MUST occur before sliding ends and SpawnPattern(_patternCurrent) and SpawnPattern(_patternSliding) are called
         SpawnPattern(_patternPreview); //done after coroutine starts so they don't overlap
         //when _patternSliding reaches _patternCurrent position, _patternSliding remove sprites, move back, change size
         //SpawnPattern(_patternCurrent); //gives illusion that _patternSliding becomes new pattern to follow
@@ -189,5 +209,14 @@ public class PatternManager : Singleton<PatternManager>
             yield return null;
         }
         NextPatternSequence(); //AFTER pulse finishes
+    }
+
+    private void LoopPatternArray()
+    {
+        _arrowIndex = 0;
+        _patternIndex = -1; //to account for increment in NextPatternSequence()
+        StartCoroutine(Pulse(_patternCurrent));
+        //NextPatternSequence is called after pulse finishes inside Pulse coroutine
+        Debug.Log("pattern loop");
     }
 }
