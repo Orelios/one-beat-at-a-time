@@ -200,12 +200,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPresist: 0
-  _correctArrowSprites: []
-  _incorrectArrowSprites: []
+  _correctArrowSprites:
+  - {fileID: 21300000, guid: d8042749778fb2a4ba90b852941ee8ec, type: 3}
+  - {fileID: 21300000, guid: d8042749778fb2a4ba90b852941ee8ec, type: 3}
+  - {fileID: 21300000, guid: d8042749778fb2a4ba90b852941ee8ec, type: 3}
+  - {fileID: 21300000, guid: d8042749778fb2a4ba90b852941ee8ec, type: 3}
+  _incorrectArrowSprites:
+  - {fileID: 21300000, guid: 5763eda0fc5f14f4d95889dce5e7409c, type: 3}
+  - {fileID: 21300000, guid: 5763eda0fc5f14f4d95889dce5e7409c, type: 3}
+  - {fileID: 21300000, guid: 5763eda0fc5f14f4d95889dce5e7409c, type: 3}
+  - {fileID: 21300000, guid: 5763eda0fc5f14f4d95889dce5e7409c, type: 3}
   _arrowInputEnums: 00000000000000000000000000000000
   _patterns:
   - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
   - {fileID: 11400000, guid: 0c651553940758c4b904338a4f160164, type: 2}
+  - {fileID: 11400000, guid: d64e7b8e1a669cd4db7ab74e1c100efb, type: 2}
   _slideDuration: 0.5
 --- !u!114 &42261301 stripped
 MonoBehaviour:
@@ -1758,6 +1767,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1606173374}
+  - component: {fileID: 1606173375}
   m_Layer: 0
   m_Name: PatternCurrent
   m_TagString: Untagged
@@ -1784,6 +1794,21 @@ Transform:
   - {fileID: 1934708918}
   m_Father: {fileID: 5362327}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1606173375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606173373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2553eaefd623324f86927a4b133a2e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _useTestBeat: 0
+  _pulseSize: 1.15
+  _returnSpeed: 5
 --- !u!1001 &1667281474
 PrefabInstance:
   m_ObjectHideFlags: 0

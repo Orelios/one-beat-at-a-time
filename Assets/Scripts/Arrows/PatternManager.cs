@@ -64,7 +64,7 @@ public class PatternManager : Singleton<PatternManager>
                 = _incorrectArrowSprites[x]; //change current ARROW to wrong version
             _patternCurrent.GetComponent<PulseToTheBeat>().Pulse(); //pulse the pattern
             _arrowIndex = 0;
-            NextPatternSequence(); //AFTER pulse finishes
+            //NextPatternSequence(); //AFTER pulse finishes
         }
 
         if (_arrowIndex >= 4)
