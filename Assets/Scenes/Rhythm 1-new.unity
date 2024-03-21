@@ -215,7 +215,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
   - {fileID: 11400000, guid: 0c651553940758c4b904338a4f160164, type: 2}
   - {fileID: 11400000, guid: d64e7b8e1a669cd4db7ab74e1c100efb, type: 2}
+  - {fileID: 11400000, guid: 3010765fbcb9fa644af92818409e9553, type: 2}
+  - {fileID: 11400000, guid: bac37f8d32f90634d9b51dcf44614039, type: 2}
+  - {fileID: 11400000, guid: 4b98b2999f08d5948a9b48f52d95f41a, type: 2}
+  - {fileID: 11400000, guid: d3d4d1caab11ec0449ae3d4902baaa6d, type: 2}
+  - {fileID: 11400000, guid: c4f87a84f80559f4d8ecacb6c5fe582a, type: 2}
+  - {fileID: 11400000, guid: 4a2453262b29ba94f98a08678e72f665, type: 2}
+  - {fileID: 11400000, guid: 0078085eb249fa94f82755f93194a837, type: 2}
   _slideDuration: 0.5
+  _pulseDuration: 0.5
+  _pulseSizeMultiplier: 1.15
 --- !u!114 &42261301 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4024464241736979262, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}

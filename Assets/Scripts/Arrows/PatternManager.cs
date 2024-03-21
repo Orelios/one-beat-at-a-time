@@ -12,8 +12,9 @@ public class PatternManager : Singleton<PatternManager>
     private int _patternIndex = 0, _arrowIndex = 0;
     private Vector3 _slideStartPos, _slideEndPos;
     private Vector3 _slideStartScale, _slideEndScale;
-    [SerializeField] private float _slideDuration = 0.5f;
-    private float _elapsedTime;
+    [SerializeField] private float _slideDuration = 0.5f, _pulseDuration = 0.5f;
+    [SerializeField] private float _pulseSizeMultiplier = 1.15f;
+    private float _slideElapsedTime, _pulseElapsedTime;
 
     void Awake()
     {
@@ -62,9 +63,9 @@ public class PatternManager : Singleton<PatternManager>
         {
             _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
                 = _incorrectArrowSprites[x]; //change current ARROW to wrong version
-            _patternCurrent.GetComponent<PulseToTheBeat>().Pulse(); //pulse the pattern
+            StartCoroutine(Pulse(_patternCurrent)); //pulse the pattern
             _arrowIndex = 0;
-            //NextPatternSequence(); //AFTER pulse finishes
+            //NextPatternSequence is called after pulse finishes inside Pulse coroutine
         }
 
         if (_arrowIndex >= 4)
@@ -127,11 +128,11 @@ public class PatternManager : Singleton<PatternManager>
     private IEnumerator TestSlide() //general version. won't be used
     {
         //_patternSliding only - slide down and inc size
-        _elapsedTime = 0;
-        while (_elapsedTime < _slideDuration)
+        _slideElapsedTime = 0;
+        while (_slideElapsedTime < _slideDuration)
         {
-            _elapsedTime += Time.deltaTime;
-            float percentCompleted = _elapsedTime / _slideDuration;
+            _slideElapsedTime += Time.deltaTime;
+            float percentCompleted = _slideElapsedTime / _slideDuration;
             _patternSliding.transform.position = Vector3.Lerp(_slideStartPos, _slideEndPos, percentCompleted);
             _patternSliding.transform.localScale = Vector3.Lerp(_slideStartScale, _slideEndScale, percentCompleted);
             //when finished, must change position to original and change back to original size
@@ -143,11 +144,11 @@ public class PatternManager : Singleton<PatternManager>
 
     private IEnumerator SlideSequenceVersion() //will be called in NextPatternSequence()
     {
-        _elapsedTime = 0;
-        while (_elapsedTime < _slideDuration)
+        _slideElapsedTime = 0;
+        while (_slideElapsedTime < _slideDuration)
         {
-            _elapsedTime += Time.deltaTime;
-            float percentCompleted = _elapsedTime / _slideDuration;
+            _slideElapsedTime += Time.deltaTime;
+            float percentCompleted = _slideElapsedTime / _slideDuration;
             _patternSliding.transform.position = Vector3.Lerp(_slideStartPos, _slideEndPos, percentCompleted);
             _patternSliding.transform.localScale = Vector3.Lerp(_slideStartScale, _slideEndScale, percentCompleted);
             //when finished, must change position to original and change back to original size
@@ -169,5 +170,20 @@ public class PatternManager : Singleton<PatternManager>
         //when _patternSliding reaches _patternCurrent position, _patternSliding remove sprites, move back, change size
         //SpawnPattern(_patternCurrent); //gives illusion that _patternSliding becomes new pattern to follow
         //SpawnPattern(_patternSliding); //this will be behind _patternPreview
+    }
+
+    private IEnumerator Pulse(GameObject pattern)
+    {
+        _pulseElapsedTime = 0;
+        Vector3 endScale = pattern.transform.localScale;
+        Vector3 startScale = pattern.transform.localScale * _pulseSizeMultiplier;
+        while (_pulseElapsedTime < _pulseDuration)
+        {
+            _pulseElapsedTime += Time.deltaTime;
+            float percentageCompleted = _pulseElapsedTime / _pulseDuration;
+            pattern.transform.localScale = Vector3.Lerp(startScale, endScale, percentageCompleted);
+            yield return null;
+        }
+        NextPatternSequence(); //AFTER pulse finishes
     }
 }
