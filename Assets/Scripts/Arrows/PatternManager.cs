@@ -62,12 +62,20 @@ public class PatternManager : Singleton<PatternManager>
         }
         else //wrong arrow pressed, auto next pattern
         {
-            _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
+            if (_patternIndex < _patterns.Length - 1)
+            {
+                _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
                 = _incorrectArrowSprites[x]; //change current ARROW to wrong version
-            StartCoroutine(Pulse(_patternCurrent)); //pulse the pattern
-            _arrowIndex = 0;
-            //NextPatternSequence is called after pulse finishes inside Pulse coroutine
-            Debug.Log("incorrect");
+                StartCoroutine(Pulse(_patternCurrent)); //pulse the pattern
+                _arrowIndex = 0;
+                //NextPatternSequence is called after pulse finishes inside Pulse coroutine
+                Debug.Log("incorrect");
+            }
+            else //last pattern wrong arrow pressed
+            {
+                Debug.Log("incorrect. loop");
+                LoopPatternArray();
+            }
         }
 
         if (_arrowIndex >= 4)
@@ -95,7 +103,7 @@ public class PatternManager : Singleton<PatternManager>
             //so _patternIndex is not incremented within this function to avoid unintended increments
         if (pattern.gameObject.name == "PatternCurrent")
         {
-            for (int i = 0; i < _patterns[_patternIndex].iconPatterns.Length; i++)
+            for (int i = 0; i < _patterns[0].iconPatterns.Length; i++) //uses _patterns[0] because _patternIndex is irrelevant, only needs iconPatterns.Length
             {
                 pattern.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite
                     = _patterns[_patternIndex].iconPatterns[i].GetComponent<SpriteRenderer>().sprite;
@@ -105,18 +113,18 @@ public class PatternManager : Singleton<PatternManager>
         {
             if (_patternIndex < _patterns.Length - 1)
             {
-                //uses _patterns[_patternIndex + 1] to show the "preview" pattern
-                for (int i = 0; i < _patterns[_patternIndex].iconPatterns.Length; i++)
+                for (int i = 0; i < _patterns[0].iconPatterns.Length; i++) //uses _patterns[0] because _patternIndex is irrelevant, only needs iconPatterns.Length
                 {
+                    //uses _patterns[_patternIndex + 1] to show the "preview" pattern
                     pattern.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite
                         = _patterns[_patternIndex + 1].iconPatterns[i].GetComponent<SpriteRenderer>().sprite;
                 }
             }
             else
             {
-                //uses _patterns[0] to show the first pattern as in a loop
-                for (int i = 0; i < _patterns[_patternIndex].iconPatterns.Length; i++)
+                for (int i = 0; i < _patterns[0].iconPatterns.Length; i++) //uses _patterns[0] because _patternIndex is irrelevant, only needs iconPatterns.Length
                 {
+                    //uses _patterns[0] to show the first pattern as in a loop
                     pattern.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite
                         = _patterns[0].iconPatterns[i].GetComponent<SpriteRenderer>().sprite;
                 }
