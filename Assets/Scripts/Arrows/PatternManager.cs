@@ -250,17 +250,6 @@ public class PatternManager : Singleton<PatternManager>
     }
     public void checkTimingValueDec()
     {
-        if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
-        {
-            BarManipulator.Instance.SubtractSmall(_changeBar);
-        }
-        else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 2)
-        {
-            BarManipulator.Instance.SubtractMedium(_changeBar);
-        }
-        else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 3)
-        {
-            BarManipulator.Instance.SubtractSmall(_changeBar);
-        }
+        BarManipulator.Instance.SubtractMedium(_changeBar);
     }
 }
