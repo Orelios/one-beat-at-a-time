@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ProgressBar : MonoBehaviour
+public class FocusBar : MonoBehaviour
 {
-    public Image currentProgressBarIndicator;
+    public Image currentFocusBarIndicator; 
     Image image;
     [SerializeField] private float maxProgress = 100.0f;
     [SerializeField] private float progress;

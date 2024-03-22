@@ -22,7 +22,7 @@ public class PlayerArrowInput : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     Player.Instance.canPress = false;
-                    SendPlayerArrowInput(Arrows.Up);
+                    SendPlayerArrowInput(Arrows.Up, 0);
                     IndicatorAboveImage.Instance.ChangeAboveIndicatorImage(); 
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Up);
@@ -31,7 +31,7 @@ public class PlayerArrowInput : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     Player.Instance.canPress = false;
-                    SendPlayerArrowInput(Arrows.Down);
+                    SendPlayerArrowInput(Arrows.Down, 1);
                     IndicatorAboveImage.Instance.ChangeAboveIndicatorImage();
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Down);
@@ -40,7 +40,7 @@ public class PlayerArrowInput : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     Player.Instance.canPress = false;
-                    SendPlayerArrowInput(Arrows.Left);
+                    SendPlayerArrowInput(Arrows.Left, 2);
                     IndicatorAboveImage.Instance.ChangeAboveIndicatorImage();
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Left);
@@ -49,7 +49,7 @@ public class PlayerArrowInput : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     Player.Instance.canPress = false;
-                    SendPlayerArrowInput(Arrows.Right);
+                    SendPlayerArrowInput(Arrows.Right, 3);
                     IndicatorAboveImage.Instance.ChangeAboveIndicatorImage();
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Right);
@@ -64,12 +64,13 @@ public class PlayerArrowInput : MonoBehaviour
             }
         }
     }
-    public void SendPlayerArrowInput(Arrows arrow)
+    public void SendPlayerArrowInput(Arrows arrow, int x)
     {
-        arrows = arrow;
+        /*arrows = arrow;
         for (int i = 0; i < patternSpawner.Length; i++)
         {
             patternSpawner[i].PlayerArrowInputs(arrows);
-        }
+        }*/
+        PatternManager.Instance.GetComponent<PatternManager>().ReceivePlayerArrowInput(arrow, x);
     }
 }
