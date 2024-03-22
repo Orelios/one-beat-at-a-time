@@ -29,9 +29,9 @@ public class ProgressBar : MonoBehaviour
         {
             progress = 0.0f;
         }
-        if (progress >= 100)
+        if (progress >= maxProgress)
         {
-            progress = 100.0f;
+            progress = maxProgress;
             //EndRhythmScreen.Instance.StopGame();
         }
         image.fillAmount = progress / maxProgress;
@@ -70,5 +70,10 @@ public class ProgressBar : MonoBehaviour
     public float GetProgress()
     {
         return progress;
+    }
+
+    public float GetMaxProgress()
+    {
+        return maxProgress;
     }
 }

@@ -6,7 +6,9 @@ using UnityEngine;
 public class StatsScriptableObjects : ScriptableObject
 {
     public string activityName;
-    public float mentalHealthChange;
-    public float productivityChange;
+    public float mentalHealthMin;
+    public float mentalHealthMax;
+    public float productivityMin;
+    public float productivityMax;
     public float timeChange;
 }

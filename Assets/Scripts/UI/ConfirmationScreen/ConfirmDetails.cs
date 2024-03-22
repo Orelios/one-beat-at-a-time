@@ -18,8 +18,8 @@ public class ConfirmDetails : Singleton<ConfirmDetails>
         if (x.tag == "object")
         {
             confirmRef = x.GetComponent<RhythmStats>();
-            text.text = "Mental Health " + PlusOrMinusMentalHealth() + " " + Mathf.Abs(confirmRef.stats.mentalHealthChange) +
-                "\nProductivity " + PlusOrMinusProductivity() + " " + Mathf.Abs(confirmRef.stats.productivityChange) +
+            text.text = "Mental Health " + PlusOrMinusMentalHealth() + " " + Mathf.Abs(confirmRef.stats.mentalHealthMax) +
+                "\nProductivity " + PlusOrMinusProductivity() + " " + Mathf.Abs(confirmRef.stats.productivityMax) +
                 "\nTime - " + Mathf.Abs(confirmRef.stats.timeChange);
         }
         else if (x.tag == "Teleport") //"overworld" door to home/school
@@ -41,15 +41,15 @@ public class ConfirmDetails : Singleton<ConfirmDetails>
     public string PlusOrMinusMentalHealth()
     {
         string plusOrMinus = "error";
-        if (confirmRef.stats.mentalHealthChange > 0)
+        if (confirmRef.stats.mentalHealthMax > 0)
         {
             plusOrMinus = "+";
         }
-        else if (confirmRef.stats.mentalHealthChange < 0)
+        else if (confirmRef.stats.mentalHealthMax < 0)
         {
             plusOrMinus = "-";
         }
-        else if (confirmRef.stats.mentalHealthChange == 0)
+        else if (confirmRef.stats.mentalHealthMax == 0)
         {
             plusOrMinus = "";
         }
@@ -59,15 +59,15 @@ public class ConfirmDetails : Singleton<ConfirmDetails>
     public string PlusOrMinusProductivity()
     {
         string plusOrMinus = "error";
-        if (confirmRef.stats.productivityChange > 0)
+        if (confirmRef.stats.productivityMax > 0)
         {
             plusOrMinus = "+";
         }
-        else if (confirmRef.stats.productivityChange < 0)
+        else if (confirmRef.stats.productivityMax < 0)
         {
             plusOrMinus = "-";
         }
-        else if (confirmRef.stats.productivityChange == 0)
+        else if (confirmRef.stats.productivityMax == 0)
         {
             plusOrMinus = "";
         }
