@@ -1883,6 +1883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1281fd2f6b33c1f4dafcd0d02e80837a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPresist: 0
   currentProgressBarIndicator: {fileID: 327366245}
   maxProgress: 100
   progress: 0
@@ -1919,7 +1920,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 051bae509b179d84fb4a5d004d852a59, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2527,7 +2528,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 051bae509b179d84fb4a5d004d852a59, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3147,7 +3148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFocusBarIndicator: {fileID: 200740609}
   maxProgress: 100
-  progress: 0
+  progress: 100
   progressDecPerSec: 1
   small: 5
   medium: 10
