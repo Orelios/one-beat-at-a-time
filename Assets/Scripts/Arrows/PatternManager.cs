@@ -7,9 +7,9 @@ public class PatternManager : Singleton<PatternManager>
     [SerializeField] private Sprite[] _correctArrowSprites; //must be set in inspector UP/DOWN/LEFT/RIGHT
     [SerializeField] private Sprite[] _incorrectArrowSprites; //must be set in inspector UP/DOWN/LEFT/RIGHT
     [SerializeField] private Arrows[] _arrowInputEnums; //for pattern comparison later - can delete if not needed
-    [SerializeField] private PatternsScriptableObjects[] _patterns;
-    private GameObject _patternCurrent, _patternPreview, _patternSliding;
-    private int _patternIndex = 0, _arrowIndex = 0;
+    public PatternsScriptableObjects[] _patterns;
+    [System.NonSerialized] public GameObject _patternCurrent, _patternPreview, _patternSliding;
+    [System.NonSerialized] public int _patternIndex = 0, _arrowIndex = 0;
     private Vector3 _slideStartPos, _slideEndPos;
     private Vector3 _slideStartScale, _slideEndScale;
     [SerializeField] private float _slideDuration = 0.5f, _pulseDuration = 0.5f;
@@ -58,6 +58,7 @@ public class PatternManager : Singleton<PatternManager>
             _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
                 = _correctArrowSprites[x];
             _arrowIndex += 1;
+            checkTimingValue();
             Debug.Log("correct");
         }
         else //wrong arrow pressed, auto next pattern
@@ -67,7 +68,6 @@ public class PatternManager : Singleton<PatternManager>
                 _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
                 = _incorrectArrowSprites[x]; //change current ARROW to wrong version
                 StartCoroutine(Pulse(_patternCurrent)); //pulse the pattern
-                _arrowIndex = 0;
                 //NextPatternSequence is called after pulse finishes inside Pulse coroutine
                 Debug.Log("incorrect");
             }
@@ -86,7 +86,6 @@ public class PatternManager : Singleton<PatternManager>
             }
             else //last arrow but not last pattern
             {
-                _arrowIndex = 0;
                 StartCoroutine(Pulse(_patternCurrent));
                 //NextPatternSequence is called after pulse finishes inside Pulse coroutine
                 Debug.Log("pattern complete");
@@ -204,8 +203,9 @@ public class PatternManager : Singleton<PatternManager>
         //SpawnPattern(_patternSliding); //this will be behind _patternPreview
     }
 
-    private IEnumerator Pulse(GameObject pattern)
+    public IEnumerator Pulse(GameObject pattern)
     {
+        _arrowIndex = 0;
         _pulseElapsedTime = 0;
         Vector3 endScale = pattern.transform.localScale;
         Vector3 startScale = pattern.transform.localScale * _pulseSizeMultiplier;
@@ -219,12 +219,26 @@ public class PatternManager : Singleton<PatternManager>
         NextPatternSequence(); //AFTER pulse finishes
     }
 
-    private void LoopPatternArray()
+    public void LoopPatternArray()
     {
-        _arrowIndex = 0;
         _patternIndex = -1; //to account for increment in NextPatternSequence()
         StartCoroutine(Pulse(_patternCurrent));
         //NextPatternSequence is called after pulse finishes inside Pulse coroutine
         Debug.Log("pattern loop");
+    }
+    public void checkTimingValue()
+    {
+        if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
+        {
+            BarManipulator.Instance.AddLarge();
+        }
+        else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 2)
+        {
+            BarManipulator.Instance.AddMedium();
+        }
+        else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 3)
+        {
+            BarManipulator.Instance.AddSmall();
+        }
     }
 }

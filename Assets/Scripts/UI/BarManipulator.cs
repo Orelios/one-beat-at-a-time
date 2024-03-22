@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BarManipulator : MonoBehaviour
+public class BarManipulator : Singleton<BarManipulator>
 {
     public ProgressBar progressBar;
     public FocusBar focusBar;
@@ -25,8 +25,17 @@ public class BarManipulator : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                if(changeBar == false) //will change to focus bar
-                { 
+                if(PatternManager.Instance._patternIndex >= PatternManager.Instance._patterns.Length - 1)
+                {
+                    PatternManager.Instance.LoopPatternArray();
+                }
+                else
+                {
+                    PatternManager.Instance.StartCoroutine(PatternManager.
+                        Instance.Pulse(PatternManager.Instance._patternCurrent));
+                }
+                if (changeBar == false) //will change to focus bar
+                {
                     changeBar = true;
                     progressBar.currentProgressBarIndicator.gameObject.SetActive(false);
                     focusBar.currentFocusBarIndicator.gameObject.SetActive(true);
