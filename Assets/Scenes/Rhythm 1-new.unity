@@ -3815,7 +3815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949913259425656811, guid: 35a78aec7becdda43b15d636308d62db, type: 3}
       propertyPath: introScreen
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
