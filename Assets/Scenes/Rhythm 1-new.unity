@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 5362329}
   - component: {fileID: 5362328}
   - component: {fileID: 5362330}
+  - component: {fileID: 5362331}
   m_Layer: 0
   m_Name: PatternManager
   m_TagString: Untagged
@@ -186,8 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71462afb480540a41ad7092c06c75636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPresist: 0
   progressBar: {fileID: 1275084421}
   focusBar: {fileID: 0}
+  detector: {fileID: 0}
 --- !u!114 &5362330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +222,22 @@ MonoBehaviour:
   _slideDuration: 0.5
   _pulseDuration: 0.5
   _pulseSizeMultiplier: 1.15
+--- !u!114 &5362331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5362326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71462afb480540a41ad7092c06c75636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPresist: 0
+  progressBar: {fileID: 1275084421}
+  focusBar: {fileID: 2103363067}
+  detector: {fileID: 42261301}
 --- !u!114 &42261301 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4024464241736979262, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
@@ -1243,8 +1262,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71462afb480540a41ad7092c06c75636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPresist: 0
   progressBar: {fileID: 1275084421}
   focusBar: {fileID: 0}
+  detector: {fileID: 0}
 --- !u!1 &804904211
 GameObject:
   m_ObjectHideFlags: 0
