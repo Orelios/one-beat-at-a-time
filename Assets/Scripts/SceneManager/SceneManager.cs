@@ -9,6 +9,7 @@ public class ScreenManager : MonoBehaviour
     [SerializeField] private int introScreen;
     [SerializeField] private int mainScene;
     [SerializeField] private int endScreen;
+
     public void LoadMainScene()
     {
         SceneManager.LoadScene(mainScene);
