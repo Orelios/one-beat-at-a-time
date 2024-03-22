@@ -21,5 +21,14 @@ public class NoteTiming : MonoBehaviour
         {
             timingValue = 3;
         }
+        else if(other.gameObject.tag == "Miss")
+        {
+            timingValue = 4;
+            if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 4)
+            {
+                BarManipulator.Instance.SubtractMedium(BarManipulator.Instance._changeBar);
+            }
+        }
+        //Debug.Log("it hit " + timingValue);
     }
 }

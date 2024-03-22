@@ -59,7 +59,7 @@ public class PatternManager : Singleton<PatternManager>
             _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
                 = _correctArrowSprites[x];
             _arrowIndex += 1;
-            checkTimingValue();
+            checkTimingValueInc();
             //Debug.Log("correct");
         }
         else //wrong arrow pressed, auto next pattern
@@ -68,6 +68,8 @@ public class PatternManager : Singleton<PatternManager>
             {
                 _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
                 = _incorrectArrowSprites[x]; //change current ARROW to wrong version
+                //Decreases the current tabbed bar. The amoun that is decreased depends on the timing value
+                if(_patterns[_patternIndex].arrowsPattern[_arrowIndex] != arrow) { checkTimingValueDec(); }
                 StartCoroutine(Pulse(_patternCurrent)); //pulse the pattern
                 //NextPatternSequence is called after pulse finishes inside Pulse coroutine
                 //Debug.Log("incorrect");
@@ -231,7 +233,7 @@ public class PatternManager : Singleton<PatternManager>
     {
         _changeBar = changeBar; 
     }
-    public void checkTimingValue()
+    public void checkTimingValueInc()
     {
         if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
         {
@@ -244,6 +246,21 @@ public class PatternManager : Singleton<PatternManager>
         else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 3)
         {
             BarManipulator.Instance.AddSmall(_changeBar);
+        }
+    }
+    public void checkTimingValueDec()
+    {
+        if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
+        {
+            BarManipulator.Instance.SubtractSmall(_changeBar);
+        }
+        else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 2)
+        {
+            BarManipulator.Instance.SubtractMedium(_changeBar);
+        }
+        else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 3)
+        {
+            BarManipulator.Instance.SubtractSmall(_changeBar);
         }
     }
 }
