@@ -67,47 +67,47 @@ public class TooltipReference : MonoBehaviour
     public string ShowMentalHealthChange()
     {
         string mentalSymbol = " error";
-        if (_statsRef.stats.mentalHealthChange > 0)
+        if (_statsRef.stats.mentalHealthMax > 0)
         {
-            if (_statsRef.stats.mentalHealthChange <= TooltipStatRange.Instance.mental1)
+            if (_statsRef.stats.mentalHealthMax <= TooltipStatRange.Instance.mental1)
             {
                 mentalSymbol = "+";
             }
-            else if (_statsRef.stats.mentalHealthChange <= TooltipStatRange.Instance.mental2)
+            else if (_statsRef.stats.mentalHealthMax <= TooltipStatRange.Instance.mental2)
             {
                 mentalSymbol = "++";
             }
-            else if (_statsRef.stats.mentalHealthChange <= TooltipStatRange.Instance.mental3)
+            else if (_statsRef.stats.mentalHealthMax <= TooltipStatRange.Instance.mental3)
             {
                 mentalSymbol = "+++";
             }
-            else if (_statsRef.stats.mentalHealthChange > TooltipStatRange.Instance.mental3)
+            else if (_statsRef.stats.mentalHealthMax > TooltipStatRange.Instance.mental3)
             {
                 mentalSymbol = "++++";
             }
         }
 
-        else if (_statsRef.stats.mentalHealthChange < 0)
+        else if (_statsRef.stats.mentalHealthMax < 0)
         {
-            if (_statsRef.stats.mentalHealthChange >= TooltipStatRange.Instance.mentalNeg1)
+            if (_statsRef.stats.mentalHealthMax >= TooltipStatRange.Instance.mentalNeg1)
             {
                 mentalSymbol = "-";
             }
-            else if (_statsRef.stats.mentalHealthChange >= TooltipStatRange.Instance.mentalNeg2)
+            else if (_statsRef.stats.mentalHealthMax >= TooltipStatRange.Instance.mentalNeg2)
             {
                 mentalSymbol = "--";
             }
-            else if (_statsRef.stats.mentalHealthChange >= TooltipStatRange.Instance.mentalNeg3)
+            else if (_statsRef.stats.mentalHealthMax >= TooltipStatRange.Instance.mentalNeg3)
             {
                 mentalSymbol = "---";
             }
-            else if (_statsRef.stats.mentalHealthChange < TooltipStatRange.Instance.mental3)
+            else if (_statsRef.stats.mentalHealthMax < TooltipStatRange.Instance.mental3)
             {
                 mentalSymbol = "----";
             }
         }
 
-        else if (_statsRef.stats.mentalHealthChange == 0)
+        else if (_statsRef.stats.mentalHealthMax == 0)
         {
             mentalSymbol = " no change";
         }
@@ -118,32 +118,32 @@ public class TooltipReference : MonoBehaviour
     public string ShowProductivityChange()
     {
         string productivitySymbol = " error";
-        if (_statsRef.stats.productivityChange > 0)
+        if (_statsRef.stats.productivityMax > 0)
         {
-            if (_statsRef.stats.productivityChange <= TooltipStatRange.Instance.productivity1)
+            if (_statsRef.stats.productivityMax <= TooltipStatRange.Instance.productivity1)
             {
                 productivitySymbol = "+";
             }
-            else if (_statsRef.stats.productivityChange <= TooltipStatRange.Instance.productivity2)
+            else if (_statsRef.stats.productivityMax <= TooltipStatRange.Instance.productivity2)
             {
                 productivitySymbol = "++";
             }
-            else if (_statsRef.stats.productivityChange <= TooltipStatRange.Instance.productivity3)
+            else if (_statsRef.stats.productivityMax <= TooltipStatRange.Instance.productivity3)
             {
                 productivitySymbol = "+++";
             }
-            else if (_statsRef.stats.productivityChange > TooltipStatRange.Instance.productivity3)
+            else if (_statsRef.stats.productivityMax > TooltipStatRange.Instance.productivity3)
             {
                 productivitySymbol = "++++";
             }
         }
 
-        else if (_statsRef.stats.productivityChange < 0)
+        else if (_statsRef.stats.productivityMax < 0)
         {
             productivitySymbol = " wala dapat negative productivity";
         }
 
-        else if (_statsRef.stats.productivityChange == 0)
+        else if (_statsRef.stats.productivityMax == 0)
         {
             productivitySymbol = " no change";
         }

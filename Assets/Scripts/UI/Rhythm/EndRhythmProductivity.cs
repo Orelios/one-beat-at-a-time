@@ -14,11 +14,15 @@ public class EndRhythmProductivity : MonoBehaviour
     {
         text = GetComponent<TextMeshProUGUI>();
         currentProductivity = PlayerData.Instance.productivity;
-        valueToAdd = EndRhythmScreen.Instance.GetComponent<RhythmStats>().stats.productivityChange / (EndRhythmScreen.Instance.successPercent / 100);
-        //change PlayerData value
-        PlayerData.Instance.AddProductivity(valueToAdd);
 
-        text.text = "Productivity: " + currentProductivity + " + " + valueToAdd + " = " + PlayerData.Instance.productivity;
+        float min = EndRhythmScreen.Instance.GetComponent<RhythmStats>().stats.productivityMin;
+        float max = EndRhythmScreen.Instance.GetComponent<RhythmStats>().stats.productivityMax;
+        valueToAdd = min + ((max - min) * (EndRhythmScreen.Instance.successPercent / 100));
+
+        //change PlayerData value
+        PlayerData.Instance.AddProductivity(Mathf.Round(valueToAdd));
+
+        text.text = "Productivity: " + currentProductivity + " + " + Mathf.Round(valueToAdd) + " = " + PlayerData.Instance.productivity;
 
         
     }

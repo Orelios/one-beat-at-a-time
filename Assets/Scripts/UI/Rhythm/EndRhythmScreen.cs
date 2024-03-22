@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EndRhythmScreen : Singleton<EndRhythmScreen>
 {
+    public ProgressBar progressBar;
     public float successPercent;
 
     public void StopGame()
@@ -17,6 +18,9 @@ public class EndRhythmScreen : Singleton<EndRhythmScreen>
         //BeatManager.Instance.GetComponent<PlayAudio>().audios[0].Stop();
         //BeatManager.Instance.GetComponent<PlayAudio>().audios[1].Stop();
         Time.timeScale = 0f;
+
+        successPercent = (progressBar.GetProgress() / progressBar.GetMaxProgress()) * 100;
+
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
         gameObject.transform.GetChild(1).gameObject.SetActive(true);
         gameObject.transform.GetChild(2).gameObject.SetActive(true);

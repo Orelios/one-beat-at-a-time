@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3571,7 +3571,7 @@ PrefabInstance:
     - target: {fileID: 1936913194725518983, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
       propertyPath: stats
       value: 
-      objectReference: {fileID: 11400000, guid: edee7212b1c389447b2add188ad0b62f, type: 2}
+      objectReference: {fileID: 11400000, guid: 361a93a4ecf8d53469da164332647ddf, type: 2}
     - target: {fileID: 2430015154251536485, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3660,6 +3660,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4476154725947719661, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
+      propertyPath: progressBar
+      value: 
+      objectReference: {fileID: 1275084421}
     - target: {fileID: 7241920427558609642, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
