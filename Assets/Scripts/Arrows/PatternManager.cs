@@ -59,7 +59,7 @@ public class PatternManager : Singleton<PatternManager>
                 = _correctArrowSprites[x];
             _arrowIndex += 1;
             checkTimingValue();
-            Debug.Log("correct");
+            //Debug.Log("correct");
         }
         else //wrong arrow pressed, auto next pattern
         {
@@ -69,11 +69,11 @@ public class PatternManager : Singleton<PatternManager>
                 = _incorrectArrowSprites[x]; //change current ARROW to wrong version
                 StartCoroutine(Pulse(_patternCurrent)); //pulse the pattern
                 //NextPatternSequence is called after pulse finishes inside Pulse coroutine
-                Debug.Log("incorrect");
+                //Debug.Log("incorrect");
             }
             else //last pattern wrong arrow pressed
             {
-                Debug.Log("incorrect. loop");
+                //Debug.Log("incorrect. loop");
                 LoopPatternArray();
             }
         }
@@ -88,7 +88,7 @@ public class PatternManager : Singleton<PatternManager>
             {
                 StartCoroutine(Pulse(_patternCurrent));
                 //NextPatternSequence is called after pulse finishes inside Pulse coroutine
-                Debug.Log("pattern complete");
+                //Debug.Log("pattern complete");
             }
             
         }
@@ -224,7 +224,7 @@ public class PatternManager : Singleton<PatternManager>
         _patternIndex = -1; //to account for increment in NextPatternSequence()
         StartCoroutine(Pulse(_patternCurrent));
         //NextPatternSequence is called after pulse finishes inside Pulse coroutine
-        Debug.Log("pattern loop");
+        //Debug.Log("pattern loop");
     }
     public void checkTimingValue()
     {

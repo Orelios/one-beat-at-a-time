@@ -6,6 +6,7 @@ public class BarManipulator : Singleton<BarManipulator>
 {
     public ProgressBar progressBar;
     public FocusBar focusBar;
+    public NoteDetection detector;
     private bool changeBar = false;
     //[SerializeField] private bool perArrow = false;
     //[SerializeField] private bool perPattern = false;
@@ -25,7 +26,8 @@ public class BarManipulator : Singleton<BarManipulator>
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                if(PatternManager.Instance._patternIndex >= PatternManager.Instance._patterns.Length - 1)
+                detector.DestroyNote();
+                if (PatternManager.Instance._patternIndex >= PatternManager.Instance._patterns.Length - 1)
                 {
                     PatternManager.Instance.LoopPatternArray();
                 }
