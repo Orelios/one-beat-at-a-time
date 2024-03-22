@@ -15,6 +15,7 @@ public class PatternManager : Singleton<PatternManager>
     [SerializeField] private float _slideDuration = 0.5f, _pulseDuration = 0.5f;
     [SerializeField] private float _pulseSizeMultiplier = 1.15f;
     private float _slideElapsedTime, _pulseElapsedTime;
+    private bool _changeBar;
 
     void Awake()
     {
@@ -226,19 +227,23 @@ public class PatternManager : Singleton<PatternManager>
         //NextPatternSequence is called after pulse finishes inside Pulse coroutine
         //Debug.Log("pattern loop");
     }
+    public void ChangeBar(bool changeBar)
+    {
+        _changeBar = changeBar; 
+    }
     public void checkTimingValue()
     {
         if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
         {
-            BarManipulator.Instance.AddLarge();
+            BarManipulator.Instance.AddSmall(_changeBar);
         }
         else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 2)
         {
-            BarManipulator.Instance.AddMedium();
+            BarManipulator.Instance.AddMedium(_changeBar);
         }
         else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 3)
         {
-            BarManipulator.Instance.AddSmall();
+            BarManipulator.Instance.AddSmall(_changeBar);
         }
     }
 }

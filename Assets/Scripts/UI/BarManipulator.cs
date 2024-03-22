@@ -7,7 +7,7 @@ public class BarManipulator : Singleton<BarManipulator>
     public ProgressBar progressBar;
     public FocusBar focusBar;
     public NoteDetection detector;
-    private bool changeBar = false;
+    public bool _changeBar = false;
     //[SerializeField] private bool perArrow = false;
     //[SerializeField] private bool perPattern = false;
     private void Awake()
@@ -26,7 +26,6 @@ public class BarManipulator : Singleton<BarManipulator>
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                detector.DestroyNote();
                 if (PatternManager.Instance._patternIndex >= PatternManager.Instance._patterns.Length - 1)
                 {
                     PatternManager.Instance.LoopPatternArray();
@@ -36,59 +35,59 @@ public class BarManipulator : Singleton<BarManipulator>
                     PatternManager.Instance.StartCoroutine(PatternManager.
                         Instance.Pulse(PatternManager.Instance._patternCurrent));
                 }
-                if (changeBar == false) //will change to focus bar
+                if (_changeBar == false) //will change to focus bar
                 {
-                    changeBar = true;
+                    _changeBar = true;
+                    PatternManager.Instance.ChangeBar(_changeBar);
                     progressBar.currentProgressBarIndicator.gameObject.SetActive(false);
                     focusBar.currentFocusBarIndicator.gameObject.SetActive(true);
                 }
-                else if(changeBar == true) // will change to progress bar
+                else if(_changeBar == true) // will change to progress bar
                 { 
-                    changeBar = false;
+                    _changeBar = false;
+                    PatternManager.Instance.ChangeBar(_changeBar);
                     progressBar.currentProgressBarIndicator.gameObject.SetActive(true);
                     focusBar.currentFocusBarIndicator.gameObject.SetActive(false);
-                } 
+                }
+                detector.DestroyNote();
+                Debug.Log(_changeBar);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            AddLarge();
-        }
     }
 
-    public void AddSmall()
+    public void AddSmall(bool changeBar)
     {
         if (changeBar == false) { progressBar.AddProgressSmall(); }
-        if(changeBar == true) { focusBar.AddProgressSmall(); }
+        else if(changeBar == true) { focusBar.AddProgressSmall(); }
     }
 
-    public void AddMedium()
+    public void AddMedium(bool changeBar)
     {
-        if (changeBar == false) { progressBar.AddProgressMedium(); }
-        if (changeBar == true) { focusBar.AddProgressMedium(); }
+        if (changeBar == false) { progressBar.AddProgressMedium();}
+        else if (changeBar == true) { focusBar.AddProgressMedium(); }
     }
 
-    public void AddLarge()
+    public void AddLarge(bool changeBar)
     {
-        if (changeBar == false) { progressBar.AddProgressLarge(); }
-        if (changeBar == true) { focusBar.AddProgressLarge(); }
+        if (changeBar == false) { progressBar.AddProgressLarge();}
+        else if (changeBar == true) { focusBar.AddProgressLarge(); }
     }
 
-    public void SubtractSmall()
+    public void SubtractSmall(bool changeBar)
     {
         if (changeBar == false) { progressBar.SubtractProgressSmall(); }
-        if (changeBar == true) { focusBar.SubtractProgressSmall(); }
+        else if (changeBar == true) { focusBar.SubtractProgressSmall(); }
     }
 
-    public void SubtractMedium()
+    public void SubtractMedium(bool changeBar)
     {
         if (changeBar == false) { progressBar.SubtractProgressMedium(); }
-        if (changeBar == true) { focusBar.SubtractProgressMedium(); }
+        else if (changeBar == true) { focusBar.SubtractProgressMedium(); }
     }
 
-    public void SubtractLarge()
+    public void SubtractLarge(bool changeBar)
     {
         if (changeBar == false) { progressBar.SubtractProgressLarge(); }
-        if (changeBar == true) { focusBar.SubtractProgressLarge(); }
+        else if (changeBar == true) { focusBar.SubtractProgressLarge(); }
     }
 }
