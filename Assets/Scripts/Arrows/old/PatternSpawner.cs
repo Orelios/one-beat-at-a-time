@@ -148,15 +148,15 @@ public class PatternSpawner : MonoBehaviour
     {
         if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
         {
-            PlayerInputPattern.Instance.GetComponent<ProgressBarManipulator>().AddSmall();
+            PlayerInputPattern.Instance.GetComponent<BarManipulator>().AddSmall();
         }
         else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 2)
         {
-            PlayerInputPattern.Instance.GetComponent<ProgressBarManipulator>().AddMedium();
+            PlayerInputPattern.Instance.GetComponent<BarManipulator>().AddMedium();
         }
         else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 3)
         {
-            PlayerInputPattern.Instance.GetComponent<ProgressBarManipulator>().AddSmall();
+            PlayerInputPattern.Instance.GetComponent<BarManipulator>().AddSmall();
         }
     }
 }
