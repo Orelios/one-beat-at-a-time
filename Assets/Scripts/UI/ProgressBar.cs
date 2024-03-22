@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ProgressBar : MonoBehaviour
+public class ProgressBar : Singleton<ProgressBar>
 {
     public Image currentProgressBarIndicator;
     Image image;
     [SerializeField] private float maxProgress = 100.0f;
     [SerializeField] private float progress;
-    [SerializeField] private float progressDecPerSec = 1.0f;
+    public float progressDecPerSec = 1.0f;
     [SerializeField] private float small;
     [SerializeField] private float medium;
     [SerializeField] private float large;

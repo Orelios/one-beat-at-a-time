@@ -35,8 +35,14 @@ public class FocusBar : MonoBehaviour
             //EndRhythmScreen.Instance.StopGame();
         }
         image.fillAmount = progress / maxProgress;
+        FocusBarPercent();
     }
-
+    public void FocusBarPercent()
+    {
+        if(GetComponent<Image>().fillAmount <= 0.33) { ProgressBar.Instance.progressDecPerSec = 2f; }
+        else if (GetComponent<Image>().fillAmount <= 0.66) { ProgressBar.Instance.progressDecPerSec = 1.5f; }
+        else if (GetComponent<Image>().fillAmount <= 1) { ProgressBar.Instance.progressDecPerSec = 1f; }
+    }
     public void AddProgressSmall()
     {
         progress += small;
