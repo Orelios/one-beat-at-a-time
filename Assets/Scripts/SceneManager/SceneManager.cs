@@ -9,6 +9,15 @@ public class ScreenManager : MonoBehaviour
     [SerializeField] private int introScreen;
     [SerializeField] private int mainScene;
     [SerializeField] private int endScreen;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            LoadIntroScreen();
+        }
+    }
+
     public void LoadMainScene()
     {
         SceneManager.LoadScene(mainScene);
