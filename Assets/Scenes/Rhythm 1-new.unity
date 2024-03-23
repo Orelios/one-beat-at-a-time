@@ -197,7 +197,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5763eda0fc5f14f4d95889dce5e7409c, type: 3}
   - {fileID: 21300000, guid: 5763eda0fc5f14f4d95889dce5e7409c, type: 3}
   - {fileID: 21300000, guid: 5763eda0fc5f14f4d95889dce5e7409c, type: 3}
-  - {fileID: 21300000, guid: b0eedc4281ce3ca47870fd2538c65ecd, type: 3}
   _arrowInputEnums: 00000000000000000000000000000000
   _patterns:
   - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
