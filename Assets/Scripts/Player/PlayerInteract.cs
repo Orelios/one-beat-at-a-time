@@ -19,12 +19,21 @@ public class PlayerInteract : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Debug.Log(other.gameObject.tag); 
-        popupPlayerInteractText.enabled = true;
+        //popupPlayerInteractText.enabled = true;
         if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport")
         {
-            ConfirmationScreen.Instance.EnableChildren();
-            ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
-            ConfirmDetails.Instance.SetAsReference(other.gameObject);
+            //ConfirmationScreen.Instance.EnableChildren();
+            //ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
+            //ConfirmDetails.Instance.SetAsReference(other.gameObject);
+            if (other.gameObject.tag == "object")
+            {
+                InteractReference.Instance.PlayerInteractTask();
+            }
+            else if (other.gameObject.tag == "Teleport")
+            {
+                InteractReference.Instance.PlayerInteractBed();
+            }
+
             if (Input.GetKey(KeyCode.E))
             {
                 if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot >= 
@@ -70,6 +79,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        InteractReference.Instance.NotInteracting();
         popupPlayerInteractText.enabled = false;
         if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport")
         {
