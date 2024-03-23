@@ -22,7 +22,6 @@ public class PlayerArrowInput : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     SendPlayerArrowInput(Arrows.Up, 0, Player.Instance.canPress);
-                    IndicatorAboveImage.Instance.ChangeAboveIndicatorImage(); 
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Up);
                     Player.Instance.canPress = false;
@@ -31,7 +30,6 @@ public class PlayerArrowInput : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     SendPlayerArrowInput(Arrows.Down, 1, Player.Instance.canPress);
-                    IndicatorAboveImage.Instance.ChangeAboveIndicatorImage();
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Down);
                     Player.Instance.canPress = false;
@@ -40,7 +38,6 @@ public class PlayerArrowInput : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     SendPlayerArrowInput(Arrows.Left, 2, Player.Instance.canPress);
-                    IndicatorAboveImage.Instance.ChangeAboveIndicatorImage();
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Left);
                     Player.Instance.canPress = false;
@@ -49,7 +46,6 @@ public class PlayerArrowInput : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     SendPlayerArrowInput(Arrows.Right, 3, Player.Instance.canPress);
-                    IndicatorAboveImage.Instance.ChangeAboveIndicatorImage();
                     IndicatorColor.Instance.ChangeIndicatorColor();
                     IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Right);
                     Player.Instance.canPress = false;

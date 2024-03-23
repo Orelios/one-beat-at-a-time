@@ -81,6 +81,7 @@ public class PatternManager : Singleton<PatternManager>
             //pressedArrowSprite is an indicator that means the arrow was detected as correct
             if (_patterns[_patternIndex].arrowsPattern[_arrowIndex] == arrow)
             {
+                IndicatorAboveImage.Instance.ChangeAboveIndicatorImage();
                 _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
                     = _correctArrowSprites[x];
                 _arrowIndex += 1;
@@ -91,6 +92,7 @@ public class PatternManager : Singleton<PatternManager>
             {
                 if (_patternIndex < _patterns.Length - 1)
                 {
+                    IndicatorAboveImage.Instance.MissChangeAboveIndicatorImage();
                     _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
                         = _incorrectArrowSprites[x]; //change current ARROW to wrong version
                                                      //Decreases the current tabbed bar. The amoun that is decreased depends on the timing value
