@@ -268,31 +268,52 @@ public class PatternManager : Singleton<PatternManager>
     {
         if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
         {
-            BarManipulator.Instance.AddSmall(_changeBar);
+            if (GetComponent<BarManipulator>() != null) //BarManipulator is attached
+            {
+                BarManipulator.Instance.AddSmall(_changeBar);
+            }
+            else if (GetComponent<BarManipulatorNoTab>() != null) //BarManipulatorNoTab is used
+            {
+                BarManipulatorNoTab.Instance.AddSmall();
+            }
         }
         else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 2)
         {
-            BarManipulator.Instance.AddMedium(_changeBar);
+            if (GetComponent<BarManipulator>() != null) //BarManipulator is attached
+            {
+                BarManipulator.Instance.AddMedium(_changeBar);
+            }
+            else if (GetComponent<BarManipulatorNoTab>() != null) //BarManipulatorNoTab is used
+            {
+                BarManipulatorNoTab.Instance.AddMedium();
+            }
         }
         else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 3)
         {
-            BarManipulator.Instance.AddSmall(_changeBar);
+            if (GetComponent<BarManipulator>() != null) //BarManipulator is attached
+            {
+                BarManipulator.Instance.AddSmall(_changeBar);
+            }
+            else if (GetComponent<BarManipulatorNoTab>() != null) //BarManipulatorNoTab is used
+            {
+                BarManipulatorNoTab.Instance.AddSmall();
+            }
         }
     }
     public void checkTimingValueDec()
     {
-        BarManipulator.Instance.SubtractMedium(_changeBar);
+        if(GetComponent<BarManipulator>() != null) { BarManipulator.Instance.SubtractMedium(_changeBar); }
+        else if(GetComponent<BarManipulatorNoTab>() != null) { BarManipulatorNoTab.Instance.PlayerMiss(); }
     }
-
     public void Miss()
     {
         if (GetComponent<BarManipulator>() != null) //BarManipulator is attached
         {
-
+            checkTimingValueDec();
         }
-        else //else if (GetComponent<BarManipulatorNotTab>() != null) //BarManipulatorNotTab is used
+        else if (GetComponent<BarManipulatorNoTab>() != null) //BarManipulatorNoTab is used
         {
-
+            BarManipulatorNoTab.Instance.PlayerMiss();
         }
     }
 }
