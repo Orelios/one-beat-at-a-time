@@ -18,7 +18,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.gameObject.tag); 
+        //Debug.Log(other.gameObject.tag); 
         //popupPlayerInteractText.enabled = true;
         if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport")
         {
