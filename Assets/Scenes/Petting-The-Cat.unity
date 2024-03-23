@@ -1912,7 +1912,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 051bae509b179d84fb4a5d004d852a59, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0d358b9e49c6f9143a36351933488e39, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.6
   m_Pitch: 1
@@ -2525,7 +2525,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 051bae509b179d84fb4a5d004d852a59, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0d358b9e49c6f9143a36351933488e39, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -3211,10 +3211,10 @@ PrefabInstance:
     - target: {fileID: 1148555450815177418, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 051bae509b179d84fb4a5d004d852a59, type: 3}
+      objectReference: {fileID: 8300000, guid: 0d358b9e49c6f9143a36351933488e39, type: 3}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _bpm
-      value: 96
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: stressedSpeed
@@ -3714,6 +3714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NoteSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8482820708479607942, guid: b92246017e9cdcf4385880876b3d0fa4, type: 3}
+      propertyPath: notes
+      value: 
+      objectReference: {fileID: 3259586281293087878, guid: 75699e0a545e511498213300efcf4075, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
