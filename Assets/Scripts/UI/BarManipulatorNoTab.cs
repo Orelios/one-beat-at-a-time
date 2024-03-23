@@ -8,9 +8,10 @@ public class BarManipulatorNoTab : Singleton<BarManipulatorNoTab>
     public ProgressBar progressBar;
     public FocusBar focusBar;
     public NoteDetection detector;
+    public float progressDecPerSecFocusBar;
     private void Start()
     {
-        focusBar.progressDecPerSec = 4;
+        focusBar.progressDecPerSec = progressDecPerSecFocusBar;
     }
     private void Update()
     {

@@ -221,6 +221,7 @@ MonoBehaviour:
   progressBar: {fileID: 1275084421}
   focusBar: {fileID: 2103363067}
   detector: {fileID: 42261301}
+  progressDecPerSecFocusBar: 4
 --- !u!114 &42261301 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4024464241736979262, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
