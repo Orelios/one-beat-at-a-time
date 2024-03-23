@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Saturday-3.unity
     guid: 984cc2e87e37b4e429029c7c7e8943bb
   - enabled: 1
-    path: Assets/Scenes/Rhythm 2.unity
+    path: Assets/Scenes/old/Rhythm 2.unity
     guid: 5740b134785677a4db4aeabdf009c471
   m_configObjects: {}
