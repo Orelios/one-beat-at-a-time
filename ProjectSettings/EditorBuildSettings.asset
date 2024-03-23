@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 836f1dc302d85db48ac88611df42debf
+  - enabled: 1
     path: Assets/Scenes/Saturday-0-New.unity
     guid: 7d1c29a0e216f6243a530ca6eea9041f
   - enabled: 1
@@ -23,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/old/Rhythm 2.unity
     guid: 5740b134785677a4db4aeabdf009c471
+  - enabled: 1
+    path: Assets/Scenes/EndOfDay.unity
+    guid: 5ac37664be8fbca46af2bdde476941e7
   m_configObjects: {}

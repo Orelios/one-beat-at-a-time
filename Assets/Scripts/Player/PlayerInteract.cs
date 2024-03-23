@@ -18,7 +18,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.gameObject.tag); 
+        //Debug.Log(other.gameObject.tag); 
         //popupPlayerInteractText.enabled = true;
         if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport")
         {
@@ -51,6 +51,7 @@ public class PlayerInteract : MonoBehaviour
 
                 if(other.gameObject.tag == "Teleport")
                 {
+                    PlayerData.Instance.ResetTimeSlot();
                     PlayerData.Instance.AddTimeslot(1);
                     PlayerData.Instance.Save();
                     scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber); 
