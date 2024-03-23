@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -197,6 +197,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5763eda0fc5f14f4d95889dce5e7409c, type: 3}
   - {fileID: 21300000, guid: 5763eda0fc5f14f4d95889dce5e7409c, type: 3}
   - {fileID: 21300000, guid: 5763eda0fc5f14f4d95889dce5e7409c, type: 3}
+  - {fileID: 21300000, guid: b0eedc4281ce3ca47870fd2538c65ecd, type: 3}
   _arrowInputEnums: 00000000000000000000000000000000
   _patterns:
   - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
@@ -450,12 +451,12 @@ GameObject:
   - component: {fileID: 264933600}
   - component: {fileID: 264933599}
   m_Layer: 0
-  m_Name: ColliderMiss
+  m_Name: ColliderPassThrough
   m_TagString: Miss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &264933598
 Transform:
   m_ObjectHideFlags: 0
@@ -3148,7 +3149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFocusBarIndicator: {fileID: 200740609}
   maxProgress: 100
-  progress: 100
+  progress: 0
   progressDecPerSec: 1
   small: 5
   medium: 10

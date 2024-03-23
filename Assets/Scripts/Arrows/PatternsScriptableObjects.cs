@@ -15,7 +15,8 @@ public enum Arrows
     Up,
     Down,
     Left,
-    Right
+    Right,
+    Miss
 }
    
 

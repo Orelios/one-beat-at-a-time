@@ -63,6 +63,14 @@ public class PlayerArrowInput : MonoBehaviour
                 }
             }
         }
+        else if (Player.Instance.canPress == false) // miss == pressed arrow when not in early/perfect/late timings
+        {
+            if (Input.anyKeyDown)
+            {
+                SendPlayerArrowInput(Arrows.Miss, 4); //int 4 wll be used as _incorrectArrowSprites[4]
+                IndicatorAboveImage.Instance.MissChangeAboveIndicatorImage();
+            }
+        }
     }
     public void SendPlayerArrowInput(Arrows arrow, int x)
     {

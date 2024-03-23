@@ -5,7 +5,7 @@ using UnityEngine;
 public class PatternManager : Singleton<PatternManager>
 {
     [SerializeField] private Sprite[] _correctArrowSprites; //must be set in inspector UP/DOWN/LEFT/RIGHT
-    [SerializeField] private Sprite[] _incorrectArrowSprites; //must be set in inspector UP/DOWN/LEFT/RIGHT
+    [SerializeField] private Sprite[] _incorrectArrowSprites; //must be set in inspector UP/DOWN/LEFT/RIGHT/MISS
     [SerializeField] private Arrows[] _arrowInputEnums; //for pattern comparison later - can delete if not needed
     public PatternsScriptableObjects[] _patterns;
     [System.NonSerialized] public GameObject _patternCurrent, _patternPreview, _patternSliding;
@@ -52,48 +52,76 @@ public class PatternManager : Singleton<PatternManager>
     public void ReceivePlayerArrowInput(Arrows arrow, int x)
     {
         _arrowInputEnums[_arrowIndex] = arrow;//for pattern comparison later - can delete if not needed
-        //if arrow is correct, change arrow sprite to pressedArrowSprite
-        //pressedArrowSprite is an indicator that means the arrow was detected as correct
-        if (_patterns[_patternIndex].arrowsPattern[_arrowIndex] == arrow)
+        if (arrow == Arrows.Miss)
         {
-            _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
-                = _correctArrowSprites[x];
-            _arrowIndex += 1;
-            checkTimingValueInc();
-            //Debug.Log("correct");
-        }
-        else //wrong arrow pressed, auto next pattern
-        {
+            Miss();
+            //same as wrong arrow pressed, auto next pattern
             if (_patternIndex < _patterns.Length - 1)
             {
                 _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
-                = _incorrectArrowSprites[x]; //change current ARROW to wrong version
+                    = _incorrectArrowSprites[x]; //change current ARROW to MISS IMAGE (x == 4 as received from PlayerArrowInput)
                 //Decreases the current tabbed bar. The amoun that is decreased depends on the timing value
-                if(_patterns[_patternIndex].arrowsPattern[_arrowIndex] != arrow) { checkTimingValueDec(); }
+                if (_patterns[_patternIndex].arrowsPattern[_arrowIndex] != arrow) { checkTimingValueDec(); }
                 StartCoroutine(Pulse(_patternCurrent)); //pulse the pattern
                 //NextPatternSequence is called after pulse finishes inside Pulse coroutine
-                //Debug.Log("incorrect");
+                //Debug.Log("miss");
             }
-            else //last pattern wrong arrow pressed
+            else //last pattern miss pressed
             {
-                //Debug.Log("incorrect. loop");
+                //Debug.Log("miss. loop");
+                _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
+                    = _incorrectArrowSprites[x]; //change current ARROW to MISS version (x == 4 as received from PlayerArrowInput)
+                if (_patterns[_patternIndex].arrowsPattern[_arrowIndex] != arrow) { checkTimingValueDec(); }
                 LoopPatternArray();
             }
         }
-
-        if (_arrowIndex >= 4)
+        else
         {
-            if (_patternIndex >= _patterns.Length - 1) //if last pattern and last arrow
+            //if arrow is correct, change arrow sprite to pressedArrowSprite
+            //pressedArrowSprite is an indicator that means the arrow was detected as correct
+            if (_patterns[_patternIndex].arrowsPattern[_arrowIndex] == arrow)
             {
-                LoopPatternArray();
+                _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
+                    = _correctArrowSprites[x];
+                _arrowIndex += 1;
+                checkTimingValueInc();
+                //Debug.Log("correct");
             }
-            else //last arrow but not last pattern
+            else //wrong arrow pressed, auto next pattern
             {
-                StartCoroutine(Pulse(_patternCurrent));
-                //NextPatternSequence is called after pulse finishes inside Pulse coroutine
-                //Debug.Log("pattern complete");
+                if (_patternIndex < _patterns.Length - 1)
+                {
+                    _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
+                        = _incorrectArrowSprites[x]; //change current ARROW to wrong version
+                    //Decreases the current tabbed bar. The amoun that is decreased depends on the timing value
+                    if (_patterns[_patternIndex].arrowsPattern[_arrowIndex] != arrow) { checkTimingValueDec(); }
+                    StartCoroutine(Pulse(_patternCurrent)); //pulse the pattern
+                    //NextPatternSequence is called after pulse finishes inside Pulse coroutine
+                    //Debug.Log("incorrect");
+                }
+                else //last pattern wrong arrow pressed
+                {
+                    //Debug.Log("incorrect. loop");
+                    _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<SpriteRenderer>().sprite
+                        = _incorrectArrowSprites[x]; //change current ARROW to wrong version
+                    if (_patterns[_patternIndex].arrowsPattern[_arrowIndex] != arrow) { checkTimingValueDec(); }
+                    LoopPatternArray();
+                }
             }
-            
+
+            if (_arrowIndex >= 4)
+            {
+                if (_patternIndex >= _patterns.Length - 1) //if last pattern and last arrow
+                {
+                    LoopPatternArray();
+                }
+                else //last arrow but not last pattern
+                {
+                    StartCoroutine(Pulse(_patternCurrent));
+                    //NextPatternSequence is called after pulse finishes inside Pulse coroutine
+                    //Debug.Log("pattern complete");
+                }
+            }
         }
     }
 
@@ -251,5 +279,17 @@ public class PatternManager : Singleton<PatternManager>
     public void checkTimingValueDec()
     {
         BarManipulator.Instance.SubtractMedium(_changeBar);
+    }
+
+    public void Miss()
+    {
+        if (GetComponent<BarManipulator>() != null) //BarManipulator is attached
+        {
+
+        }
+        else //else if (GetComponent<BarManipulatorNotTab>() != null) //BarManipulatorNotTab is used
+        {
+
+        }
     }
 }
