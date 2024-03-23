@@ -51,6 +51,7 @@ public class PlayerInteract : MonoBehaviour
 
                 if(other.gameObject.tag == "Teleport")
                 {
+                    PlayerData.Instance.ResetTimeSlot();
                     PlayerData.Instance.AddTimeslot(1);
                     PlayerData.Instance.Save();
                     scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber); 

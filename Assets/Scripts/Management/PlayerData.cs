@@ -119,4 +119,9 @@ public class PlayerData : Singleton<PlayerData>
             timeslot = 0;
         }
     }
+
+    public void ResetTimeSlot()
+    {
+        timeslot = 0;
+    }
 }
