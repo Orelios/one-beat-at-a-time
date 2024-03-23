@@ -10,7 +10,7 @@ public class EndOfDayAcademics : MonoBehaviour
     void OnEnable()
     {
         text = GetComponent<TextMeshProUGUI>();
-        text.text = "Academics:" + " = " + PlayerData.Instance.productivity;
+        text.text = "Academics: " + PlayerData.Instance.productivity;
 
     }
 }

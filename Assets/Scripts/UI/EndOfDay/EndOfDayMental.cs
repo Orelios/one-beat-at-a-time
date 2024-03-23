@@ -10,7 +10,7 @@ public class EndOfDayMental : MonoBehaviour
     void OnEnable()
     {
         text = GetComponent<TextMeshProUGUI>();
-        text.text = "Mental Health:" + " = " + PlayerData.Instance.mentalHealth;
+        text.text = "Mental Health: " + PlayerData.Instance.mentalHealth;
 
     }
 }
