@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndOfDay.unity
     guid: 5ac37664be8fbca46af2bdde476941e7
+  - enabled: 1
+    path: Assets/Scenes/Self-Study 2.unity
+    guid: e3586fb94d76bfc4c98d96d6ed32672c
   m_configObjects: {}
