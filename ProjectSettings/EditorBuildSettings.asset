@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 836f1dc302d85db48ac88611df42debf
   - enabled: 1
-    path: Assets/Scenes/Saturday-0-New.unity
-    guid: 7d1c29a0e216f6243a530ca6eea9041f
+    path: Assets/Scenes/Saturday-0-New Texture.unity
+    guid: 1d0024f9efe73474eb1855534079b494
   - enabled: 1
     path: Assets/Scenes/Saturday-2.unity
     guid: 041a418076aa0fd4c85ba271def30468
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndOfDay.unity
     guid: 5ac37664be8fbca46af2bdde476941e7
+  - enabled: 1
+    path: Assets/Scenes/Self-Study 2.unity
+    guid: e3586fb94d76bfc4c98d96d6ed32672c
   m_configObjects: {}

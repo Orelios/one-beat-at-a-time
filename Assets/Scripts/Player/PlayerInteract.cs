@@ -27,7 +27,14 @@ public class PlayerInteract : MonoBehaviour
             //ConfirmDetails.Instance.SetAsReference(other.gameObject);
             if (other.gameObject.tag == "object")
             {
-                InteractReference.Instance.PlayerInteractTask();
+                if(other.gameObject.layer == 9)
+                {
+                    InteractReference.Instance.PlayerInteractTask2();
+                }
+                else
+                {
+                    InteractReference.Instance.PlayerInteractTask();
+                }
             }
             else if (other.gameObject.tag == "Teleport")
             {
