@@ -12,15 +12,15 @@ public class EndOfDayScreen : MonoBehaviour
     [SerializeField] private Sprite[] productivitySprites;
     public string prod, prod1, prod2, mental, mental1, mental2;
 
-    void OnEnable()
+    void Update()
     {
-        text = GetComponent<TextMeshProUGUI>();
+        //text = GetComponent<TextMeshProUGUI>();
 
         GetProd();
         GetMental();
 
         text.text = "By the end of the day, Aria thinks she" + prod
-            + "\nAs her body hits the bed, she" + mental;
+            + "\n\nAs her body hits the bed, she" + mental;
             //made some progress today.\r\nAs her body hits the bed, she feels tired and promptly falls asleep.";
 
         GetStartMental();
@@ -33,11 +33,11 @@ public class EndOfDayScreen : MonoBehaviour
     {
         if (PlayerData.Instance.productivity <= 30)
         {
-            mental = mental1;
+            prod = prod1;
         }
         else if (PlayerData.Instance.productivity <= 60)
         {
-            mental = mental2;
+            prod = prod2;
         }
     }
 
@@ -45,11 +45,11 @@ public class EndOfDayScreen : MonoBehaviour
     {
         if (PlayerData.Instance.mentalHealth <= 20)
         {
-            prod = prod1;
+            mental = mental1;
         }
         else if (PlayerData.Instance.mentalHealth <= 50)
         {
-            prod = prod2;
+            mental = mental2;
         }
     }
 

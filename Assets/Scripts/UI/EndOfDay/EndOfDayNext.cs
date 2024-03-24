@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class EndOfDayNext : MonoBehaviour
 {
-    public GameObject currentScreen ,nextScreen;
+    public GameObject currentScreen, nextScreen;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            NextScreen();
+        }
+    }
 
     public void NextScreen()
     {
