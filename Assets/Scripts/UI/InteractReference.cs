@@ -19,11 +19,13 @@ public class InteractReference : Singleton<InteractReference>
     public void PlayerInteractTask()
     {
         task.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        task.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
         task.transform.GetChild(1).gameObject.SetActive(true);
     }
     public void PlayerInteractTask2()
     {
         task2.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        task2.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
         task2.transform.GetChild(1).gameObject.SetActive(true);
     }
 
@@ -32,8 +34,10 @@ public class InteractReference : Singleton<InteractReference>
         bed.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
         bed.transform.GetChild(1).gameObject.SetActive(false);
         task.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
+        task.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
         task.transform.GetChild(1).gameObject.SetActive(false);
         task2.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
+         task2.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
         task2.transform.GetChild(1).gameObject.SetActive(false);
     }
 
