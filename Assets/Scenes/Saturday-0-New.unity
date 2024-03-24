@@ -8762,12 +8762,20 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: day
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: timeslot
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: isNewGame
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: startMentalHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8111532214138149449, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: m_IsActive

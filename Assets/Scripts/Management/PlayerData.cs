@@ -7,24 +7,30 @@ using SimpleJSON;
 public class PlayerData : Singleton<PlayerData>
 {
     public bool isNewGame = false;
+    public float startMentalHealth;
     public float mentalHealth;
     public float maxMentalHealth;
+    public float startProductivity;
     public float productivity;
     public float maxProductivity;
     public float academics;
     public float maxAcademics;
     public float timeslot;
+    public int day;
 
     public void Save()
     {
         JSONObject playerDataJson = new JSONObject();
+        playerDataJson.Add("keyStartMentalHealth", startMentalHealth);
         playerDataJson.Add("keyMentalHealth", mentalHealth);
-        playerDataJson.Add("keyProductivity", productivity);
-        playerDataJson.Add("keyAcademics", academics);
-        playerDataJson.Add("keyTimeRemaining", timeslot);
         playerDataJson.Add("keyMaxMentalHealth", maxMentalHealth);
+        playerDataJson.Add("keyStartProductivity", startProductivity);
+        playerDataJson.Add("keyProductivity", productivity);
         playerDataJson.Add("keyMaxProductivity", maxProductivity);
+        playerDataJson.Add("keyAcademics", academics);
         playerDataJson.Add("keyMaxAcademics", maxAcademics);
+        playerDataJson.Add("keyTimeslot", timeslot);
+        playerDataJson.Add("keyDay", day);
 
         //POSITION
         JSONArray position = new JSONArray();
@@ -45,13 +51,16 @@ public class PlayerData : Singleton<PlayerData>
         JSONObject playerDataJson = (JSONObject)JSON.Parse(jsonString);
 
         //SET VALUES
+        startMentalHealth = playerDataJson["keyStartMentalHealth"];
         mentalHealth = playerDataJson["keyMentalHealth"];
-        productivity = playerDataJson["keyProductivity"];
-        academics = playerDataJson["keyAcademics"];
-        timeslot = playerDataJson["keyTimeRemaining"];
         maxMentalHealth = playerDataJson["keyMaxMentalHealth"];
+        startProductivity = playerDataJson["keyStartProductivity"];
+        productivity = playerDataJson["keyProductivity"];
         maxProductivity = playerDataJson["keyMaxProductivity"];
+        academics = playerDataJson["keyAcademics"];
         maxAcademics = playerDataJson["keyMaxAcademics"];
+        timeslot = playerDataJson["keyTimeslot"];
+        day = playerDataJson["keyDay"];
 
         //POSITION
         transform.position = new Vector3(
