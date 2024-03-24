@@ -3641,14 +3641,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.0232234, a: 1}
+  m_Color: {r: 0.58431375, g: 0.8156863, b: 0.83137256, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 268db84ed0caf9944bd66f6475c8de2f, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4011,18 +4011,6 @@ PrefabInstance:
     - target: {fileID: 725774025365691051, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
       propertyPath: m_Name
       value: ImageAboveIndicator
-      objectReference: {fileID: 0}
-    - target: {fileID: 1676019080704358050, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
-      propertyPath: aboveImageIndicator.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2945073728915731936, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
-      propertyPath: _pulseSize
-      value: 1.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2945073728915731936, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
-      propertyPath: _returnSpeed
-      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 4147638435685419719, guid: 623978bdae6b48749b449c2a69cffb2d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12823,22 +12811,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Detector
       objectReference: {fileID: 0}
-    - target: {fileID: 4873829510554242728, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5597883062498858535, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5597883062498858535, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5597883062498858535, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 5597883062498858535, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.75
@@ -12878,10 +12850,6 @@ PrefabInstance:
     - target: {fileID: 5597883062498858535, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5597883062498858535, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
