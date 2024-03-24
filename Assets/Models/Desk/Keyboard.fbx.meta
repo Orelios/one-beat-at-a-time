@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: d6274c4569cd46c4faccb5cf143f3d53
+guid: 7caadbb46e0ef894fa4fa1b2c1793bf5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: keyboard_color
+    second: {fileID: 2100000, guid: b6b51aabd92da3549982d84b8a26d4eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: keyboard_color_2
+    second: {fileID: 2100000, guid: aca53ffc0bf227346952b12e6ad33e7c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -37,7 +47,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
