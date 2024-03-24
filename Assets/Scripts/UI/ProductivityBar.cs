@@ -6,14 +6,10 @@ using UnityEngine.UI;
 
 public class ProductivityBar : Singleton<ProductivityBar>
 {
-    Image image;
+    public GameObject bar;
 
     void Start()
     {
-        image = GetComponent<Image>();
-        //Just make sure the image is set to filled type
-        image.type = Image.Type.Filled;
-
         UpdateBar();
     }
 
@@ -24,6 +20,76 @@ public class ProductivityBar : Singleton<ProductivityBar>
 
     public void UpdateBar()
     {
-        image.fillAmount = PlayerData.Instance.productivity / PlayerData.Instance.maxProductivity;
+        //image.fillAmount = PlayerData.Instance.productivity / PlayerData.Instance.maxProductivity;
+        if (PlayerData.Instance.productivity == 0) 
+        {
+            bar.transform.GetChild(0).gameObject.SetActive(true);
+            bar.transform.GetChild(1).gameObject.SetActive(false);
+            bar.transform.GetChild(2).gameObject.SetActive(false);
+            bar.transform.GetChild(3).gameObject.SetActive(false);
+            bar.transform.GetChild(4).gameObject.SetActive(false);
+            bar.transform.GetChild(5).gameObject.SetActive(false);
+            bar.transform.GetChild(6).gameObject.SetActive(false);
+        }
+        else if (PlayerData.Instance.productivity <= 10)
+        {
+            bar.transform.GetChild(0).gameObject.SetActive(false);
+            bar.transform.GetChild(1).gameObject.SetActive(true);
+            bar.transform.GetChild(2).gameObject.SetActive(false);
+            bar.transform.GetChild(3).gameObject.SetActive(false);
+            bar.transform.GetChild(4).gameObject.SetActive(false);
+            bar.transform.GetChild(5).gameObject.SetActive(false);
+            bar.transform.GetChild(6).gameObject.SetActive(false);
+        }
+        else if(PlayerData.Instance.productivity <= 20)
+        {
+            bar.transform.GetChild(0).gameObject.SetActive(false);
+            bar.transform.GetChild(1).gameObject.SetActive(false);
+            bar.transform.GetChild(2).gameObject.SetActive(true);
+            bar.transform.GetChild(3).gameObject.SetActive(false);
+            bar.transform.GetChild(4).gameObject.SetActive(false);
+            bar.transform.GetChild(5).gameObject.SetActive(false);
+            bar.transform.GetChild(6).gameObject.SetActive(false);
+        }
+        else if (PlayerData.Instance.productivity <= 30)
+        {
+            bar.transform.GetChild(0).gameObject.SetActive(false);
+            bar.transform.GetChild(1).gameObject.SetActive(false);
+            bar.transform.GetChild(2).gameObject.SetActive(false);
+            bar.transform.GetChild(3).gameObject.SetActive(true);
+            bar.transform.GetChild(4).gameObject.SetActive(false);
+            bar.transform.GetChild(5).gameObject.SetActive(false);
+            bar.transform.GetChild(6).gameObject.SetActive(false);
+        }
+        else if (PlayerData.Instance.productivity <= 40)
+        {
+            bar.transform.GetChild(0).gameObject.SetActive(false);
+            bar.transform.GetChild(1).gameObject.SetActive(false);
+            bar.transform.GetChild(2).gameObject.SetActive(false);
+            bar.transform.GetChild(3).gameObject.SetActive(false);
+            bar.transform.GetChild(4).gameObject.SetActive(true);
+            bar.transform.GetChild(5).gameObject.SetActive(false);
+            bar.transform.GetChild(6).gameObject.SetActive(false);
+        }
+        else if (PlayerData.Instance.productivity <= 50)
+        {
+            bar.transform.GetChild(0).gameObject.SetActive(false);
+            bar.transform.GetChild(1).gameObject.SetActive(false);
+            bar.transform.GetChild(2).gameObject.SetActive(false);
+            bar.transform.GetChild(3).gameObject.SetActive(false);
+            bar.transform.GetChild(4).gameObject.SetActive(false);
+            bar.transform.GetChild(5).gameObject.SetActive(true);
+            bar.transform.GetChild(6).gameObject.SetActive(false);
+        }
+        else if (PlayerData.Instance.productivity <= 60)
+        {
+            bar.transform.GetChild(0).gameObject.SetActive(false);
+            bar.transform.GetChild(1).gameObject.SetActive(false);
+            bar.transform.GetChild(2).gameObject.SetActive(false);
+            bar.transform.GetChild(3).gameObject.SetActive(false);
+            bar.transform.GetChild(4).gameObject.SetActive(false);
+            bar.transform.GetChild(5).gameObject.SetActive(false);
+            bar.transform.GetChild(6).gameObject.SetActive(true);
+        }
     }
 }
