@@ -70,29 +70,29 @@ public class PlayerArrowInput : MonoBehaviour
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Up, 0, Player.Instance.canPress);
-                    IndicatorColor.Instance.ChangeIndicatorColor();
-                    IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Up);
+                    //IndicatorColor.Instance.ChangeIndicatorColor();
+                    //IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Up);
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Down, 1, Player.Instance.canPress);
-                    IndicatorColor.Instance.ChangeIndicatorColor();
-                    IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Down);
+                    //IndicatorColor.Instance.ChangeIndicatorColor();
+                    //IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Down);
                 }
                 else if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Left, 2, Player.Instance.canPress);
-                    IndicatorColor.Instance.ChangeIndicatorColor();
-                    IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Left);
+                    //IndicatorColor.Instance.ChangeIndicatorColor();
+                    //IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Left);
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     Player.Instance.canPress = false;
                     SendPlayerArrowInput(Arrows.Right, 3, Player.Instance.canPress);
-                    IndicatorColor.Instance.ChangeIndicatorColor();
-                    IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Right);
+                    //IndicatorColor.Instance.ChangeIndicatorColor();
+                    //IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Right);
                 }
                 //The key pressed was not an arrow key
                 else
