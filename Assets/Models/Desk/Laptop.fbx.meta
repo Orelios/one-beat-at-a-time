@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 3ab452148f648964ba991b46669e674c
+guid: fad235ed5b08a0940b29b4ba401a3755
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: laptop_color
+    second: {fileID: 2100000, guid: e7962aaf705cf074399a319844141b7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: laptopkeyboardcolor
+    second: {fileID: 2100000, guid: d7ce340a6ef38c143bad2a8a22e8573f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monitor_screen_color
+    second: {fileID: 2100000, guid: 97f76f109c16e95419954f15a4d03934, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -37,7 +52,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1

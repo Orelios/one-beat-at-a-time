@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 3d303ec4df042c640adc9f18333eb0ed
+guid: 149b573ba601b5d4bb7032a7e35ff736
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carpet_color
+    second: {fileID: 2100000, guid: 67091bacfa97fea429a6371e545d93e1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -37,7 +42,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
