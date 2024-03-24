@@ -17,6 +17,7 @@ public class EndOfDayScreen : MonoBehaviour
         text = GetComponent<TextMeshProUGUI>();
 
         GetProd();
+        GetMental();
 
         text.text = "By the end of the day, Aria thinks she" + prod
             + "\nAs her body hits the bed, she" + mental;
@@ -32,11 +33,11 @@ public class EndOfDayScreen : MonoBehaviour
     {
         if (PlayerData.Instance.productivity <= 30)
         {
-            prod = prod1;
+            mental = mental1;
         }
         else if (PlayerData.Instance.productivity <= 60)
         {
-            prod = prod2;
+            mental = mental2;
         }
     }
 
