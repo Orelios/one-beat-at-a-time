@@ -14,7 +14,7 @@ public class EndOfDayScreen : MonoBehaviour
 
     void OnEnable()
     {
-        text = GetComponent<TextMeshProUGUI>();
+        //text = GetComponent<TextMeshProUGUI>();
 
         GetProd();
         GetMental();
