@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 5362328}
   - component: {fileID: 5362330}
   - component: {fileID: 5362331}
+  - component: {fileID: 5362332}
   m_Layer: 0
   m_Name: PatternManager
   m_TagString: Untagged
@@ -222,6 +223,24 @@ MonoBehaviour:
   focusBar: {fileID: 2103363067}
   detector: {fileID: 197017457}
   progressDecPerSecFocusBar: 4
+--- !u!114 &5362332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5362326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31401f9db1cc824cb80a58292fa7a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPresist: 0
+  catSprites:
+  - {fileID: 346028911}
+  - {fileID: 851211304}
+  - {fileID: 1350157887}
+  - {fileID: 1680972248}
 --- !u!1 &41019028
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +471,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 172593134}
-  - component: {fileID: 172593135}
   m_Layer: 5
   m_Name: CatSpriteHolder
   m_TagString: Untagged
@@ -483,24 +501,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &172593135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172593133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a31401f9db1cc824cb80a58292fa7a3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPresist: 0
-  catSprites:
-  - {fileID: 346028911}
-  - {fileID: 851211304}
-  - {fileID: 1350157887}
-  - {fileID: 1680972248}
 --- !u!114 &197017457 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4024464241736979262, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
@@ -2481,6 +2481,12 @@ MonoBehaviour:
   focusBar: {fileID: 0}
   detector: {fileID: 0}
   _changeBar: 0
+  studyBubbleObjects: []
+  focusBubbleObjects: []
+  barEnum: 1
+  studyBubbleIndex: 0
+  focusBubbleIndex: 0
+  fadeDuration: 0.5
 --- !u!1 &804904211
 GameObject:
   m_ObjectHideFlags: 0
