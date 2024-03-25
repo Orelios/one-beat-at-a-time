@@ -19,6 +19,11 @@ public class BarManipulatorNoTab : Singleton<BarManipulatorNoTab>
         {
             EndRhythmScreen.Instance.StopGame();
         }
+
+        if(FocusBar.Instance.GetComponent<Image>().fillAmount >= 0.66f)
+        {
+            CatSpriteChanger.Instance.CatTired();
+        }
     }
     public void AddSmall()
     {
