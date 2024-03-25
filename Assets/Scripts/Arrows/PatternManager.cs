@@ -115,10 +115,38 @@ public class PatternManager : Singleton<PatternManager>
             {
                 if (_patternIndex >= _patterns.Length - 1) //if last pattern and last arrow
                 {
+                    if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Study)
+                    {
+                        BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex].SetActive(false);
+                        BarManipulator.Instance.CycleStudyBubbleIndex();
+                        BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex].SetActive(true);
+                        Debug.Log("focus");
+                    }
+                    else if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Focus)
+                    {
+                        BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex].SetActive(false);
+                        BarManipulator.Instance.CycleFocusBubbleIndex();
+                        BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex].SetActive(true);
+                        Debug.Log("focus");
+                    }
                     LoopPatternArray();
                 }
                 else //last arrow but not last pattern
                 {
+                    if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Study)
+                    {
+                        BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex].SetActive(false);
+                        BarManipulator.Instance.CycleStudyBubbleIndex();
+                        BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex].SetActive(true);
+                        Debug.Log("focus");
+                    }
+                    else if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Focus)
+                    {
+                        BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex].SetActive(false);
+                        BarManipulator.Instance.CycleFocusBubbleIndex();
+                        BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex].SetActive(true);
+                        Debug.Log("focus");
+                    }
                     StartCoroutine(Pulse(_patternCurrent));
                     //NextPatternSequence is called after pulse finishes inside Pulse coroutine
                     //Debug.Log("pattern complete");

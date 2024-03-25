@@ -8,6 +8,10 @@ public class BarManipulator : Singleton<BarManipulator>
     public FocusBar focusBar;
     public NoteDetection detector;
     public bool _changeBar = false;
+    public GameObject[] studyBubbleObjects; //create empty object with children each containing a sprite
+    public GameObject[] focusBubbleObjects;
+    public Bars barEnum = Bars.Focus;
+    public int studyBubbleIndex = 0, focusBubbleIndex = 0;
     //[SerializeField] private bool perArrow = false;
     //[SerializeField] private bool perPattern = false;
     private void Awake()
@@ -41,6 +45,7 @@ public class BarManipulator : Singleton<BarManipulator>
                     PatternManager.Instance.ChangeBar(_changeBar);
                     progressBar.currentProgressBarIndicator.gameObject.SetActive(false);
                     focusBar.currentFocusBarIndicator.gameObject.SetActive(true);
+                    barEnum = Bars.Focus;
                 }
                 else if(_changeBar == true) // will change to progress bar
                 { 
@@ -48,6 +53,7 @@ public class BarManipulator : Singleton<BarManipulator>
                     PatternManager.Instance.ChangeBar(_changeBar);
                     progressBar.currentProgressBarIndicator.gameObject.SetActive(true);
                     focusBar.currentFocusBarIndicator.gameObject.SetActive(false);
+                    barEnum = Bars.Study;
                 }
                 detector.DestroyNote();
                 Debug.Log(_changeBar);
@@ -89,5 +95,29 @@ public class BarManipulator : Singleton<BarManipulator>
     {
         if (changeBar == false) { progressBar.SubtractProgressLarge(); }
         else if (changeBar == true) { focusBar.SubtractProgressLarge(); }
+    }
+
+    public enum Bars
+    {
+        Study,
+        Focus
+    }
+
+    public void CycleStudyBubbleIndex()
+    {
+        studyBubbleIndex += 1;
+        if (studyBubbleIndex >= studyBubbleObjects.Length)
+        {
+            studyBubbleIndex = 0;
+        }
+    }
+
+    public void CycleFocusBubbleIndex()
+    {
+        focusBubbleIndex += 1;
+        if (focusBubbleIndex >= focusBubbleObjects.Length)
+        {
+            focusBubbleIndex = 0;
+        }
     }
 }
