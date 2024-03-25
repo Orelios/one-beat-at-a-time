@@ -13671,17 +13671,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1345247387505692616, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
-      propertyPath: groundDistance
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 3562789634407309006, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.16300106
       objectReference: {fileID: 0}
     - target: {fileID: 3562789634407309006, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.65
+      value: 1.89
       objectReference: {fileID: 0}
     - target: {fileID: 3562789634407309006, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13726,10 +13722,6 @@ PrefabInstance:
     - target: {fileID: 6586813215914459603, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: m_Name
       value: PlayerOverworld
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
-      propertyPath: maxProductivity
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13958,7 +13950,7 @@ PrefabInstance:
       objectReference: {fileID: 964316623}
     - target: {fileID: 4704039678498772619, guid: 5bd92315888ea1d429930e95a0d552f2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -75.00009
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 4775141716467375914, guid: 5bd92315888ea1d429930e95a0d552f2, type: 3}
       propertyPath: _statsRef
