@@ -58,7 +58,7 @@ public class PlayerArrowInput : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 SoundEffectManager.Instance.PlayMissSound();
-                CatSpriteChanger.Instance.CatEarlyOrLate();
+                if (PatternManager.Instance.GetComponent<CatSpriteChanger>() != null) { CatSpriteChanger.Instance.CatEarlyOrLate(); }
                 Player.Instance.canPress = false;
                 SendPlayerArrowInput(Arrows.Up, 0, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
@@ -68,7 +68,7 @@ public class PlayerArrowInput : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 SoundEffectManager.Instance.PlayMissSound();
-                CatSpriteChanger.Instance.CatEarlyOrLate();
+                if (PatternManager.Instance.GetComponent<CatSpriteChanger>() != null) { CatSpriteChanger.Instance.CatEarlyOrLate(); }
                 Player.Instance.canPress = false;
                 SendPlayerArrowInput(Arrows.Down, 1, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
@@ -78,7 +78,7 @@ public class PlayerArrowInput : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 SoundEffectManager.Instance.PlayMissSound();
-                CatSpriteChanger.Instance.CatEarlyOrLate();
+                if (PatternManager.Instance.GetComponent<CatSpriteChanger>() != null) { CatSpriteChanger.Instance.CatEarlyOrLate(); }
                 Player.Instance.canPress = false;
                 SendPlayerArrowInput(Arrows.Left, 2, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
@@ -88,7 +88,7 @@ public class PlayerArrowInput : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 SoundEffectManager.Instance.PlayMissSound();
-                CatSpriteChanger.Instance.CatEarlyOrLate();
+                if(PatternManager.Instance.GetComponent<CatSpriteChanger>() != null) { CatSpriteChanger.Instance.CatEarlyOrLate(); }
                 Player.Instance.canPress = false;
                 SendPlayerArrowInput(Arrows.Right, 3, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
