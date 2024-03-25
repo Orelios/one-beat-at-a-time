@@ -452,6 +452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 172593134}
+  - component: {fileID: 172593135}
   m_Layer: 5
   m_Name: CatSpriteHolder
   m_TagString: Untagged
@@ -482,6 +483,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &172593135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172593133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31401f9db1cc824cb80a58292fa7a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPresist: 0
+  catSprites:
+  - {fileID: 346028911}
+  - {fileID: 851211304}
+  - {fileID: 1350157887}
+  - {fileID: 1680972248}
 --- !u!114 &197017457 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4024464241736979262, guid: 11c6db0bb4588574eaeab0182c58fc71, type: 3}
@@ -2713,7 +2732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &851211303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3767,7 +3786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1350157886
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4622,7 +4641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1680972247
 RectTransform:
   m_ObjectHideFlags: 0
