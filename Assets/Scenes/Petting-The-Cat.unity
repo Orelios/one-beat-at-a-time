@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1934,7 +1934,7 @@ PrefabInstance:
     - target: {fileID: 1936913194725518983, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
       propertyPath: stats
       value: 
-      objectReference: {fileID: 11400000, guid: edee7212b1c389447b2add188ad0b62f, type: 2}
+      objectReference: {fileID: 11400000, guid: ec7f2c8278f5cf7418c5d138420a8898, type: 2}
     - target: {fileID: 2430015154251536485, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2158,6 +2158,10 @@ PrefabInstance:
     - target: {fileID: 7241920427558609642, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1583977378}
+    - target: {fileID: 7241920427558609642, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadIntroScreen
       objectReference: {fileID: 0}
     - target: {fileID: 7863670220817329861, guid: d2bd03a4bca92f346b3f9503033396dc, type: 3}
       propertyPath: m_text
@@ -2774,8 +2778,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Up Next
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d16786ad39fe6f341816f21a7c0f406b, type: 2}
+  m_sharedMaterial: {fileID: -2813440570270126450, guid: d16786ad39fe6f341816f21a7c0f406b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2799,10 +2803,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
-  m_fontSizeBase: 36
+  m_fontSize: 54.5
+  m_fontSizeBase: 54.5
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -4327,6 +4331,17 @@ MonoBehaviour:
   _useTestBeat: 0
   _pulseSize: 1.15
   _returnSpeed: 5
+--- !u!114 &1583977378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8949913259425656811, guid: 35a78aec7becdda43b15d636308d62db, type: 3}
+  m_PrefabInstance: {fileID: 8912731686458278376}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eacb036267cfc94084fdcbb8e9ec754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1586318804
 GameObject:
   m_ObjectHideFlags: 0
@@ -4604,8 +4619,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '"The cat doesn''t want to be pet anymore"'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d16786ad39fe6f341816f21a7c0f406b, type: 2}
+  m_sharedMaterial: {fileID: -2813440570270126450, guid: d16786ad39fe6f341816f21a7c0f406b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4668,7 +4683,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -213.34402, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1662434861
@@ -4894,8 +4909,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Note: How well you perform affects your state'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d16786ad39fe6f341816f21a7c0f406b, type: 2}
+  m_sharedMaterial: {fileID: -2813440570270126450, guid: d16786ad39fe6f341816f21a7c0f406b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4958,7 +4973,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -213.34402, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1717011761
