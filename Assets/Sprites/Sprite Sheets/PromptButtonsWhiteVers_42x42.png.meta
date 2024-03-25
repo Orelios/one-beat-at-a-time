@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 547094879a5283f49b592d19c305b651
+guid: 8581bb5b4af9d234bb54c1ed7180432d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -108,18 +108,106 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PromptButtonsWhiteVers_42x42_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3dcd453064d054c919e9931743185c
+      internalID: 560821190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PromptButtonsWhiteVers_42x42_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7a41a46d9777740bf571fdc27d6078
+      internalID: -2022611547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PromptButtonsWhiteVers_42x42_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdabfcebe3b666548a3a22ce644481d7
+      internalID: 647572331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PromptButtonsWhiteVers_42x42_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58aafce1d9a3684c958f468ddd20587
+      internalID: 1881572828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d01b7a58269682e4ab0a576279483c52
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PromptButtonsWhiteVers_42x42_0: 560821190
+      PromptButtonsWhiteVers_42x42_1: -2022611547
+      PromptButtonsWhiteVers_42x42_2: 647572331
+      PromptButtonsWhiteVers_42x42_3: 1881572828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
