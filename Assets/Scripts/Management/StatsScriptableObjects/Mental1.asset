@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3004c59827c774e8f498f6ec3d8c4f, type: 3}
   m_Name: Mental1
   m_EditorClassIdentifier: 
-  activityName: Nap
-  mentalHealthChange: 10
-  productivityChange: 0
+  activityName: Petting the cat
+  mentalHealthMin: 5
+  mentalHealthMax: 20
+  productivityMin: 0
+  productivityMax: 0
   timeChange: -1

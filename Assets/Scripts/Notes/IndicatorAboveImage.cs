@@ -14,17 +14,20 @@ public class IndicatorAboveImage : Singleton<IndicatorAboveImage>
     {
         if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 1)
         {
-            GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[0]; 
+            GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[0];
+            SoundEffectManager.Instance.PlayEarlySound();
             //GetComponent<SpriteRenderer>().color = Color.red;
         }
         else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 2)
         {
             GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[1];
+            SoundEffectManager.Instance.PlayPerfectSound();
             //GetComponent<SpriteRenderer>().color = Color.green;
         }
         else if (NoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 3)
         {
             GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[2];
+            SoundEffectManager.Instance.PlayLateSound();
             //GetComponent<SpriteRenderer>().color = Color.blue;
         }
         StartCoroutine(RetrunToOriginal());
