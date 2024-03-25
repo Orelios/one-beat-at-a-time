@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82ff2dceddf674d9a23ac91dddbdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 7
+  sceneNumber: 8
 --- !u!65 &183466750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2136,6 +2136,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1148555450815177418, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1148555450815177418, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: m_Volume
       value: 0.05
@@ -7210,7 +7214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82ff2dceddf674d9a23ac91dddbdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 8
+  sceneNumber: 9
 --- !u!65 &1284708921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16295,6 +16299,10 @@ PrefabInstance:
       propertyPath: groundDistance
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 2875129566698045660, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3562789634407309006, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.16300106
@@ -16343,6 +16351,10 @@ PrefabInstance:
       propertyPath: popupPlayerInteractText
       value: 
       objectReference: {fileID: 879199064}
+    - target: {fileID: 6389398355805720824, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ceac3419a63841647972f33ce21be5bf, type: 2}
     - target: {fileID: 6586813215914459603, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: m_Name
       value: PlayerOverworld

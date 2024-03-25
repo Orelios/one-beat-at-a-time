@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleScreen: 2
-  introScreen: 4
+  introScreen: 7
   mainScene: 1
   endScreen: 3
 --- !u!4 &437041945
