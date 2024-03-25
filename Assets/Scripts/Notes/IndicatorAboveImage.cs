@@ -8,7 +8,7 @@ public class IndicatorAboveImage : Singleton<IndicatorAboveImage>
     public float returnDelay;
     public void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[3];
+        GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[4];
     }
     public void ChangeAboveIndicatorImage()
     {
@@ -33,13 +33,13 @@ public class IndicatorAboveImage : Singleton<IndicatorAboveImage>
     private IEnumerator RetrunToOriginal()
     {
         yield return new WaitForSeconds(returnDelay);
-        GetComponent<SpriteRenderer>().color = Color.white;
-        GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[3];
+        //GetComponent<SpriteRenderer>().color = Color.white;
+        GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[4];
     }
 
     public void MissChangeAboveIndicatorImage()
     {
         GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[3];
-        GetComponent<SpriteRenderer>().color = Color.red;
+        //GetComponent<SpriteRenderer>().color = Color.red;
     }
 }
