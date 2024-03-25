@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class EndRhythmProductivity : MonoBehaviour
@@ -8,11 +9,8 @@ public class EndRhythmProductivity : MonoBehaviour
     private float currentProductivity;
     private float valueToAdd;
 
-    TextMeshProUGUI text;
-
     void OnEnable()
     {
-        text = GetComponent<TextMeshProUGUI>();
         currentProductivity = PlayerData.Instance.productivity;
 
         float min = EndRhythmScreen.Instance.GetComponent<RhythmStats>().stats.productivityMin;
@@ -20,10 +18,36 @@ public class EndRhythmProductivity : MonoBehaviour
         valueToAdd = min + ((max - min) * (EndRhythmScreen.Instance.successPercent / 100));
 
         //change PlayerData value
-        PlayerData.Instance.AddProductivity(Mathf.Round(valueToAdd));
-
-        text.text = "Productivity: " + currentProductivity + " + " + Mathf.Round(valueToAdd) + " = " + PlayerData.Instance.productivity;
-
+        Mathf.Round(valueToAdd);
+        PlayerData.Instance.AddProductivity(valueToAdd);
+        ChangeIcons();
         
+    }
+    private void ChangeIcons()
+    {
+        if (valueToAdd == 0)
+        {
+            transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+            transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+            transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+        }
+        else if (valueToAdd <= 10)
+        {
+            transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+            transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+        }
+        else if (valueToAdd <= 20)
+        {
+            transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+        }
+        else if (valueToAdd <= 30)
+        {
+            transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        }
     }
 }
