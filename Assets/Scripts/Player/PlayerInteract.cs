@@ -60,6 +60,10 @@ public class PlayerInteract : MonoBehaviour
                 {
                     PlayerData.Instance.ResetTimeSlot();
                     PlayerData.Instance.AddTimeslot(1);
+                    if (PlayerData.Instance.timeslot > 0)
+                    {
+                        PlayerData.Instance.AddMentalHealth(-5);
+                    }
                     PlayerData.Instance.Save();
                     scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber); 
                 }

@@ -115,10 +115,30 @@ public class PatternManager : Singleton<PatternManager>
             {
                 if (_patternIndex >= _patterns.Length - 1) //if last pattern and last arrow
                 {
+                    if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Study)
+                    {
+                        BarManipulator.Instance.StartCoroutine(BarManipulator.Instance.FadeOut(BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex]));
+                        BarManipulator.Instance.CycleStudyBubbleIndex();
+                    }
+                    else if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Focus)
+                    {
+                        BarManipulator.Instance.StartCoroutine(BarManipulator.Instance.FadeOut(BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex]));
+                        BarManipulator.Instance.CycleFocusBubbleIndex();
+                    }
                     LoopPatternArray();
                 }
                 else //last arrow but not last pattern
                 {
+                    if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Study)
+                    {
+                        BarManipulator.Instance.StartCoroutine(BarManipulator.Instance.FadeOut(BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex]));
+                        BarManipulator.Instance.CycleStudyBubbleIndex();
+                    }
+                    else if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Focus)
+                    {
+                        BarManipulator.Instance.StartCoroutine(BarManipulator.Instance.FadeOut(BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex]));
+                        BarManipulator.Instance.CycleFocusBubbleIndex();
+                    }
                     StartCoroutine(Pulse(_patternCurrent));
                     //NextPatternSequence is called after pulse finishes inside Pulse coroutine
                     //Debug.Log("pattern complete");
