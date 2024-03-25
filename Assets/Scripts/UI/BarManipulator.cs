@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BarManipulator : Singleton<BarManipulator>
 {
@@ -12,6 +14,9 @@ public class BarManipulator : Singleton<BarManipulator>
     public GameObject[] focusBubbleObjects;
     public Bars barEnum = Bars.Focus;
     public int studyBubbleIndex = 0, focusBubbleIndex = 0;
+    private Color visible, invisible;
+    private float fadeElapsedTime = 0f;
+    public float fadeDuration = 0.5f;
     //[SerializeField] private bool perArrow = false;
     //[SerializeField] private bool perPattern = false;
     private void Awake()
@@ -118,6 +123,22 @@ public class BarManipulator : Singleton<BarManipulator>
         if (focusBubbleIndex >= focusBubbleObjects.Length)
         {
             focusBubbleIndex = 0;
+        }
+    }
+
+    public IEnumerator FadeOut (GameObject x)
+    {
+        Image y = x.GetComponent<Image>();
+        visible = new Color(y.color.r, y.color.g, y.color.b, 1f);
+        invisible = new Color(y.color.r, y.color.g, y.color.b, 0f);
+        y.color = visible; //set visible
+        fadeElapsedTime = 0f;
+        while (fadeElapsedTime < fadeDuration)
+        {
+            fadeElapsedTime += Time.deltaTime;
+            float percentageCompleted = fadeElapsedTime / fadeDuration;
+            y.color = Color.Lerp(visible, invisible, percentageCompleted);
+            yield return null;
         }
     }
 }

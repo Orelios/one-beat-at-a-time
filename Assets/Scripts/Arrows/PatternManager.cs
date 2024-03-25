@@ -117,17 +117,13 @@ public class PatternManager : Singleton<PatternManager>
                 {
                     if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Study)
                     {
-                        BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex].SetActive(false);
+                        BarManipulator.Instance.StartCoroutine(BarManipulator.Instance.FadeOut(BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex]));
                         BarManipulator.Instance.CycleStudyBubbleIndex();
-                        BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex].SetActive(true);
-                        Debug.Log("focus");
                     }
                     else if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Focus)
                     {
-                        BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex].SetActive(false);
+                        BarManipulator.Instance.StartCoroutine(BarManipulator.Instance.FadeOut(BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex]));
                         BarManipulator.Instance.CycleFocusBubbleIndex();
-                        BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex].SetActive(true);
-                        Debug.Log("focus");
                     }
                     LoopPatternArray();
                 }
@@ -135,17 +131,13 @@ public class PatternManager : Singleton<PatternManager>
                 {
                     if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Study)
                     {
-                        BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex].SetActive(false);
+                        BarManipulator.Instance.StartCoroutine(BarManipulator.Instance.FadeOut(BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex]));
                         BarManipulator.Instance.CycleStudyBubbleIndex();
-                        BarManipulator.Instance.studyBubbleObjects[BarManipulator.Instance.studyBubbleIndex].SetActive(true);
-                        Debug.Log("focus");
                     }
                     else if (BarManipulator.Instance.barEnum == BarManipulator.Bars.Focus)
                     {
-                        BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex].SetActive(false);
+                        BarManipulator.Instance.StartCoroutine(BarManipulator.Instance.FadeOut(BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex]));
                         BarManipulator.Instance.CycleFocusBubbleIndex();
-                        BarManipulator.Instance.focusBubbleObjects[BarManipulator.Instance.focusBubbleIndex].SetActive(true);
-                        Debug.Log("focus");
                     }
                     StartCoroutine(Pulse(_patternCurrent));
                     //NextPatternSequence is called after pulse finishes inside Pulse coroutine
