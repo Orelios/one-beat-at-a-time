@@ -18,6 +18,7 @@ public class PlayerArrowInput : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+                SoundEffectManager.Instance.PlayInputSound();
                 SendPlayerArrowInput(Arrows.Up, 0, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
                 //IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Up);
@@ -26,6 +27,7 @@ public class PlayerArrowInput : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
+                SoundEffectManager.Instance.PlayInputSound();
                 SendPlayerArrowInput(Arrows.Down, 1, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
                 //IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Down);
@@ -34,6 +36,7 @@ public class PlayerArrowInput : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
+                SoundEffectManager.Instance.PlayInputSound();
                 SendPlayerArrowInput(Arrows.Left, 2, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
                 //IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Left);
@@ -42,6 +45,7 @@ public class PlayerArrowInput : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
+                SoundEffectManager.Instance.PlayInputSound();
                 SendPlayerArrowInput(Arrows.Right, 3, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
                 //IndicatorImage.Instance.ChangeIndicatorImage(Arrows.Right);
@@ -53,6 +57,8 @@ public class PlayerArrowInput : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+                SoundEffectManager.Instance.PlayMissSound();
+                if (PatternManager.Instance.GetComponent<CatSpriteChanger>() != null) { CatSpriteChanger.Instance.CatEarlyOrLate(); }
                 Player.Instance.canPress = false;
                 SendPlayerArrowInput(Arrows.Up, 0, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
@@ -61,6 +67,8 @@ public class PlayerArrowInput : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
+                SoundEffectManager.Instance.PlayMissSound();
+                if (PatternManager.Instance.GetComponent<CatSpriteChanger>() != null) { CatSpriteChanger.Instance.CatEarlyOrLate(); }
                 Player.Instance.canPress = false;
                 SendPlayerArrowInput(Arrows.Down, 1, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
@@ -69,6 +77,8 @@ public class PlayerArrowInput : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
+                SoundEffectManager.Instance.PlayMissSound();
+                if (PatternManager.Instance.GetComponent<CatSpriteChanger>() != null) { CatSpriteChanger.Instance.CatEarlyOrLate(); }
                 Player.Instance.canPress = false;
                 SendPlayerArrowInput(Arrows.Left, 2, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
@@ -77,6 +87,8 @@ public class PlayerArrowInput : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
+                SoundEffectManager.Instance.PlayMissSound();
+                if(PatternManager.Instance.GetComponent<CatSpriteChanger>() != null) { CatSpriteChanger.Instance.CatEarlyOrLate(); }
                 Player.Instance.canPress = false;
                 SendPlayerArrowInput(Arrows.Right, 3, Player.Instance.canPress);
                 //IndicatorColor.Instance.ChangeIndicatorColor();
