@@ -41,5 +41,6 @@ public class IndicatorAboveImage : Singleton<IndicatorAboveImage>
     {
         GetComponent<SpriteRenderer>().sprite = aboveImageIndicator[3];
         //GetComponent<SpriteRenderer>().color = Color.red;
+        StartCoroutine(RetrunToOriginal());
     }
 }
