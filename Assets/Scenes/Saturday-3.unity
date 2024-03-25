@@ -4973,7 +4973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &983870851
 Light:
   m_ObjectHideFlags: 0
@@ -5947,6 +5947,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211309790}
   m_CullTransparentMesh: 1
+--- !u!1001 &1212201886
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 699990665501209262, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032530083533857110, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032530083533857110, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.368844
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032530083533857110, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.5108404
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032530083533857110, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032530083533857110, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032530083533857110, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032530083533857110, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032530083533857110, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032530083533857110, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032530083533857110, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247004459111039018, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489518667413600923, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179129229144993151, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_Name
+      value: Evening Lighting
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052614547311969761, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3094ece0587ef4348b5c1581427b4f66, type: 3}
 --- !u!1 &1231815947
 GameObject:
   m_ObjectHideFlags: 0
@@ -15588,3 +15661,4 @@ SceneRoots:
   - {fileID: 1893050413}
   - {fileID: 2139510839}
   - {fileID: 2132404877}
+  - {fileID: 1212201886}
