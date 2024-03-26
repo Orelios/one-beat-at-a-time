@@ -7,6 +7,7 @@ public class PatternManager : Singleton<PatternManager>
 {
     [SerializeField] private Sprite[] _correctArrowSprites; //must be set in inspector UP/DOWN/LEFT/RIGHT
     [SerializeField] private Sprite[] _incorrectArrowSprites; //must be set in inspector UP/DOWN/LEFT/RIGHT/MISS
+    public Sprite blank;
     [SerializeField] private Arrows[] _arrowInputEnums; //for pattern comparison later - can delete if not needed
     public PatternsScriptableObjects[] _patterns;
     [System.NonSerialized] public GameObject _patternCurrent, _patternPreview, _patternSliding;
@@ -105,6 +106,7 @@ public class PatternManager : Singleton<PatternManager>
                 else //last pattern wrong arrow pressed
                 {
                     //Debug.Log("incorrect. loop");
+                    IndicatorAboveImage.Instance.MissChangeAboveIndicatorImage();
                     _patternCurrent.transform.GetChild(_arrowIndex).GetComponent<Image>().sprite
                         = _incorrectArrowSprites[x]; //change current ARROW to wrong version
                     if (_patterns[_patternIndex].arrowsPattern[_arrowIndex] != arrow) { checkTimingValueDec(); }
@@ -220,7 +222,7 @@ public class PatternManager : Singleton<PatternManager>
     {
         for (int i = 0; i < _patterns[0].iconPatterns.Length; i++) //uses _patterns[0] because _patternIndex is irrelevant, only needs iconPatterns.Length
         {
-            pattern.transform.GetChild(i).GetComponent<Image>().sprite = null;
+            pattern.transform.GetChild(i).GetComponent<Image>().sprite = blank;
         }
     }
 
