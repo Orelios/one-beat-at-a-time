@@ -211,7 +211,7 @@ public class PatternManager : Singleton<PatternManager>
         for (int i = 0; i < _patterns[_patternIndex].iconPatterns.Length; i++)
         {
             pattern.transform.GetChild(i).GetComponent<Image>().sprite
-                = _patterns[_patternIndex].iconPatterns[i].GetComponent<Image>().sprite;
+                = _patterns[_patternIndex].iconPatterns[i].GetComponent<SpriteRenderer>().sprite;
         }
     }
     #endregion

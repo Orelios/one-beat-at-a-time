@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2273812142642361110}
   - component: {fileID: 4136293642446915735}
   m_Layer: 0
-  m_Name: Note80
+  m_Name: CatNote80 test
   m_TagString: Notes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -645595251, guid: 170c59eaf9a00fa41909525a5b9aae32, type: 3}
+  m_Sprite: {fileID: 507283501, guid: 7a56f5bf2ef20384b82ec1dc8cdc0b5a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -155,7 +155,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.0898519, y: 0}
+  m_Offset: {x: -2.388995, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -166,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8202962, y: 9.6}
+  m_Size: {x: 0.028277874, y: 9.6}
   m_EdgeRadius: 0
 --- !u!114 &-6134245802637037321
 MonoBehaviour:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e635ccf6f7366498cb86c399b7304b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteSpeed: 6400
+  noteSpeed: 4800
   despawnTimer: 7
 --- !u!114 &2273812142642361110
 MonoBehaviour:
