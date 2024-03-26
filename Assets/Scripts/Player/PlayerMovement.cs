@@ -62,9 +62,9 @@ public class PlayerMovement : Singleton<PlayerMovement>
 
     private void EnsurePlayerNotBelowGround()
     {
-        if (transform.position.y < groundDistance)
+        if (transform.position.y < groundDistance + 0.1f)
         {
-            transform.position = new Vector3(transform.position.x, groundDistance, transform.position.z);
+            transform.position = new Vector3(transform.position.x, groundDistance + 0.1f, transform.position.z);
         }
     }
 }
