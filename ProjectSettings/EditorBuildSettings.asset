@@ -33,6 +33,6 @@ EditorBuildSettings:
     path: Assets/Scenes/EndOfDay.unity
     guid: 5ac37664be8fbca46af2bdde476941e7
   - enabled: 1
-    path: Assets/Scenes/Self-Study-Sat-2 1.unity
-    guid: 50d5ad02b2a74674292c99d17a08cd86
+    path: Assets/Scenes/Self-Study-Sat-3.unity
+    guid: a14fc68ad7551fd48b6eea7e29a326d5
   m_configObjects: {}
