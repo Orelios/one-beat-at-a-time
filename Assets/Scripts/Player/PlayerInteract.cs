@@ -73,7 +73,14 @@ public class PlayerInteract : MonoBehaviour
                         PlayerData.Instance.AddMentalHealth(-5);
                     }
                     PlayerData.Instance.Save();
-                    scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber); 
+                    if (other.GetComponent<GoToEndOfDay>() != null)
+                    {
+                        other.GetComponent<GoToEndOfDay>().PlayTimeline();
+                    }
+                    else
+                    {
+                        scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                    }
                 }
             }
             //ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
