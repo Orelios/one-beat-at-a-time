@@ -3134,8 +3134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5011c5d37e633d40867d96635e8c8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _duration: 1
-  desiredOpacity: 168
+  _duration: 3
+  desiredOpacity: 255
 --- !u!1 &468998541
 GameObject:
   m_ObjectHideFlags: 0
