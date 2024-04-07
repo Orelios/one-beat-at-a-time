@@ -47,7 +47,15 @@ public class PlayerInteract : MonoBehaviour
                     Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
                 {
                     PlayerData.Instance.Save();
-                    scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                    if (other.GetComponent<ZoomToMonitors>() != null)
+                    {
+                        other.GetComponent<ZoomToMonitors>().PlayTimeline();
+                        //scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                    }
+                    else
+                    {
+                        scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                    }
                 }
                 else if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot < 
                     Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
