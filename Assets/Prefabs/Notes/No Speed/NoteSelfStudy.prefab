@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 826033057202046527}
   - component: {fileID: 9170060607075265274}
   - component: {fileID: 3843916537991337237}
+  - component: {fileID: 1055007125387079780}
   m_Layer: 5
   m_Name: NoteSelfStudy
-  m_TagString: Untagged
+  m_TagString: Notes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,3 +150,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.6, y: 8.35}
   m_EdgeRadius: 0
+--- !u!114 &1055007125387079780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367385006264602081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba6921f3528d04e9e6204fb88407d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timingValue: 1
