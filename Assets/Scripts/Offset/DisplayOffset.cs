@@ -12,12 +12,24 @@ public class DisplayOffset : MonoBehaviour
     private void Awake()
     {
         text = GetComponent<TextMeshProUGUI>();
-        text.text = "" + offsetValue.ToString("F1");
+        text.text = "" + offsetValue;
+    }
+
+    public void RoundOffsetTo1Decimal()
+    {
+        offsetValue = Mathf.Round(offsetValue * 10.0f) * 0.1f;
     }
 
     public void UpdateValue()
     {
-        text.text = "" + offsetValue.ToString("F1");
+        RoundOffsetTo1Decimal();
+        text.text = "" + offsetValue;
+    }
+
+    public void SaveOffset()
+    {
+        RoundOffsetTo1Decimal();
+        PlayerData.Instance.offset = offsetValue;
     }
 
     public void IncreaseSmall()
