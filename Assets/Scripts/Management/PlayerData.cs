@@ -17,6 +17,7 @@ public class PlayerData : Singleton<PlayerData>
     public float maxAcademics;
     public float timeslot;
     public int day;
+    public float offset;
 
     public void Save()
     {
@@ -31,6 +32,7 @@ public class PlayerData : Singleton<PlayerData>
         playerDataJson.Add("keyMaxAcademics", maxAcademics);
         playerDataJson.Add("keyTimeslot", timeslot);
         playerDataJson.Add("keyDay", day);
+        playerDataJson.Add("keyOffset", offset);
 
         //POSITION
         JSONArray position = new JSONArray();
@@ -61,6 +63,7 @@ public class PlayerData : Singleton<PlayerData>
         maxAcademics = playerDataJson["keyMaxAcademics"];
         timeslot = playerDataJson["keyTimeslot"];
         day = playerDataJson["keyDay"];
+        offset = playerDataJson["keyOffset"];
 
         //POSITION
         transform.position = new Vector3(
