@@ -6,9 +6,9 @@ public class NoteSpawner : MonoBehaviour
 {
     public GameObject detector;
     public GameObject notes;
-    private float distance;
+    public float distance;
     public float travelTime;
-    private float noteSpeed;
+    public float noteSpeed;
 
     private void Start()
     {
@@ -16,6 +16,7 @@ public class NoteSpawner : MonoBehaviour
         {
             detector = GameObject.Find("/NoteManager/NoteDetector");
         }
+        //distance = this.gameObject.transform.localPosition.x;
     }
 
     public void spawnNotes()
