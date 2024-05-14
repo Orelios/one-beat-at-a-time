@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class OffsetNoteDetection : Singleton<OffsetNoteDetection>
+public class OffsetNoteDetection : MonoBehaviour
 {
     public GameObject noteInDetector = null;
     public bool _readyToChangePattern = true;

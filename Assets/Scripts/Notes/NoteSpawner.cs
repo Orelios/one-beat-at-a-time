@@ -10,24 +10,24 @@ public class NoteSpawner : MonoBehaviour
     public float travelTime;
     public float noteSpeed;
 
-    private void Start()
+    private void OnEnable()
     {
         if (detector == null)
         {
             detector = GameObject.Find("/NoteManager/NoteDetector");
         }
-        //distance = this.gameObject.transform.localPosition.x;
+        UpdateSettings();
     }
 
-    public void spawnNotes()
+    public void UpdateSettings()
     {
-        //Distance = Vector3.Distance(Object1.transform.position, Object2.transform.position);
         distance = Vector3.Distance(detector.transform.position, this.gameObject.transform.position);
         noteSpeed = distance / travelTime;
+    }
+
+    public void SpawnNotes()
+    {
         GameObject noteInstance = Instantiate(notes, transform.position, transform.rotation, this.gameObject.transform);
         noteInstance.GetComponent<Rigidbody2D>().velocity = new Vector3(-noteSpeed, 0, 0);
-        //old code
-        //Instantiate(notes, transform.position, transform.rotation, GameObject.FindGameObjectWithTag("NoteSpawner").transform); 
-        //Debug.Log("Spawned a note"); 
     }
 }

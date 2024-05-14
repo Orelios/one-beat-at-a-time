@@ -4,55 +4,55 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DisplayOffset : MonoBehaviour
+public class DisplayOffsetPosition : Singleton<DisplayOffsetPosition>
 {
     TextMeshProUGUI text;
-    public float offsetValue;
+    public float offsetPosValue;
 
     private void Awake()
     {
         text = GetComponent<TextMeshProUGUI>();
-        text.text = "" + offsetValue;
+        text.text = "" + offsetPosValue;
     }
 
     public void RoundOffsetTo1Decimal()
     {
-        offsetValue = Mathf.Round(offsetValue * 10.0f) * 0.1f;
+        offsetPosValue = Mathf.Round(offsetPosValue * 10.0f) * 0.1f;
     }
 
     public void UpdateValue()
     {
         RoundOffsetTo1Decimal();
-        text.text = "" + offsetValue;
+        text.text = "" + offsetPosValue;
     }
 
     public void SaveOffset()
     {
         RoundOffsetTo1Decimal();
-        PlayerData.Instance.offset = offsetValue;
+        PlayerData.Instance.offset = offsetPosValue;
     }
 
     public void IncreaseSmall()
     {
-        offsetValue += 0.1f;
+        offsetPosValue += 0.1f;
         UpdateValue();
     }
 
     public void IncreaseBig()
     {
-        offsetValue += 1.0f;
+        offsetPosValue += 1.0f;
         UpdateValue();
     }
 
     public void DecreaseSmall()
     {
-        offsetValue -= 0.1f;
+        offsetPosValue -= 0.1f;
         UpdateValue();
     }
 
     public void DecreaseBig()
     {
-        offsetValue -= 1.0f;
+        offsetPosValue -= 1.0f;
         UpdateValue();
     }
 }
