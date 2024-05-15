@@ -12645,7 +12645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1574749443
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19593,6 +19593,7 @@ MonoBehaviour:
   startXPos: 0
   startPosition: {x: 0, y: 0, z: 0}
   relativeNoteSpeed: 0
+  startSpeed: 0
 --- !u!1 &1845011478
 GameObject:
   m_ObjectHideFlags: 0
