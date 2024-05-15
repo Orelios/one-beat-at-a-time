@@ -8,21 +8,25 @@ public class BeatManager : Singleton<BeatManager>
     [SerializeField] private float startTime;
     [SerializeField] private float stressedSpeed = 2.0f;
     [SerializeField] private float _bpm;
-    [SerializeField] private AudioSource _audioSource;
+    public AudioSource audioSource;
     [SerializeField] private Intervals[] _intervals;
 
     private void OnAwake()
     {
-        _audioSource.time = startTime;
-        _audioSource.Play();
+        if (audioSource == null)
+        {
+            audioSource = this.GetComponent<AudioSource>();
+        }
+        audioSource.time = startTime;
+        audioSource.Play();
     }
     
     private void Update()
     {
         foreach(Intervals interval in _intervals)
         {
-            float sampledTime = (_audioSource.timeSamples /
-                (_audioSource.clip.frequency * interval.getIntervalLength(_bpm)));
+            float sampledTime = (audioSource.timeSamples /
+                (audioSource.clip.frequency * interval.getIntervalLength(_bpm)));
             interval.CheckForNewInterval(sampledTime); 
         }
         //checkPitch();
@@ -30,13 +34,13 @@ public class BeatManager : Singleton<BeatManager>
 
     private void checkPitch()
     {
-        if (MentalHealth.Instance.isStressed == false && _audioSource.pitch != 1)
+        if (MentalHealth.Instance.isStressed == false && audioSource.pitch != 1)
         {
-            _audioSource.pitch = 1;
+            audioSource.pitch = 1;
         }
-        else if (MentalHealth.Instance.isStressed == true && _audioSource.pitch != stressedSpeed)
+        else if (MentalHealth.Instance.isStressed == true && audioSource.pitch != stressedSpeed)
         {
-            _audioSource.pitch = stressedSpeed;
+            audioSource.pitch = stressedSpeed;
         }
     }
 }
