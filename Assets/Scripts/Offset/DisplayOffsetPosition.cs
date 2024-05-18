@@ -29,7 +29,7 @@ public class DisplayOffsetPosition : Singleton<DisplayOffsetPosition>
     public void SaveOffset()
     {
         RoundOffsetTo1Decimal();
-        PlayerData.Instance.offset = offsetPosValue;
+        PlayerData.Instance.offsetPos = offsetPosValue;
     }
 
     public void IncreaseSmall()

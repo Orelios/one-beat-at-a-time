@@ -25,7 +25,7 @@ public class OffsetNoteSpawner : Singleton<OffsetNoteSpawner>
         startPosition = new Vector3(defaultXPos, 0, 0);
             //this.gameObject.transform.localPosition;
 
-        /* //if player has adjusted offset, default will not match start, so position will reflect adjusted offset
+        /* //if player has adjusted offsetPos, default will not match start, so position will reflect adjusted offsetPos
         if (defaultXPos != startPosition.x)
         {
             this.gameObject.transform.localPosition = startPosition;
@@ -45,7 +45,7 @@ public class OffsetNoteSpawner : Singleton<OffsetNoteSpawner>
     private void CalculateDefaultSpeed() //no longer used so that note speed is constant for all
     {
         //defaultNoteSpeed is the speed it takes for the note to travel from defaultPosition of Spawner to Detector in travelTimeFrom1200
-        //if travelTimeFrom1200 is 2, it will take the note 2 seconds to travel from defaultPosition (not offset) to detector
+        //if travelTimeFrom1200 is 2, it will take the note 2 seconds to travel from defaultPosition (not offsetPos) to detector
         distance = Vector3.Distance(offsetDetector.transform.position, this.gameObject.transform.position);
         defaultNoteSpeed = distance / travelTimeFrom1200;
 

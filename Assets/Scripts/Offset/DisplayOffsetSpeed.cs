@@ -29,7 +29,7 @@ public class DisplayOffsetSpeed : Singleton<DisplayOffsetSpeed>
     public void SaveOffset()
     {
         RoundOffsetTo1Decimal();
-        PlayerData.Instance.offset = offsetSpeedValue;
+        PlayerData.Instance.offsetNoteSpeed = offsetSpeedValue;
     }
 
     public void IncreaseSmall()
