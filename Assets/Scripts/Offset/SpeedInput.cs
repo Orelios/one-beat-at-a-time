@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpeedInput : MonoBehaviour
+public class SpeedInput : Singleton<SpeedInput>
 {
     public float offsetSpeedValue;
     public InputField inputField;

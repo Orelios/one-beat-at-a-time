@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PositionInput : MonoBehaviour
+public class PositionInput : Singleton<PositionInput>
 {
     public float offsetPosValue;
     //public string inputValue;
