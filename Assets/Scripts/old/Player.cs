@@ -26,4 +26,8 @@ public class Player : MonoBehaviour
     {
         
     }
+    public void CanPressFalse()
+    {
+        canPress = false; 
+    }
 }
