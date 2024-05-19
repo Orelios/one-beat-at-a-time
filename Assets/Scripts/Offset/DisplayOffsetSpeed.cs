@@ -34,6 +34,13 @@ public class DisplayOffsetSpeed : Singleton<DisplayOffsetSpeed>
         PlayerPrefs.SetFloat("offsetNoteSpeed", offsetSpeedValue);
     }
 
+    public void ResetOffset()
+    {
+        PlayerPrefs.SetFloat("offsetNoteSpeed", 0.0f);
+        offsetSpeedValue = PlayerPrefs.GetFloat("offsetNoteSpeed");
+        UpdateValue();
+    }
+
     public void IncreaseSmall()
     {
         offsetSpeedValue += 0.1f;

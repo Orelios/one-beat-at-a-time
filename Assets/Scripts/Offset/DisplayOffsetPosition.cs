@@ -34,6 +34,13 @@ public class DisplayOffsetPosition : Singleton<DisplayOffsetPosition>
         PlayerPrefs.SetFloat("offsetPos", offsetPosValue);
     }
 
+    public void ResetOffset()
+    {
+        PlayerPrefs.SetFloat("offsetPos", 0.0f);
+        offsetPosValue = PlayerPrefs.GetFloat("offsetPos");
+        UpdateValue();
+    }
+
     public void IncreaseSmall()
     {
         offsetPosValue += 0.1f;
