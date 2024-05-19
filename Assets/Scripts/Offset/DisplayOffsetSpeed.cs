@@ -9,8 +9,9 @@ public class DisplayOffsetSpeed : Singleton<DisplayOffsetSpeed>
     TextMeshProUGUI text;
     public float offsetSpeedValue;
 
-    private void Awake()
+    private void OnEnable()
     {
+        offsetSpeedValue = PlayerPrefs.GetFloat("offsetNoteSpeed");
         text = GetComponent<TextMeshProUGUI>();
         text.text = "" + offsetSpeedValue;
     }
@@ -29,7 +30,8 @@ public class DisplayOffsetSpeed : Singleton<DisplayOffsetSpeed>
     public void SaveOffset()
     {
         RoundOffsetTo1Decimal();
-        PlayerData.Instance.offsetNoteSpeed = offsetSpeedValue;
+        //PlayerData.Instance.offsetNoteSpeed = offsetSpeedValue;
+        PlayerPrefs.SetFloat("offsetNoteSpeed", offsetSpeedValue);
     }
 
     public void IncreaseSmall()

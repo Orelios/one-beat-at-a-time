@@ -9,8 +9,9 @@ public class DisplayOffsetPosition : Singleton<DisplayOffsetPosition>
     TextMeshProUGUI text;
     public float offsetPosValue;
 
-    private void Awake()
+    private void OnEnable()
     {
+        offsetPosValue = PlayerPrefs.GetFloat("offsetPos");
         text = GetComponent<TextMeshProUGUI>();
         text.text = "" + offsetPosValue;
     }
@@ -29,7 +30,8 @@ public class DisplayOffsetPosition : Singleton<DisplayOffsetPosition>
     public void SaveOffset()
     {
         RoundOffsetTo1Decimal();
-        PlayerData.Instance.offsetPos = offsetPosValue;
+        //PlayerData.Instance.offsetPos = offsetPosValue;
+        PlayerPrefs.SetFloat("offsetPos", offsetPosValue);
     }
 
     public void IncreaseSmall()

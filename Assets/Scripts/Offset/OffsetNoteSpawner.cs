@@ -22,8 +22,10 @@ public class OffsetNoteSpawner : Singleton<OffsetNoteSpawner>
             offsetDetector = GameObject.Find("OffsetNoteDetector");
         }
         //if player has calibrated offset, position and note speed will reflect the new values, otherwise offset values will be zero
-        this.gameObject.transform.localPosition = new Vector3(defaultXPos + PlayerData.Instance.offsetPos, 0, 0);
-        noteSpeed = defaultNoteSpeed + PlayerData.Instance.offsetNoteSpeed;
+        //this.gameObject.transform.localPosition = new Vector3(defaultXPos + PlayerData.Instance.offsetPos, 0, 0);
+        this.gameObject.transform.localPosition = new Vector3(defaultXPos + PlayerPrefs.GetFloat("offsetPos"), 0, 0);
+        //noteSpeed = defaultNoteSpeed + PlayerData.Instance.offsetNoteSpeed;
+        noteSpeed = defaultNoteSpeed + PlayerPrefs.GetFloat("offsetNoteSpeed");
 
         //startPosition is for developer reference on defaults. MUST REMOVE OR PRIVATE before playtesting
         startPosition = this.gameObject.transform.localPosition;
