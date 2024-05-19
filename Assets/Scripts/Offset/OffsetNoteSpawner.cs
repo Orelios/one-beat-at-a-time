@@ -13,7 +13,7 @@ public class OffsetNoteSpawner : Singleton<OffsetNoteSpawner>
     public float defaultXPos;
     public Vector3 startPosition;
     public float defaultNoteSpeed;
-    public float multiplier;
+    //public float multiplier;
 
     private void OnEnable()
     {
@@ -49,12 +49,12 @@ public class OffsetNoteSpawner : Singleton<OffsetNoteSpawner>
 
     public void UpdatePosition()
     {
-        this.gameObject.transform.localPosition = new Vector3(defaultXPos + (PositionInput.Instance.offsetPosValue * multiplier), this.gameObject.transform.localPosition.y, 0);
+        this.gameObject.transform.localPosition = new Vector3(defaultXPos + (PositionInput.Instance.offsetPosValue), this.gameObject.transform.localPosition.y, 0);
     }
 
     public void UpdateSpeed()
     {
-        noteSpeed = defaultNoteSpeed + (SpeedInput.Instance.offsetSpeedValue * multiplier);
+        noteSpeed = defaultNoteSpeed + (SpeedInput.Instance.offsetSpeedValue);
     }
 
     public void SpawnNotes()

@@ -11,7 +11,7 @@ public class NoteSpawner : MonoBehaviour
     public float noteSpeed;
     public float defaultXPos;
     public float defaultNoteSpeed = 166.25f;
-    public float multiplier = 10.0f;
+    //public float multiplier = 10.0f;
 
     private void OnEnable()
     {
@@ -19,7 +19,7 @@ public class NoteSpawner : MonoBehaviour
         {
             detector = GameObject.Find("/NoteManager/NoteDetector");
         }
-        this.gameObject.transform.localPosition = new Vector3(defaultXPos + PlayerPrefs.GetFloat("offsetPos") * multiplier, 0, 0);
+        this.gameObject.transform.localPosition = new Vector3(defaultXPos + PlayerPrefs.GetFloat("offsetPos"), 0, 0);
         noteSpeed = defaultNoteSpeed + PlayerPrefs.GetFloat("offsetNoteSpeed");
     }
 
@@ -31,12 +31,12 @@ public class NoteSpawner : MonoBehaviour
 
     public void UpdatePosition()
     {
-        this.gameObject.transform.localPosition = new Vector3(defaultXPos + (PlayerPrefs.GetFloat("offsetPos") * multiplier), this.gameObject.transform.localPosition.y, 0);
+        this.gameObject.transform.localPosition = new Vector3(defaultXPos + PlayerPrefs.GetFloat("offsetPos"), this.gameObject.transform.localPosition.y, 0);
     }
 
     public void UpdateSpeed()
     {
-        noteSpeed = defaultNoteSpeed + (PlayerPrefs.GetFloat("offsetNoteSpeed") * multiplier);
+        noteSpeed = defaultNoteSpeed + PlayerPrefs.GetFloat("offsetNoteSpeed");
     }
 
     public void SpawnNotes()
