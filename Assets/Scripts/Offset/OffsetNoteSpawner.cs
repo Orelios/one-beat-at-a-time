@@ -13,7 +13,7 @@ public class OffsetNoteSpawner : Singleton<OffsetNoteSpawner>
     public float defaultXPos;
     public Vector3 startPosition;
     public float defaultNoteSpeed;
-    public float multiplier = 10.0f;
+    public float multiplier;
 
     private void OnEnable()
     {
@@ -54,7 +54,7 @@ public class OffsetNoteSpawner : Singleton<OffsetNoteSpawner>
 
     public void UpdateSpeed()
     {
-        noteSpeed = defaultNoteSpeed + (DisplayOffsetSpeed.Instance.offsetSpeedValue * 10);
+        noteSpeed = defaultNoteSpeed + (DisplayOffsetSpeed.Instance.offsetSpeedValue * multiplier);
     }
 
     public void SpawnNotes()
