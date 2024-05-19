@@ -8249,10 +8249,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NoteManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2455481829842117199, guid: b8b8aba2dbcf9684e9e473edeaf0a8c9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 897
-      objectReference: {fileID: 0}
     - target: {fileID: 4139121471389702395, guid: b8b8aba2dbcf9684e9e473edeaf0a8c9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8332,10 +8328,6 @@ PrefabInstance:
     - target: {fileID: 4139121471389702395, guid: b8b8aba2dbcf9684e9e473edeaf0a8c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8437707023940875258, guid: b8b8aba2dbcf9684e9e473edeaf0a8c9, type: 3}
-      propertyPath: defaultXPos
-      value: 897
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

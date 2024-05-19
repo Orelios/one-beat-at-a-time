@@ -23,7 +23,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224819713005420992}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -316,7 +316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1200, y: 0}
+  m_AnchoredPosition: {x: 897, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5112382767185549408
@@ -371,9 +371,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detector: {fileID: 8617312295090698962}
   notes: {fileID: 6367385006264602081, guid: 2c03feae207264344ba15aeee547e822, type: 3}
-  distance: 0
-  travelTime: 2
   noteSpeed: 0
+  defaultXPos: 897
+  defaultNoteSpeed: 166.25
 --- !u!1 &7122062814888936401
 GameObject:
   m_ObjectHideFlags: 0
