@@ -31,37 +31,32 @@ public class BarManipulator : Singleton<BarManipulator>
 
     public void ChangeBar()
     {
-        if(Player.Instance.canPress == true)
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (Input.GetKeyDown(KeyCode.Tab))
+            if (PatternManager.Instance._patternIndex >= PatternManager.Instance._patterns.Length - 1)
             {
-                if (PatternManager.Instance._patternIndex >= PatternManager.Instance._patterns.Length - 1)
-                {
-                    PatternManager.Instance.LoopPatternArray();
-                }
-                else
-                {
-                    PatternManager.Instance.StartCoroutine(PatternManager.
-                        Instance.Pulse(PatternManager.Instance._patternCurrent));
-                }
-                if (_changeBar == false) //will change to focus bar
-                {
-                    _changeBar = true;
-                    PatternManager.Instance.ChangeBar(_changeBar);
-                    progressBar.currentProgressBarIndicator.gameObject.SetActive(false);
-                    focusBar.currentFocusBarIndicator.gameObject.SetActive(true);
-                    barEnum = Bars.Focus;
-                }
-                else if(_changeBar == true) // will change to progress bar
-                { 
-                    _changeBar = false;
-                    PatternManager.Instance.ChangeBar(_changeBar);
-                    progressBar.currentProgressBarIndicator.gameObject.SetActive(true);
-                    focusBar.currentFocusBarIndicator.gameObject.SetActive(false);
-                    barEnum = Bars.Study;
-                }
-                detector.DestroyNote();
-                Debug.Log(_changeBar);
+                PatternManager.Instance.LoopPatternArray();
+            }
+            else
+            {
+                PatternManager.Instance.StartCoroutine(PatternManager.
+                    Instance.Pulse(PatternManager.Instance._patternCurrent));
+            }
+            if (_changeBar == false) //will change to focus bar
+            {
+                _changeBar = true;
+                PatternManager.Instance.ChangeBar(_changeBar);
+                progressBar.currentProgressBarIndicator.gameObject.SetActive(false);
+                focusBar.currentFocusBarIndicator.gameObject.SetActive(true);
+                barEnum = Bars.Focus;
+            }
+            else if (_changeBar == true) // will change to progress bar
+            {
+                _changeBar = false;
+                PatternManager.Instance.ChangeBar(_changeBar);
+                progressBar.currentProgressBarIndicator.gameObject.SetActive(true);
+                focusBar.currentFocusBarIndicator.gameObject.SetActive(false);
+                barEnum = Bars.Study;
             }
         }
     }
