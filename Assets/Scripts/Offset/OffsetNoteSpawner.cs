@@ -13,6 +13,7 @@ public class OffsetNoteSpawner : Singleton<OffsetNoteSpawner>
     public float defaultXPos;
     public Vector3 startPosition;
     public float defaultNoteSpeed;
+    public float multiplier = 10.0f;
 
     private void OnEnable()
     {
@@ -20,20 +21,12 @@ public class OffsetNoteSpawner : Singleton<OffsetNoteSpawner>
         {
             offsetDetector = GameObject.Find("OffsetNoteDetector");
         }
-        //TEMPORARY - this is to see and set up defaults later. MUST REMOVE before playtesting
-        //defaultXPos = this.gameObject.transform.localPosition.x;
-        startPosition = new Vector3(defaultXPos, 0, 0);
-            //this.gameObject.transform.localPosition;
+        //if player has calibrated offset, position and note speed will reflect the new values, otherwise offset values will be zero
+        this.gameObject.transform.localPosition = new Vector3(defaultXPos + PlayerData.Instance.offsetPos, 0, 0);
+        noteSpeed = defaultNoteSpeed + PlayerData.Instance.offsetNoteSpeed;
 
-        /* //if player has adjusted offsetPos, default will not match start, so position will reflect adjusted offsetPos
-        if (defaultXPos != startPosition.x)
-        {
-            this.gameObject.transform.localPosition = startPosition;
-        }
-        */
-
-        //CalculateDefaultSpeed();
-        noteSpeed = defaultNoteSpeed;
+        //startPosition is for developer reference on defaults. MUST REMOVE OR PRIVATE before playtesting
+        startPosition = this.gameObject.transform.localPosition;
     }
 
     public void CalculateTravelTime()
@@ -51,15 +44,10 @@ public class OffsetNoteSpawner : Singleton<OffsetNoteSpawner>
 
         //for reference, using 166.25 as noteSpeed, it would take 2 secs from 1200 localPosition.x
     }
-    private void Update()
-    {
-        //it is necessary to update position every frame (or start of spawnNotes() so that calibration is reflected live
-        UpdatePosition();
-    }
 
     public void UpdatePosition()
     {
-        this.gameObject.transform.localPosition = new Vector3(defaultXPos + (DisplayOffsetPosition.Instance.offsetPosValue * 10), this.gameObject.transform.localPosition.y, 0);
+        this.gameObject.transform.localPosition = new Vector3(defaultXPos + (DisplayOffsetPosition.Instance.offsetPosValue * multiplier), this.gameObject.transform.localPosition.y, 0);
     }
 
     public void UpdateSpeed()
@@ -69,9 +57,15 @@ public class OffsetNoteSpawner : Singleton<OffsetNoteSpawner>
 
     public void SpawnNotes()
     {
+        //it is necessary to update position at the start of spawnNotes() (or every frame but will be less optimized) BEFORE instantiation or object pooling so that calibration is reflected live
+        UpdatePosition();
+
         GameObject offsetNoteInstance = Instantiate(notes, transform.position, transform.rotation, this.gameObject.transform);
+        
         //Update speed here to ensure new notes spawned will use new note speed
         UpdateSpeed();
+
+        //newly spawned notes will have their velocity set by noteSpeed
         offsetNoteInstance.GetComponent<Rigidbody2D>().velocity = new Vector3(-noteSpeed, 0, 0);
     }
 }
