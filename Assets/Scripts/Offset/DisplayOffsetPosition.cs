@@ -8,12 +8,15 @@ public class DisplayOffsetPosition : Singleton<DisplayOffsetPosition>
 {
     TextMeshProUGUI text;
     public float offsetPosValue;
+    //public TMP_InputField inputField;
+    public string inputField;
 
     private void OnEnable()
     {
         offsetPosValue = PlayerPrefs.GetFloat("offsetPos");
         text = GetComponent<TextMeshProUGUI>();
         text.text = "" + offsetPosValue;
+        //inputField = GetComponent<TMP_InputField>();
     }
 
     public void RoundOffsetTo1Decimal()
@@ -39,6 +42,15 @@ public class DisplayOffsetPosition : Singleton<DisplayOffsetPosition>
         PlayerPrefs.SetFloat("offsetPos", 0.0f);
         offsetPosValue = PlayerPrefs.GetFloat("offsetPos");
         UpdateValue();
+    }
+
+    public void AddInputField(string x)
+    {
+        inputField = x;
+        float input = float.Parse(inputField);
+        offsetPosValue += input;
+        UpdateValue();
+        //inputField = "";
     }
 
     public void IncreaseSmall()
