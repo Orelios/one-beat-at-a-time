@@ -18,7 +18,7 @@ public class NoteDetection : Singleton<NoteDetection>
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        noteInDetector = collision.GetComponent<NoteMovement>().gameObject;
+        noteInDetector = collision.gameObject;
         if (collision.gameObject.tag == "Notes")
         {
             Player.Instance.canPress = true;
