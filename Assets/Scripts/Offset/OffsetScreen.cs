@@ -8,6 +8,10 @@ public class OffsetScreen : MonoBehaviour
     {
         this.transform.GetChild(0).gameObject.SetActive(false);
         BeatManager.Instance.audioSource.UnPause();
+        foreach(Transform child in OffsetNoteSpawner.Instance.transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
     public void EnableOffsetScreen()
