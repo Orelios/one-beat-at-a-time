@@ -4450,6 +4450,10 @@ PrefabInstance:
       propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1683615281475503771, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 782.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2310884892216422264, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -4480,15 +4484,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3953052676829506070, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
       propertyPath: defaultXPos
-      value: 948
+      value: 782.1
       objectReference: {fileID: 0}
     - target: {fileID: 3953052676829506070, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
       propertyPath: startPosition.x
-      value: 948
+      value: 782.1
       objectReference: {fileID: 0}
     - target: {fileID: 3953052676829506070, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
       propertyPath: defaultNoteSpeed
-      value: 400
+      value: 330
+      objectReference: {fileID: 0}
+    - target: {fileID: 5433944662458596216, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6866080111147682493, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
       propertyPath: m_IsActive
