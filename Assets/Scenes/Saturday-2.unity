@@ -11453,7 +11453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee45a4eeed0b5db499a1498365c99e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detector: {fileID: 1606213662}
+  detector: {fileID: 1606213664}
   patternSpawner: []
   playerPressEvent:
     m_PersistentCalls:
@@ -11485,6 +11485,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  offsetSettings: {fileID: 1606213665}
 --- !u!4 &1441194548
 Transform:
   m_ObjectHideFlags: 0
@@ -12529,6 +12530,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6106004e3e97b9742840d28d32d196a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1606213665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6866080111147682493, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+  m_PrefabInstance: {fileID: 1606213661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1617251184 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d7f71efed1f158a468b7fe29da345896, type: 3}
