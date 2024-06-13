@@ -6,15 +6,16 @@ using UnityEngine;
 public class Breathing : MonoBehaviour
 {
     private float BeatManagerStep = 0.5f;
-    public float breathCount = 4;
     [SerializeField]
+    private float breathCount = 4;
     private float _breathDuration;
     [SerializeField]
-    private bool _inhaling, _exhaling, _holding;
-    [SerializeField]
+    private bool _inhaling, _exhaling, _holding, _inhaleFull, _holdFull;
     private Vector2 _startScale = new Vector2(1, 1), _endScale = new Vector2(5, 5);
-    private float percentageCompleted, stopwatch = 0f;
-    private Coroutine exhaleCo, inhaleCo;
+    private float inhalePercentageCompleted, exhalePercentageCompleted, inhaleCount, exhaleCount, holdCount;
+    private Coroutine exhaleCo, inhaleCo, holdCo;
+    [SerializeField]
+    private bool upPressed, downPressed;
     void Start()
     {
         _breathDuration = (60f / (BeatManager.Instance.GetBPM() * BeatManagerStep)) * breathCount;
@@ -22,27 +23,43 @@ public class Breathing : MonoBehaviour
         //exhaleCo = Exhale();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            CheckInhale();
+            upPressed = true;
+            if (!downPressed)
+            {
+                CheckInhale();
+            }
         }
-        
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
-            StopInhale();
+            upPressed = false;
         }
-
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            CheckExhale();
+            downPressed = true;
         }
-
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
-            StopExhale();
+            downPressed = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) && upPressed) // Down arrow pressed whil Up arrow is STILL pressed
+        {
+            if (!_inhaleFull) // Down arrow is pressed too early
+            {
+                StopInhale();
+                return;
+            }
+            CheckHold();
+        }
+
+        if (Input.GetKeyUp(KeyCode.UpArrow) && downPressed)
+        {
+            upPressed = false;
+            CheckExhale();
         }
     }
 
@@ -50,13 +67,22 @@ public class Breathing : MonoBehaviour
     {
         StopCoroutine(inhaleCo);
         _inhaling = false;
-        //transform.localScale = _startScale;
+        _inhaleFull = false;
+        transform.localScale = _startScale;
     }
 
     private void StopExhale()
     {
         StopCoroutine(exhaleCo);
         _exhaling = false;
+        transform.localScale = _startScale;
+    }
+
+    private void StopHold()
+    {
+        StopCoroutine(holdCo);
+        _holding = false;
+        //_holdFull = false;
         //transform.localScale = _startScale;
     }
 
@@ -71,33 +97,104 @@ public class Breathing : MonoBehaviour
 
     private void CheckExhale()
     {
-        if (!_exhaling)
+        if (!_exhaling && _holdFull)
         {
+            _holding = false;
+            _holdFull = false;
             _exhaling = true;
             exhaleCo = StartCoroutine(Exhale());
         }
+        else // exhaled too early
+        {
+            ResetState();
+        }
+    }
+
+    private void CheckHold()
+    {
+        if (!_holding && _inhaleFull)
+        {
+            _inhaleFull = false;
+            _holding = true;
+            holdCo = StartCoroutine(Hold());
+        }
+    }
+
+    private void ResetState()
+    {
+        transform.localScale = _startScale;
+        StopCoroutine(inhaleCo);
+        _inhaling = false;
+        _inhaleFull = false;
+
+        StopCoroutine(holdCo);
+        _holding = false;
+        _holdFull = false;
+
+        StopCoroutine(exhaleCo);
+        _exhaling = false;
     }
 
     private IEnumerator Inhale()
     {
-        stopwatch = 0;
-        while (stopwatch < _breathDuration)
+        inhaleCount = 0;
+        while (inhaleCount < _breathDuration)
         {
-            stopwatch += Time.deltaTime;
-            percentageCompleted = stopwatch / _breathDuration;
-            transform.localScale = Vector3.Lerp(_startScale, _endScale, percentageCompleted);
+            inhaleCount += Time.deltaTime;
+            inhalePercentageCompleted = inhaleCount / _breathDuration;
+            transform.localScale = Vector3.Lerp(_startScale, _endScale, inhalePercentageCompleted);
+            if (inhalePercentageCompleted >= 1.0f)
+            {
+                _inhaling = false;
+                _inhaleFull = true;
+            }
+            if (Input.GetKeyUp(KeyCode.UpArrow))
+            {
+                //upPressed = false;
+                StopInhale();
+            }
             yield return null;
         }
     }
 
     private IEnumerator Exhale()
     {
-        stopwatch = 0;
-        while (stopwatch < _breathDuration)
+        exhaleCount = 0;
+        while (exhaleCount < _breathDuration)
         {
-            stopwatch += Time.deltaTime;
-            percentageCompleted = stopwatch / _breathDuration;
-            transform.localScale = Vector3.Lerp(_endScale, _startScale, percentageCompleted);
+            exhaleCount += Time.deltaTime;
+            exhalePercentageCompleted = exhaleCount / _breathDuration;
+            transform.localScale = Vector3.Lerp(_endScale, _startScale, exhalePercentageCompleted);
+            if (exhalePercentageCompleted >= 1.0f)
+            {
+                _exhaling = false;
+                _holdFull = false;
+            }
+            if (Input.GetKeyUp(KeyCode.DownArrow))
+            {
+                //downPressed = false;
+                StopExhale();
+            }
+            yield return null;
+        }
+    }
+
+    private IEnumerator Hold()
+    {
+        holdCount = 0;
+        while (holdCount < _breathDuration)
+        {
+            holdCount += Time.deltaTime;
+            if (holdCount >= _breathDuration)
+            {
+                _holdFull = true;
+            }
+            // if Up/Down arrow is released WHILE still holding (i.e holdCount < _breathDuration), reset
+            if (Input.GetKeyUp(KeyCode.UpArrow)  || Input.GetKeyUp(KeyCode.DownArrow))
+            {
+                //downPressed = false;
+                ResetState();
+            }
             yield return null;
         }
     }
