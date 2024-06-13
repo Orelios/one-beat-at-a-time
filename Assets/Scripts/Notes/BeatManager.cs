@@ -43,6 +43,8 @@ public class BeatManager : Singleton<BeatManager>
             audioSource.pitch = stressedSpeed;
         }
     }
+
+    public float GetBPM() { return _bpm; }
 }
 
 [System.Serializable]
