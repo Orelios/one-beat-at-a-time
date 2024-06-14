@@ -7,18 +7,19 @@ public class Breathing : MonoBehaviour
 {
     private float BeatManagerStep = 0.5f;
     [SerializeField]
-    private float breathCount = 4;
-    private float _breathDuration;
+    private float breathCount = 4, _leewayCount = 2;
+    private float _breathDuration, _leewayDuration, _inhaleLeewayTimer, _holdLeewayTimer;
     [SerializeField]
     private bool _inhaling, _exhaling, _holding, _inhaleFull, _holdFull;
     private Vector2 _startScale = new Vector2(1, 1), _endScale = new Vector2(5, 5);
     private float inhalePercentageCompleted, exhalePercentageCompleted, inhaleCount, exhaleCount, holdCount;
-    private Coroutine exhaleCo, inhaleCo, holdCo;
+    private Coroutine exhaleCo, inhaleCo, holdCo, inhaleLeewayCo, holdLeewayCo;
     [SerializeField]
     private bool upPressed, downPressed;
     void Start()
     {
         _breathDuration = (60f / (BeatManager.Instance.GetBPM() * BeatManagerStep)) * breathCount;
+        _leewayDuration = (60f / (BeatManager.Instance.GetBPM() * BeatManagerStep)) * _leewayCount;
         //inhaleCo = Inhale();
         //exhaleCo = Exhale();
     }
@@ -158,6 +159,10 @@ public class Breathing : MonoBehaviour
             }
             yield return null;
         }
+        if ((inhaleCount >= _breathDuration) && !downPressed)
+        {
+            inhaleLeewayCo = StartCoroutine(InhaleLeewayTimer());
+        }
     }
 
     private IEnumerator Exhale()
@@ -193,12 +198,52 @@ public class Breathing : MonoBehaviour
                 _holdFull = true;
             }
             // if Up/Down arrow is released WHILE still holding (i.e holdCount < _breathDuration), reset
-            if (Input.GetKeyUp(KeyCode.UpArrow)  || Input.GetKeyUp(KeyCode.DownArrow))
+            if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
             {
                 //downPressed = false;
                 ResetState();
             }
             yield return null;
+        }
+        if ((holdCount >= _breathDuration) && upPressed)
+        {
+            holdLeewayCo = StartCoroutine(HoldLeewayTimer());
+        }
+    }
+
+    private IEnumerator InhaleLeewayTimer()
+    {
+        _inhaleLeewayTimer = 0;
+        while (_inhaleLeewayTimer < _leewayDuration)
+        {
+            _inhaleLeewayTimer += Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                StopCoroutine(inhaleLeewayCo);
+            }
+            yield return null;
+        }
+        if ((_inhaleLeewayTimer >= _leewayDuration) && !downPressed)
+        {
+            ResetState();
+        }
+    }
+
+    private IEnumerator HoldLeewayTimer()
+    {
+        _holdLeewayTimer = 0;
+        while (_holdLeewayTimer < _leewayDuration)
+        {
+            _holdLeewayTimer += Time.deltaTime;
+            if (Input.GetKeyUp(KeyCode.UpArrow))
+            {
+                StopCoroutine(holdLeewayCo);
+            }
+            yield return null;
+        }
+        if ((_holdLeewayTimer >= _leewayDuration) && upPressed)
+        {
+            ResetState();
         }
     }
 }
