@@ -46,6 +46,7 @@ public class Breathing : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
             downPressed = false;
+            _holdFull = false;
             StopHold();
             StopExhale();
         }
@@ -69,23 +70,23 @@ public class Breathing : MonoBehaviour
 
     private void StopInhale()
     {
-        StopCoroutine(inhaleCo);
+        transform.localScale = _startScale;
         _inhaling = false;
         _inhaleFull = false;
-        transform.localScale = _startScale;
+        if (inhaleCo != null) { StopCoroutine(inhaleCo);}
     }
 
     private void StopExhale()
     {
-        StopCoroutine(exhaleCo);
-        _exhaling = false;
         transform.localScale = _startScale;
+        _exhaling = false;
+        if (exhaleCo != null) { StopCoroutine(exhaleCo);}
     }
 
     private void StopHold()
     {
-        StopCoroutine(holdCo);
         _holding = false;
+        if (holdCo != null) { StopCoroutine(holdCo);}
         //_holdFull = false;
         //transform.localScale = _startScale;
     }
@@ -127,15 +128,15 @@ public class Breathing : MonoBehaviour
     private void ResetState()
     {
         transform.localScale = _startScale;
-        StopCoroutine(inhaleCo);
+        if (inhaleCo != null) { StopCoroutine(inhaleCo);}
         _inhaling = false;
         _inhaleFull = false;
 
-        StopCoroutine(holdCo);
+        if (holdCo != null) { StopCoroutine(holdCo);}
         _holding = false;
         _holdFull = false;
 
-        StopCoroutine(exhaleCo);
+        if (exhaleCo != null) { StopCoroutine(exhaleCo);}
         _exhaling = false;
     }
 
@@ -178,9 +179,8 @@ public class Breathing : MonoBehaviour
                 _exhaling = false;
                 _holdFull = false;
             }
-            if (Input.GetKeyUp(KeyCode.DownArrow))
+            if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow))
             {
-                //downPressed = false;
                 StopExhale();
             }
             yield return null;
