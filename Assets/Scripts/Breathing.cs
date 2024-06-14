@@ -36,6 +36,7 @@ public class Breathing : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             upPressed = false;
+            StopInhale();
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -44,6 +45,8 @@ public class Breathing : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
             downPressed = false;
+            StopHold();
+            StopExhale();
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow) && upPressed) // Down arrow pressed whil Up arrow is STILL pressed
