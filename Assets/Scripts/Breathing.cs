@@ -1,27 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Breathing : MonoBehaviour
 {
+    [SerializeField] private GameObject grows, ui;
     private float BeatManagerStep = 0.5f;
     [SerializeField]
     private float breathCount = 4, _leewayCount = 2;
     private float _breathDuration, _leewayDuration, _inhaleLeewayTimer, _holdLeewayTimer;
-    [SerializeField]
     private bool _inhaling, _exhaling, _holding, _inhaleFull, _holdFull;
     private Vector2 _startScale = new Vector2(1, 1), _endScale = new Vector2(5, 5);
     private float inhalePercentageCompleted, exhalePercentageCompleted, inhaleCount, exhaleCount, holdCount;
     private Coroutine exhaleCo, inhaleCo, holdCo, inhaleLeewayCo, holdLeewayCo;
-    [SerializeField]
     private bool upPressed, downPressed;
+    [SerializeField] private Sprite[] _instructionArrowSprites;
+    [SerializeField] private Sprite[] _correctArrowSprites;
+    [SerializeField] private Sprite[] _incorrectArrowSprites;
+
     void Start()
     {
         _breathDuration = (60f / (BeatManager.Instance.GetBPM() * BeatManagerStep)) * breathCount;
         _leewayDuration = (60f / (BeatManager.Instance.GetBPM() * BeatManagerStep)) * _leewayCount;
         //inhaleCo = Inhale();
         //exhaleCo = Exhale();
+        //SetHoldUI();
     }
 
     void Update()
@@ -70,7 +76,7 @@ public class Breathing : MonoBehaviour
 
     private void StopInhale()
     {
-        transform.localScale = _startScale;
+        grows.transform.localScale = _startScale;
         _inhaling = false;
         _inhaleFull = false;
         if (inhaleCo != null) { StopCoroutine(inhaleCo);}
@@ -78,7 +84,7 @@ public class Breathing : MonoBehaviour
 
     private void StopExhale()
     {
-        transform.localScale = _startScale;
+        grows.transform.localScale = _startScale;
         _exhaling = false;
         if (exhaleCo != null) { StopCoroutine(exhaleCo);}
     }
@@ -127,7 +133,7 @@ public class Breathing : MonoBehaviour
 
     private void ResetState()
     {
-        transform.localScale = _startScale;
+        grows.transform.localScale = _startScale;
         if (inhaleCo != null) { StopCoroutine(inhaleCo);}
         _inhaling = false;
         _inhaleFull = false;
@@ -147,7 +153,7 @@ public class Breathing : MonoBehaviour
         {
             inhaleCount += Time.deltaTime;
             inhalePercentageCompleted = inhaleCount / _breathDuration;
-            transform.localScale = Vector3.Lerp(_startScale, _endScale, inhalePercentageCompleted);
+            grows.transform.localScale = Vector3.Lerp(_startScale, _endScale, inhalePercentageCompleted);
             if (inhalePercentageCompleted >= 1.0f)
             {
                 _inhaling = false;
@@ -160,6 +166,7 @@ public class Breathing : MonoBehaviour
             }
             yield return null;
         }
+        SetHoldUI();
         if ((inhaleCount >= _breathDuration) && !downPressed)
         {
             inhaleLeewayCo = StartCoroutine(InhaleLeewayTimer());
@@ -173,7 +180,7 @@ public class Breathing : MonoBehaviour
         {
             exhaleCount += Time.deltaTime;
             exhalePercentageCompleted = exhaleCount / _breathDuration;
-            transform.localScale = Vector3.Lerp(_endScale, _startScale, exhalePercentageCompleted);
+            grows.transform.localScale = Vector3.Lerp(_endScale, _startScale, exhalePercentageCompleted);
             if (exhalePercentageCompleted >= 1.0f)
             {
                 _exhaling = false;
@@ -185,6 +192,7 @@ public class Breathing : MonoBehaviour
             }
             yield return null;
         }
+        SetInhaleUI();
     }
 
     private IEnumerator Hold()
@@ -205,6 +213,7 @@ public class Breathing : MonoBehaviour
             }
             yield return null;
         }
+        SetExhaleUI();
         if ((holdCount >= _breathDuration) && upPressed)
         {
             holdLeewayCo = StartCoroutine(HoldLeewayTimer());
@@ -245,5 +254,32 @@ public class Breathing : MonoBehaviour
         {
             ResetState();
         }
+    }
+
+    private void SetInhaleUI()
+    {
+        ui.transform.GetChild(1).GetComponent<Image>().sprite = _instructionArrowSprites[0];
+        ui.transform.GetChild(2).GetComponent<Image>().sprite = _instructionArrowSprites[2];
+        ui.transform.GetChild(3).GetComponent<Image>().sprite = _instructionArrowSprites[2];
+        ui.transform.GetChild(4).GetComponent<Image>().sprite = _instructionArrowSprites[0];
+        ui.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = "Inhale";
+    }
+
+    private void SetExhaleUI()
+    {
+        ui.transform.GetChild(1).GetComponent<Image>().sprite = _instructionArrowSprites[1];
+        ui.transform.GetChild(2).GetComponent<Image>().sprite = _instructionArrowSprites[2];
+        ui.transform.GetChild(3).GetComponent<Image>().sprite = _instructionArrowSprites[2];
+        ui.transform.GetChild(4).GetComponent<Image>().sprite = _instructionArrowSprites[1];
+        ui.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = "Exhale";
+    }
+
+    private void SetHoldUI()
+    {
+        ui.transform.GetChild(1).GetComponent<Image>().sprite = _instructionArrowSprites[2];
+        ui.transform.GetChild(2).GetComponent<Image>().sprite = _instructionArrowSprites[2];
+        ui.transform.GetChild(3).GetComponent<Image>().sprite = _instructionArrowSprites[2];
+        ui.transform.GetChild(4).GetComponent<Image>().sprite = _instructionArrowSprites[2];
+        ui.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = "Hold";
     }
 }
