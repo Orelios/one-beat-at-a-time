@@ -11,7 +11,7 @@ public class Breathing : MonoBehaviour
     private float BeatManagerStep = 0.5f;
     [SerializeField]
     private float breathCount = 4, _leewayCount = 2;
-    private float _breathDuration, _leewayDuration, _inhaleLeewayTimer, _holdLeewayTimer;
+    private float _breathDuration, _leewayDuration, _inhaleLeewayTimer, _holdLeewayTimer, _countUp1, _countUp2, _countUp3, _countUp4;
     private bool _inhaling, _exhaling, _holding, _inhaleFull, _holdFull;
     private Vector2 _startScale = new Vector2(1, 1), _endScale = new Vector2(5, 5);
     private float inhalePercentageCompleted, exhalePercentageCompleted, inhaleCount, exhaleCount, holdCount;
@@ -23,8 +23,20 @@ public class Breathing : MonoBehaviour
 
     void Start()
     {
+        /*
+         * NOTE: when new sprite for HOLD (both up and down AT THE SAME TIME) are added
+         * put them in _correctArrowSprites[3]
+         * (and maybe incorrect version as well, in which case _incorrectArrowSprites[3])
+         * 
+         * NOTE: incorrect sprites are not used because UI just resets back to Inhale
+         * can maybe later add a pulse coroutine where incorrect arrows are shown briefly
+        */
         _breathDuration = (60f / (BeatManager.Instance.GetBPM() * BeatManagerStep)) * breathCount;
         _leewayDuration = (60f / (BeatManager.Instance.GetBPM() * BeatManagerStep)) * _leewayCount;
+        _countUp1 = (60f / (BeatManager.Instance.GetBPM() * BeatManagerStep));
+        _countUp2 = _countUp1 * 2;
+        _countUp3 = _countUp1 * 3;
+        _countUp4 = _countUp1 * 4;
         //inhaleCo = Inhale();
         //exhaleCo = Exhale();
         //SetHoldUI();
@@ -43,7 +55,11 @@ public class Breathing : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             upPressed = false;
-            StopInhale();
+            //StopInhale();
+            if (!downPressed)
+            {
+                SetInhaleUI();
+            }
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -53,15 +69,17 @@ public class Breathing : MonoBehaviour
         {
             downPressed = false;
             _holdFull = false;
-            StopHold();
-            StopExhale();
+            //StopHold();
+            //StopExhale();
+            //ResetState();
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) && upPressed) // Down arrow pressed whil Up arrow is STILL pressed
+        if (Input.GetKeyDown(KeyCode.DownArrow) && upPressed) // Down arrow pressed while Up arrow is STILL pressed
         {
             if (!_inhaleFull) // Down arrow is pressed too early
             {
-                StopInhale();
+                //StopInhale();
+                ResetState();
                 return;
             }
             CheckHold();
@@ -134,6 +152,8 @@ public class Breathing : MonoBehaviour
     private void ResetState()
     {
         grows.transform.localScale = _startScale;
+        SetInhaleUI();
+
         if (inhaleCo != null) { StopCoroutine(inhaleCo);}
         _inhaling = false;
         _inhaleFull = false;
@@ -152,6 +172,24 @@ public class Breathing : MonoBehaviour
         while (inhaleCount < _breathDuration)
         {
             inhaleCount += Time.deltaTime;
+
+            if (inhaleCount >= _countUp4)
+            {
+                ui.transform.GetChild(4).GetComponent<Image>().sprite = _correctArrowSprites[0];
+            }
+            else if (inhaleCount >= _countUp3)
+            {
+                ui.transform.GetChild(3).GetComponent<Image>().sprite = _correctArrowSprites[2];
+            }
+            else if (inhaleCount >= _countUp2)
+            {
+                ui.transform.GetChild(2).GetComponent<Image>().sprite = _correctArrowSprites[2];
+            }
+            else if (inhaleCount >= _countUp1)
+            {
+                ui.transform.GetChild(1).GetComponent<Image>().sprite = _correctArrowSprites[0];
+            }
+
             inhalePercentageCompleted = inhaleCount / _breathDuration;
             grows.transform.localScale = Vector3.Lerp(_startScale, _endScale, inhalePercentageCompleted);
             if (inhalePercentageCompleted >= 1.0f)
@@ -162,7 +200,8 @@ public class Breathing : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.UpArrow))
             {
                 //upPressed = false;
-                StopInhale();
+                //StopInhale();
+                ResetState();
             }
             yield return null;
         }
@@ -179,6 +218,24 @@ public class Breathing : MonoBehaviour
         while (exhaleCount < _breathDuration)
         {
             exhaleCount += Time.deltaTime;
+
+            if (exhaleCount >= _countUp4)
+            {
+                ui.transform.GetChild(4).GetComponent<Image>().sprite = _correctArrowSprites[1];
+            }
+            else if (exhaleCount >= _countUp3)
+            {
+                ui.transform.GetChild(3).GetComponent<Image>().sprite = _correctArrowSprites[2];
+            }
+            else if (exhaleCount >= _countUp2)
+            {
+                ui.transform.GetChild(2).GetComponent<Image>().sprite = _correctArrowSprites[2];
+            }
+            else if (exhaleCount >= _countUp1)
+            {
+                ui.transform.GetChild(1).GetComponent<Image>().sprite = _correctArrowSprites[1];
+            }
+
             exhalePercentageCompleted = exhaleCount / _breathDuration;
             grows.transform.localScale = Vector3.Lerp(_endScale, _startScale, exhalePercentageCompleted);
             if (exhalePercentageCompleted >= 1.0f)
@@ -188,7 +245,8 @@ public class Breathing : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow))
             {
-                StopExhale();
+                //StopExhale();
+                ResetState();
             }
             yield return null;
         }
@@ -201,6 +259,24 @@ public class Breathing : MonoBehaviour
         while (holdCount < _breathDuration)
         {
             holdCount += Time.deltaTime;
+
+            if (holdCount >= _countUp4)
+            {
+                ui.transform.GetChild(4).GetComponent<Image>().sprite = _correctArrowSprites[3];
+            }
+            else if (holdCount >= _countUp3)
+            {
+                ui.transform.GetChild(3).GetComponent<Image>().sprite = _correctArrowSprites[2];
+            }
+            else if (holdCount >= _countUp2)
+            {
+                ui.transform.GetChild(2).GetComponent<Image>().sprite = _correctArrowSprites[2];
+            }
+            else if (holdCount >= _countUp1)
+            {
+                ui.transform.GetChild(1).GetComponent<Image>().sprite = _correctArrowSprites[3];
+            }
+
             if (holdCount >= _breathDuration)
             {
                 _holdFull = true;
@@ -226,9 +302,13 @@ public class Breathing : MonoBehaviour
         while (_inhaleLeewayTimer < _leewayDuration)
         {
             _inhaleLeewayTimer += Time.deltaTime;
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.DownArrow)) // start exhaling
             {
                 StopCoroutine(inhaleLeewayCo);
+            }
+            if (Input.GetKeyUp(KeyCode.UpArrow)) // stop inhaling
+            {
+                ResetState();
             }
             yield return null;
         }
@@ -244,9 +324,13 @@ public class Breathing : MonoBehaviour
         while (_holdLeewayTimer < _leewayDuration)
         {
             _holdLeewayTimer += Time.deltaTime;
-            if (Input.GetKeyUp(KeyCode.UpArrow))
+            if (Input.GetKeyUp(KeyCode.UpArrow)) // start exhaling
             {
                 StopCoroutine(holdLeewayCo);
+            }
+            if (Input.GetKeyUp(KeyCode.DownArrow)) // stop holding
+            {
+                ResetState();
             }
             yield return null;
         }

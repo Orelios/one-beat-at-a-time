@@ -1015,6 +1015,7 @@ MonoBehaviour:
   - {fileID: -1644852540, guid: 6f8e058cf1a67cc429b1bccb96f12666, type: 3}
   - {fileID: -330712456, guid: 6f8e058cf1a67cc429b1bccb96f12666, type: 3}
   - {fileID: 1540938031, guid: 6f8e058cf1a67cc429b1bccb96f12666, type: 3}
+  - {fileID: 1540938031, guid: 6f8e058cf1a67cc429b1bccb96f12666, type: 3}
   _incorrectArrowSprites:
   - {fileID: -74649179, guid: 6f8e058cf1a67cc429b1bccb96f12666, type: 3}
   - {fileID: 1991057661, guid: 6f8e058cf1a67cc429b1bccb96f12666, type: 3}
