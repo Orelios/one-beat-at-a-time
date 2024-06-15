@@ -56,4 +56,12 @@ public class IndicatorAboveImage : Singleton<IndicatorAboveImage>
         //GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(RetrunToOriginal());
     }
+
+    public void PerfectChangeAboveIndiCatorImage()
+    {
+        GetComponent<Image>().sprite = aboveImageIndicator[1];
+        GetComponent<Image>().preserveAspect = true;
+        //GetComponent<SpriteRenderer>().color = Color.red;
+        StartCoroutine(RetrunToOriginal());
+    }
 }

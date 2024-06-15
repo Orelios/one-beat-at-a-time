@@ -76,4 +76,9 @@ public class ProgressBar : Singleton<ProgressBar>
     {
         return maxProgress;
     }
+
+    public void AddComboScore()
+    {
+        progress += small * ComboSystem.Instance.comboScore; 
+    }
 }
