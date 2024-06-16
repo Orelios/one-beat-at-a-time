@@ -1047,6 +1047,14 @@ MonoBehaviour:
   progressBar: {fileID: 491104286}
   breathCount: 4
   _leewayCount: 2
+  _pulseLeeway: 0.3
+  _inhaling: 0
+  _exhaling: 0
+  _holding: 0
+  _inhaleFull: 0
+  _holdFull: 0
+  upPressed: 0
+  downPressed: 0
   _instructionArrowSprites:
   - {fileID: -830626885, guid: 6f8e058cf1a67cc429b1bccb96f12666, type: 3}
   - {fileID: -1935479533, guid: 6f8e058cf1a67cc429b1bccb96f12666, type: 3}
@@ -6541,7 +6549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6590,7 +6598,7 @@ PrefabInstance:
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2945073727904171361}
+      objectReference: {fileID: 184471841}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -6669,7 +6677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Pulse
+      value: CanPressCoroutine
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -6709,7 +6717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: PulseToTheBeat, Assembly-CSharp
+      value: Breathing, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
