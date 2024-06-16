@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Breathing : MonoBehaviour
 {
     [SerializeField] private GameObject grows, ui;
+    public ProgressBar progressBar;
     private float BeatManagerStep = 0.5f;
     [SerializeField]
     private float breathCount = 4, _leewayCount = 2;
@@ -242,6 +243,7 @@ public class Breathing : MonoBehaviour
             {
                 _exhaling = false;
                 _holdFull = false;
+                progressBar.AddProgressLarge();
             }
             if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow))
             {
