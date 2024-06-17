@@ -60,27 +60,12 @@ public class Breathing : MonoBehaviour
                     CheckInhale();
                 }
             }
-            if (Input.GetKeyUp(KeyCode.UpArrow))
-            {
-                upPressed = false;
-                //StopInhale();
-                if (!downPressed)
-                {
-                    SetInhaleUI();
-                }
-            }
+            
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 downPressed = true;
             }
-            if (Input.GetKeyUp(KeyCode.DownArrow))
-            {
-                downPressed = false;
-                _holdFull = false;
-                //StopHold();
-                //StopExhale();
-                //ResetState();
-            }
+            
 
             if (Input.GetKeyDown(KeyCode.DownArrow) && upPressed) // Down arrow pressed while Up arrow is STILL pressed
             {
@@ -93,11 +78,29 @@ public class Breathing : MonoBehaviour
                 CheckHold();
             }
 
-            if (Input.GetKeyUp(KeyCode.UpArrow) && downPressed)
+            
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            upPressed = false;
+            //StopInhale();
+            if (!downPressed)
             {
-                upPressed = false;
-                CheckExhale();
+                SetInhaleUI();
             }
+        }
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            downPressed = false;
+            _holdFull = false;
+            //StopHold();
+            //StopExhale();
+            //ResetState();
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow) && downPressed)
+        {
+            upPressed = false;
+            CheckExhale();
         }
     }
 
