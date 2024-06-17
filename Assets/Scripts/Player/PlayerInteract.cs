@@ -7,19 +7,26 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private TMP_Text popupPlayerInteractText; 
     public ScreenManager scene;
+    public DialogueManager dialogueManager;
+    private bool isDialogueBoxActive = false;
     private void Start()
     {
-        popupPlayerInteractText.enabled = false; 
-    }
+        popupPlayerInteractText.enabled = true;
+        isDialogueBoxActive = true;
+}
   
-    private void Update()
-    {
-    }
-
     private void OnTriggerStay(Collider other)
     {
         //Debug.Log(other.gameObject.tag); 
         //popupPlayerInteractText.enabled = true;
+        if(other.GetComponent<Dialogue>() != null)
+        {
+            for(int i=0; i <= other.GetComponent<Dialogue>().dialogues.Capacity - 1; i++)
+            {
+                dialogueManager._dialogues[i] = other.GetComponent<Dialogue>().dialogues[i]; 
+            }
+        }
+
         if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport")
         {
             //ConfirmationScreen.Instance.EnableChildren();
@@ -41,22 +48,28 @@ public class PlayerInteract : MonoBehaviour
                 InteractReference.Instance.PlayerInteractBed();
             }
 
-            if (Input.GetKey(KeyCode.E))
+
+            if (Input.GetKey(KeyCode.E) && isDialogueBoxActive == true)
             {
-                if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot >= 
+                dialogueManager.gameObject.SetActive(true);
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && isDialogueBoxActive == false)
+            {
+                isDialogueBoxActive = true; 
+                if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot >=
                     Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
                 {
                     PlayerData.Instance.Save();
                     scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
                 }
-                else if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot < 
+                else if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot <
                     Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
                 {
                     Debug.Log("Not enough time slots");
                     //show message of insufficient time slots
                 }
 
-                if(other.gameObject.tag == "Teleport")
+                if (other.gameObject.tag == "Teleport")
                 {
                     PlayerData.Instance.ResetTimeSlot();
                     PlayerData.Instance.AddTimeslot(1);
@@ -65,7 +78,7 @@ public class PlayerInteract : MonoBehaviour
                         PlayerData.Instance.AddMentalHealth(-5);
                     }
                     PlayerData.Instance.Save();
-                    scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber); 
+                    scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
                 }
             }
             //ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
@@ -91,12 +104,18 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        isDialogueBoxActive = true;
         InteractReference.Instance.NotInteracting();
         popupPlayerInteractText.enabled = false;
         if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport")
         {
             //ConfirmButton.Instance.canConfirm = false;
-            ConfirmationScreen.Instance.DisableChildren();
+            //ConfirmationScreen.Instance.DisableChildren();
         }
+    }
+
+    public void MakeDialogueBoxInactive()
+    {
+        isDialogueBoxActive = false; 
     }
 }
