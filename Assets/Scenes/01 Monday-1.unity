@@ -3243,8 +3243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleScreen: 2
-  introScreen: 2
-  mainScene: 1
+  overworldScene: 0
+  nextScene: 2
   endScreen: 3
 --- !u!4 &899282519
 Transform:
@@ -4252,7 +4252,7 @@ GameObject:
   - component: {fileID: 1110509955}
   - component: {fileID: 1110509954}
   - component: {fileID: 1110509953}
-  - component: {fileID: 1110509952}
+  - component: {fileID: 1110509956}
   m_Layer: 5
   m_Name: PressEToNext
   m_TagString: Untagged
@@ -4280,19 +4280,6 @@ RectTransform:
   m_AnchoredPosition: {x: -122.398, y: -267.78806}
   m_SizeDelta: {x: 361.203, y: 75.216}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1110509952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110509950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6872cd83f4e164f45ab369b613d34253, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 899282518}
 --- !u!114 &1110509953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4336,19 +4323,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1110509954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 899282518}
-        m_TargetAssemblyTypeName: ScreenManager, Assembly-CSharp
-        m_MethodName: LoadIntroScreen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1110509954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4387,6 +4362,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110509950}
   m_CullTransparentMesh: 1
+--- !u!114 &1110509956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110509950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89aeccdcd7f9c349a0cff01a4330729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 899282518}
 --- !u!1001 &1157696771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11037,17 +11025,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589454033}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 7596484185955214848}
+  m_Father: {fileID: 1818010119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1820, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589454035
 MonoBehaviour:
@@ -11600,7 +11588,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732907177}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11613,7 +11601,7 @@ RectTransform:
   - {fileID: 405176601}
   - {fileID: 1973443582}
   - {fileID: 1864350769}
-  m_Father: {fileID: 7596484185955214848}
+  m_Father: {fileID: 1818010119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11694,6 +11682,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7f71efed1f158a468b7fe29da345896, type: 3}
   m_PrefabInstance: {fileID: 1746421684}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1818010118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1818010119}
+  m_Layer: 5
+  m_Name: UniqueEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1818010119
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818010118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1589454034}
+  - {fileID: 1732907178}
+  m_Father: {fileID: 7596484185955214848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!43 &1839718382
 Mesh:
   m_ObjectHideFlags: 0
@@ -13257,6 +13282,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: overworldScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: maxMentalHealth
       value: 50
       objectReference: {fileID: 0}
@@ -13426,10 +13455,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2089031107075140641, guid: 5bd92315888ea1d429930e95a0d552f2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1589454034}
-    - targetCorrespondingSourceObject: {fileID: 2089031107075140641, guid: 5bd92315888ea1d429930e95a0d552f2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1732907178}
+      addedObject: {fileID: 1818010119}
     - targetCorrespondingSourceObject: {fileID: 2089031107075140641, guid: 5bd92315888ea1d429930e95a0d552f2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 535629870}

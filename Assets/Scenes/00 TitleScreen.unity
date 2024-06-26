@@ -8698,7 +8698,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1257266157}
         m_TargetAssemblyTypeName: ScreenManager, Assembly-CSharp
-        m_MethodName: LoadIntroScreen
+        m_MethodName: LoadNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9072,8 +9072,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleScreen: 2
-  introScreen: 1
-  mainScene: 1
+  overworldScene: 0
+  nextScene: 1
   endScreen: 3
 --- !u!4 &1257266158
 Transform:

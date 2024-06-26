@@ -80,6 +80,7 @@ public class PlayerInteract : MonoBehaviour
                         {
                             PlayerData.Instance.AddMentalHealth(-5);
                         }
+                        PlayerData.Instance.IncrementOverworldScene();
                         PlayerData.Instance.Save();
                         scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
                     }
@@ -111,6 +112,7 @@ public class PlayerInteract : MonoBehaviour
                         {
                             PlayerData.Instance.AddMentalHealth(-5);
                         }
+                        PlayerData.Instance.IncrementOverworldScene();
                         PlayerData.Instance.Save();
                         scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
                     }

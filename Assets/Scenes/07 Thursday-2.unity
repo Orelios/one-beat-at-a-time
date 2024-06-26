@@ -4072,7 +4072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82ff2dceddf674d9a23ac91dddbdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 5
+  sceneNumber: 8
 --- !u!1 &899282517
 GameObject:
   m_ObjectHideFlags: 0
@@ -4103,8 +4103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleScreen: 2
-  introScreen: 0
-  mainScene: 1
+  overworldScene: 0
+  nextScene: 8
   endScreen: 3
 --- !u!4 &899282519
 Transform:
@@ -6406,7 +6406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82ff2dceddf674d9a23ac91dddbdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 3
+  sceneNumber: 12
 --- !u!65 &1328848842
 BoxCollider:
   m_ObjectHideFlags: 0

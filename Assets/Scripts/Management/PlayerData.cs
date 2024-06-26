@@ -17,6 +17,7 @@ public class PlayerData : Singleton<PlayerData>
     public float maxAcademics;
     public float timeslot;
     public int day;
+    public int overworldScene;
     //public float defaultNoteSpeed;
     //public float offsetPos;
     //public float offsetNoteSpeed;
@@ -34,6 +35,7 @@ public class PlayerData : Singleton<PlayerData>
         playerDataJson.Add("keyMaxAcademics", maxAcademics);
         playerDataJson.Add("keyTimeslot", timeslot);
         playerDataJson.Add("keyDay", day);
+        playerDataJson.Add("keyOverworldScene", overworldScene);
         //playerDataJson.Add("keyDefaultNoteSpeed", defaultNoteSpeed);
         //playerDataJson.Add("keyOffsetPos", offsetPos);
         //playerDataJson.Add("keyOffsetNoteSpeed", offsetNoteSpeed);
@@ -67,6 +69,7 @@ public class PlayerData : Singleton<PlayerData>
         maxAcademics = playerDataJson["keyMaxAcademics"];
         timeslot = playerDataJson["keyTimeslot"];
         day = playerDataJson["keyDay"];
+        overworldScene = playerDataJson["keyOverworldScene"];
         //defaultNoteSpeed = playerDataJson["keyDefaultNoteSpeed"];
         //offsetPos = playerDataJson["keyOffsetPos"];
         //offsetNoteSpeed = playerDataJson["keyOffsetNoteSpeed"];
@@ -143,5 +146,10 @@ public class PlayerData : Singleton<PlayerData>
     public void ResetTimeSlot()
     {
         timeslot = 0;
+    }
+
+    public void IncrementOverworldScene()
+    {
+        overworldScene += 1;
     }
 }

@@ -3440,6 +3440,7 @@ MonoBehaviour:
   maxAcademics: 0
   timeslot: 1
   day: 1
+  overworldScene: 0
 --- !u!4 &849764248
 Transform:
   m_ObjectHideFlags: 0
@@ -4176,7 +4177,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1257266157}
         m_TargetAssemblyTypeName: ScreenManager, Assembly-CSharp
-        m_MethodName: LoadIntroScreen
+        m_MethodName: LoadTitleScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4970,9 +4971,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eacb036267cfc94084fdcbb8e9ec754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleScreen: 2
-  introScreen: 0
-  mainScene: 1
+  titleScreen: 0
+  overworldScene: 0
+  nextScene: 0
   endScreen: 3
 --- !u!4 &1257266158
 Transform:

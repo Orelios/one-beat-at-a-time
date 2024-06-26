@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43001968, g: 0.4647513, b: 0.49610025, a: 1}
+  m_IndirectSpecularColor: {r: 0.43001986, g: 0.46475154, b: 0.49610066, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -366,8 +366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleScreen: 2
-  introScreen: 4
-  mainScene: 1
+  overworldScene: 0
+  nextScene: 13
   endScreen: 3
 --- !u!4 &89214419
 Transform:
@@ -837,7 +837,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 89214418}
         m_TargetAssemblyTypeName: ScreenManager, Assembly-CSharp
-        m_MethodName: LoadIntroScreen
+        m_MethodName: LoadNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 418255413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6872cd83f4e164f45ab369b613d34253, type: 3}
+  m_Script: {fileID: 11500000, guid: fb9afc6a413cc21498a65ae882e2e4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 89214418}
@@ -1126,7 +1126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: isNewGame
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8111532214138149449, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: m_IsActive
