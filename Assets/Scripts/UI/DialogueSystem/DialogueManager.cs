@@ -39,7 +39,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
-        Debug.Log("hi");
         index = 0;
         StartCoroutine(TypeLine());
     }

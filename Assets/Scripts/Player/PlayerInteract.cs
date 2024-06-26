@@ -20,11 +20,12 @@ public class PlayerInteract : MonoBehaviour
         //Debug.Log(other.gameObject.tag); 
         //popupPlayerInteractText.enabled = true;
 
-        if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport")
+        if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport" || other.gameObject.tag == "dialogue")
         {
             //ConfirmationScreen.Instance.EnableChildren();
             //ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
             //ConfirmDetails.Instance.SetAsReference(other.gameObject);
+
             if (other.gameObject.tag == "object")
             {
                 if(other.gameObject.layer == 9)
@@ -52,13 +53,17 @@ public class PlayerInteract : MonoBehaviour
                     dialogueManager._dialogues[i] = other.GetComponent<Dialogue>().dialogues[i];
                 }
 
+                if (other.gameObject.tag == "dialogue") { dialogueManager.gameObject.SetActive(true); }
+
                 if (Input.GetKey(KeyCode.E) && isDialogueBoxActive == true)
                 {
                     dialogueManager.gameObject.SetActive(true);
                 }
                 else if (Input.GetKeyDown(KeyCode.E) && isDialogueBoxActive == false)
                 {
+                    if (other.gameObject.tag == "dialogue") { other.gameObject.SetActive(false); }
                     isDialogueBoxActive = true;
+
                     if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot >=
                         Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
                     {
@@ -86,7 +91,7 @@ public class PlayerInteract : MonoBehaviour
                     }
                 }
             }
-            else 
+            if (other.GetComponent<Dialogue>() == null)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
