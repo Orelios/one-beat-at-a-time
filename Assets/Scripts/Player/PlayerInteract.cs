@@ -19,13 +19,6 @@ public class PlayerInteract : MonoBehaviour
     {
         //Debug.Log(other.gameObject.tag); 
         //popupPlayerInteractText.enabled = true;
-        if(other.GetComponent<Dialogue>() != null)
-        {
-            for(int i=0; i <= other.GetComponent<Dialogue>().dialogues.Capacity - 1; i++)
-            {
-                dialogueManager._dialogues[i] = other.GetComponent<Dialogue>().dialogues[i]; 
-            }
-        }
 
         if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport")
         {
@@ -48,37 +41,79 @@ public class PlayerInteract : MonoBehaviour
                 InteractReference.Instance.PlayerInteractBed();
             }
 
-
-            if (Input.GetKey(KeyCode.E) && isDialogueBoxActive == true)
+            if(other.GetComponent<Dialogue>() != null)
             {
-                dialogueManager.gameObject.SetActive(true);
-            }
-            else if (Input.GetKeyDown(KeyCode.E) && isDialogueBoxActive == false)
-            {
-                isDialogueBoxActive = true; 
-                if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot >=
-                    Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
+                for (int i = 0; i <= dialogueManager._dialogues.Capacity - 1; i++)
                 {
-                    PlayerData.Instance.Save();
-                    scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                    dialogueManager._dialogues[i] = "";
                 }
-                else if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot <
-                    Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
+                for (int i = 0; i <= other.GetComponent<Dialogue>().dialogues.Capacity - 1; i++)
                 {
-                    Debug.Log("Not enough time slots");
-                    //show message of insufficient time slots
+                    dialogueManager._dialogues[i] = other.GetComponent<Dialogue>().dialogues[i];
                 }
 
-                if (other.gameObject.tag == "Teleport")
+                if (Input.GetKey(KeyCode.E) && isDialogueBoxActive == true)
                 {
-                    PlayerData.Instance.ResetTimeSlot();
-                    PlayerData.Instance.AddTimeslot(1);
-                    if (PlayerData.Instance.timeslot > 0)
+                    dialogueManager.gameObject.SetActive(true);
+                }
+                else if (Input.GetKeyDown(KeyCode.E) && isDialogueBoxActive == false)
+                {
+                    isDialogueBoxActive = true;
+                    if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot >=
+                        Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
                     {
-                        PlayerData.Instance.AddMentalHealth(-5);
+                        PlayerData.Instance.Save();
+                        scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
                     }
-                    PlayerData.Instance.Save();
-                    scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                    else if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot <
+                        Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
+                    {
+                        Debug.Log("Not enough time slots");
+                        //show message of insufficient time slots
+                    }
+
+                    if (other.gameObject.tag == "Teleport")
+                    {
+                        PlayerData.Instance.ResetTimeSlot();
+                        PlayerData.Instance.AddTimeslot(1);
+                        if (PlayerData.Instance.timeslot > 0)
+                        {
+                            PlayerData.Instance.AddMentalHealth(-5);
+                        }
+                        PlayerData.Instance.Save();
+                        scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                    }
+                }
+            }
+            else 
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    isDialogueBoxActive = true;
+                    if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot >=
+                        Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
+                    {
+                        PlayerData.Instance.Save();
+                        scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                    }
+                    else if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot <
+                        Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
+                    {
+                        Debug.Log("Not enough time slots");
+                        //show message of insufficient time slots
+                    }
+
+                    if (other.gameObject.tag == "Teleport")
+                    {
+                        PlayerData.Instance.ResetTimeSlot();
+                        PlayerData.Instance.AddTimeslot(1);
+                        if (PlayerData.Instance.timeslot > 0)
+                        {
+                            PlayerData.Instance.AddMentalHealth(-5);
+                        }
+                        PlayerData.Instance.Save();
+                        scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                    }
                 }
             }
             //ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
