@@ -6327,8 +6327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayIndicator: {fileID: 1872273439}
-  previousDay: 5
-  currentDay: 6
+  previousDay: 3
+  currentDay: 4
   _moveDuration: 1
   _waitDuration: 1
   dayIndicatorPositions:

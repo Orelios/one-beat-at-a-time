@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
+    path: Assets/Scenes/01 TitleScreen.unity
     guid: 836f1dc302d85db48ac88611df42debf
   - enabled: 1
-    path: Assets/Scenes/Saturday-0-New Texture.unity
+    path: Assets/Scenes/old/Saturday-0-New Texture.unity
     guid: 1d0024f9efe73474eb1855534079b494
   - enabled: 1
-    path: Assets/Scenes/Saturday-2.unity
+    path: Assets/Scenes/old/Saturday-2.unity
     guid: 041a418076aa0fd4c85ba271def30468
   - enabled: 1
     path: Assets/Scenes/Tutorial-Study-Sat-2.unity
@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Self-Study-Sat-2.unity
     guid: a5c8a3554e6f2394ab0fb061b20b4597
   - enabled: 1
-    path: Assets/Scenes/Saturday-3.unity
+    path: Assets/Scenes/old/Saturday-3.unity
     guid: 984cc2e87e37b4e429029c7c7e8943bb
   - enabled: 1
     path: Assets/Scenes/Tutorial-PetCat.unity
@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Petting-The-Cat.unity
     guid: c32bb2b14f06e4543851283584ffb175
   - enabled: 1
-    path: Assets/Scenes/EndOfDay.unity
+    path: Assets/Scenes/old/EndOfDay.unity
     guid: 5ac37664be8fbca46af2bdde476941e7
   - enabled: 1
     path: Assets/Scenes/Self-Study-Sat-3.unity
