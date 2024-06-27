@@ -5505,6 +5505,62 @@ PrefabInstance:
       propertyPath: _intervals.Array.data[0]._trigger.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerPerfectEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerNotPerfectEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c0132aa16905334aa81d64aec57d644, type: 2}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerNotPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerNotPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 5bd5bb2e61803ec418ed0e4b0334a7a3, type: 2}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerNotPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerNotPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerNotPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374729809840920379, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
+      propertyPath: playerNotPerfectEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2680731394634991854, guid: b0db3a27a1db55e49af60e7bc2b9cd8b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -245.00005
@@ -8451,7 +8507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 25.900024, y: -118}
+  m_AnchoredPosition: {x: 25.899902, y: -118}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1085381272
@@ -10468,6 +10524,8 @@ MonoBehaviour:
   bed: {fileID: 1430301224}
   task: {fileID: 1812895742}
   task2: {fileID: 52291743}
+  task3: {fileID: 0}
+  task4: {fileID: 0}
 --- !u!114 &1307141660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12040,6 +12098,110 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506159333}
   m_CullTransparentMesh: 1
+--- !u!1 &1512127233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1512127237}
+  - component: {fileID: 1512127236}
+  - component: {fileID: 1512127235}
+  - component: {fileID: 1512127234}
+  m_Layer: 0
+  m_Name: OffsetPerfectTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1512127234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512127233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435888beb06bf9846bfa7c4691a9034c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perfectCount: 0
+  isPerfect3: 0
+--- !u!114 &1512127235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512127233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8d43ac88184ac43890d533ff01b5d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 5bd5bb2e61803ec418ed0e4b0334a7a3, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1512127234}
+        m_TargetAssemblyTypeName: OffsetPerfectTracker, Assembly-CSharp
+        m_MethodName: ResetPerfectCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1512127236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512127233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8d43ac88184ac43890d533ff01b5d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 2c0132aa16905334aa81d64aec57d644, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1512127234}
+        m_TargetAssemblyTypeName: OffsetPerfectTracker, Assembly-CSharp
+        m_MethodName: IncrementPerfectCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &1512127237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512127233}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 642.41797, y: 572.91296, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539452131
 GameObject:
   m_ObjectHideFlags: 0
@@ -21041,3 +21203,4 @@ SceneRoots:
   - {fileID: 128581063}
   - {fileID: 1385117416}
   - {fileID: 1161387666}
+  - {fileID: 1512127237}
