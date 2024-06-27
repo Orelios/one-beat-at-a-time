@@ -29,17 +29,14 @@ public class PlayerInteract : MonoBehaviour
             if (other.gameObject.tag == "object")
             {
                 if(other.gameObject.layer == 9){InteractReference.Instance.PlayerInteractTask2();}
+
                 else if(other.gameObject.layer == 10) { InteractReference.Instance.PlayerInteractTask3(); }
+
                 else if (other.gameObject.layer == 11) { InteractReference.Instance.PlayerInteractTask4(); }
-                else
-                {
-                    InteractReference.Instance.PlayerInteractTask();
-                }
+
+                else{InteractReference.Instance.PlayerInteractTask();}
             }
-            else if (other.gameObject.tag == "Teleport")
-            {
-                InteractReference.Instance.PlayerInteractBed();
-            }
+            else if (other.gameObject.tag == "Teleport"){InteractReference.Instance.PlayerInteractBed();}
 
             if(other.GetComponent<Dialogue>() != null)
             {
