@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class EnableAndDisableScript2 : MonoBehaviour
 {
-    public ScreenManager scene; 
+    public ScreenManager scene;
+    public GameObject dialogue2, dialogue3, dialogue, offset; 
     public void EnableObject()
     {
-        gameObject.SetActive(true); 
+        dialogue2.gameObject.SetActive(true); 
+    }
+
+    public void EnableObject3()
+    {
+        dialogue3.gameObject.SetActive(true);
     }
 
     public void DisableObject()
     {
-        gameObject.SetActive(false); 
+        dialogue2.gameObject.SetActive(false);
+        dialogue3.gameObject.SetActive(false);
+        scene.LoadNextScene();
     }
 
-    private void OnDisable()
+    private void Update()
     {
-        scene.LoadNextScene();
+        if(!dialogue2.activeSelf && !dialogue3.activeSelf && !dialogue.activeSelf && !offset.activeSelf) { DisableObject(); }
     }
 }

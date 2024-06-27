@@ -5,7 +5,9 @@ using UnityEngine.Events;
 
 public class OffsetScreen : MonoBehaviour
 {
-    public UnityEvent OnOffsetScreenDisable; 
+    public OffsetPerfectTracker track; 
+    public UnityEvent OnOffsetScreenDisablePerfect;
+    public UnityEvent OnOffsetScreenDisableNotPerfect; 
     public void DisableOffsetScreen()
     {
         this.transform.GetChild(0).gameObject.SetActive(false);
@@ -14,7 +16,8 @@ public class OffsetScreen : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        OnOffsetScreenDisable.Invoke();
+        if(track.isPerfect3 == true) { OnOffsetScreenDisablePerfect.Invoke(); }
+        else { OnOffsetScreenDisableNotPerfect.Invoke(); }
     }
 
     public void EnableOffsetScreen()

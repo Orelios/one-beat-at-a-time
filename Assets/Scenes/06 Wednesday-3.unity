@@ -8212,8 +8212,8 @@ MonoBehaviour:
   bed: {fileID: 1430301224}
   task: {fileID: 1812895742}
   task2: {fileID: 52291743}
-  task3: {fileID: 0}
-  task4: {fileID: 0}
+  task3: {fileID: 52291743}
+  task4: {fileID: 52291743}
 --- !u!114 &1307141660
 MonoBehaviour:
   m_ObjectHideFlags: 0

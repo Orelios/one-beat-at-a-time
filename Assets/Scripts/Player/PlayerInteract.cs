@@ -66,7 +66,7 @@ public class PlayerInteract : MonoBehaviour
                     other.gameObject.SetActive(false);
                     isDialogueBoxActive = true;
                 }
-                else if (Input.GetKeyDown(KeyCode.E) && isDialogueBoxActive == false)
+                else if (Input.GetKey(KeyCode.E) && isDialogueBoxActive == false)
                 {
                     isDialogueBoxActive = true;
 
@@ -100,9 +100,8 @@ public class PlayerInteract : MonoBehaviour
             }
             if (other.GetComponent<Dialogue>() == null)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKey(KeyCode.E))
                 {
-                    isDialogueBoxActive = true;
                     if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot >=
                         Mathf.Abs(other.GetComponent<RhythmStats>().stats.timeChange))
                     {
