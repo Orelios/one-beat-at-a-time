@@ -89,7 +89,8 @@ public class PlayerInteract : MonoBehaviour
                         PlayerData.Instance.AddTimeslot(1);
                         if (PlayerData.Instance.timeslot > 0)
                         {
-                            PlayerData.Instance.AddMentalHealth(-5);
+                            PlayerData.Instance.AddMentalHealth(-1);
+                            PlayerData.Instance.IncrementSkipCount();
                         }
                         PlayerData.Instance.IncrementOverworldScene();
                         PlayerData.Instance.Save();
@@ -121,7 +122,8 @@ public class PlayerInteract : MonoBehaviour
                         PlayerData.Instance.AddTimeslot(1);
                         if (PlayerData.Instance.timeslot > 0)
                         {
-                            PlayerData.Instance.AddMentalHealth(-5);
+                            PlayerData.Instance.AddMentalHealth(-1);
+                            PlayerData.Instance.IncrementSkipCount();
                         }
                         PlayerData.Instance.IncrementOverworldScene();
                         PlayerData.Instance.Save();
