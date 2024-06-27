@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Self-Study
   m_EditorClassIdentifier: 
   activityName: Self-Study
-  type: 0
-  mentalHealthMin: -30
-  mentalHealthMax: -15
+  mentalHealthMin: -4
+  mentalHealthMax: -1
   productivityMin: 0
-  productivityMax: 30
+  productivityMax: 6
   timeChange: -1

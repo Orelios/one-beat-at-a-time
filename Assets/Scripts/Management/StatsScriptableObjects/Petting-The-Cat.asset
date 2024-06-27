@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Petting-The-Cat
   m_EditorClassIdentifier: 
   activityName: Pet the cat
-  mentalHealthMin: 5
-  mentalHealthMax: 20
+  mentalHealthMin: 0
+  mentalHealthMax: 3
   productivityMin: 0
   productivityMax: 0
   timeChange: -1
