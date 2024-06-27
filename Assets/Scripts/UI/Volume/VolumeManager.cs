@@ -7,12 +7,8 @@ public class VolumeManager : MonoBehaviour
 {
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider soundEffectsSlider; 
-
-    [SerializeField] private GameObject volumeMenu;
-    private bool isVolumeMenu; 
     private void Start()
     {
-        volumeMenu.SetActive(false);
         if (!PlayerPrefs.HasKey("BgMusic") && !PlayerPrefs.HasKey("SoundEffects"))
         {
             PlayerPrefs.SetFloat("BgMusic", musicSlider.value = 1f);
@@ -22,18 +18,15 @@ public class VolumeManager : MonoBehaviour
         else { LoadData();}
 
         musicSlider.value = PlayerPrefs.GetFloat("BgMusic");
-        GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BgMusic");
+        BeatManager.Instance.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BgMusic");
 
         soundEffectsSlider.value = PlayerPrefs.GetFloat("SoundEffects");
         SoundEffectManager.Instance.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("SoundEffects");
     }
-    private void Update()
-    {
-        VolumeMenu();
-    }
     public void ChangeMusicVolume()
     {
-        GetComponent<AudioSource>().volume = musicSlider.value; 
+        BeatManager.Instance.GetComponent<AudioSource>().volume = musicSlider.value;
+        if(OffsetBeatManager.Instance != null) { OffsetBeatManager.Instance.GetComponent<AudioSource>().volume = musicSlider.value; }
         SaveBgMusicValue();
     }
 
@@ -56,14 +49,5 @@ public class VolumeManager : MonoBehaviour
     {
         PlayerPrefs.GetFloat("BgMusic");
         PlayerPrefs.GetFloat("SoundEffects");
-    }
-
-    private void VolumeMenu()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isVolumeMenu == true) { volumeMenu.SetActive(false); isVolumeMenu = false; }
-            else { volumeMenu.SetActive(true); isVolumeMenu = true; }
-        }
     }
 }

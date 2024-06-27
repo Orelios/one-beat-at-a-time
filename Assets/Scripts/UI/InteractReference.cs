@@ -6,7 +6,7 @@ public class InteractReference : Singleton<InteractReference>
 {
     public GameObject bed;
     public GameObject task;
-    public GameObject task2;
+    public GameObject task2, task3, task4;
     void Start()
     {
         NotInteracting();
@@ -29,16 +29,40 @@ public class InteractReference : Singleton<InteractReference>
         task2.transform.GetChild(1).gameObject.SetActive(true);
     }
 
+    public void PlayerInteractTask3()
+    {
+        task3.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        task3.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
+        task3.transform.GetChild(1).gameObject.SetActive(true);
+    }
+
+    public void PlayerInteractTask4()
+    {
+        task4.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        task4.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
+        task4.transform.GetChild(1).gameObject.SetActive(true);
+    }
+
     public void NotInteracting()
     {
         bed.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
         bed.transform.GetChild(1).gameObject.SetActive(false);
+
         task.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
         task.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
         task.transform.GetChild(1).gameObject.SetActive(false);
+
         task2.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
-         task2.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
+        task2.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
         task2.transform.GetChild(1).gameObject.SetActive(false);
+
+        task3.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
+        task3.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
+        task3.transform.GetChild(1).gameObject.SetActive(false);
+
+        task4.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
+        task4.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
+        task4.transform.GetChild(1).gameObject.SetActive(false);
     }
 
 }

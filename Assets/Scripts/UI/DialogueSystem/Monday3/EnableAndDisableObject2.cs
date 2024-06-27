@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnableAndDisableScript2 : MonoBehaviour
 {
-    ScreenManager scene; 
+    public ScreenManager scene; 
     public void EnableObject()
     {
         gameObject.SetActive(true); 
@@ -15,11 +15,8 @@ public class EnableAndDisableScript2 : MonoBehaviour
         gameObject.SetActive(false); 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnDisable()
     {
-        if(other.gameObject.tag == "Player")
-        {
-            if (Input.GetKey(KeyCode.E)) { scene.LoadNextScene(); }          
-        }
+        scene.LoadNextScene();
     }
 }

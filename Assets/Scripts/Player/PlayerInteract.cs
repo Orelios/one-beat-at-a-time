@@ -13,7 +13,7 @@ public class PlayerInteract : MonoBehaviour
     {
         popupPlayerInteractText.enabled = true;
         isDialogueBoxActive = true;
-}
+    }
   
     private void OnTriggerStay(Collider other)
     {
@@ -28,10 +28,9 @@ public class PlayerInteract : MonoBehaviour
 
             if (other.gameObject.tag == "object")
             {
-                if(other.gameObject.layer == 9)
-                {
-                    InteractReference.Instance.PlayerInteractTask2();
-                }
+                if(other.gameObject.layer == 9){InteractReference.Instance.PlayerInteractTask2();}
+                else if(other.gameObject.layer == 10) { InteractReference.Instance.PlayerInteractTask3(); }
+                else if (other.gameObject.layer == 11) { InteractReference.Instance.PlayerInteractTask4(); }
                 else
                 {
                     InteractReference.Instance.PlayerInteractTask();
@@ -53,15 +52,25 @@ public class PlayerInteract : MonoBehaviour
                     dialogueManager._dialogues[i] = other.GetComponent<Dialogue>().dialogues[i];
                 }
 
-                if (other.gameObject.tag == "dialogue") { dialogueManager.gameObject.SetActive(true); }
+                if (isDialogueBoxActive == true) 
+                { 
+                    if (other.gameObject.tag == "dialogue") 
+                    { 
+                        dialogueManager.gameObject.SetActive(true); 
+                    } 
+                }
 
                 if (Input.GetKey(KeyCode.E) && isDialogueBoxActive == true)
                 {
                     dialogueManager.gameObject.SetActive(true);
                 }
+                else if (isDialogueBoxActive == false && other.gameObject.tag == "dialogue") 
+                { 
+                    other.gameObject.SetActive(false);
+                    isDialogueBoxActive = true;
+                }
                 else if (Input.GetKeyDown(KeyCode.E) && isDialogueBoxActive == false)
                 {
-                    if (other.gameObject.tag == "dialogue") { other.gameObject.SetActive(false); }
                     isDialogueBoxActive = true;
 
                     if (other.gameObject.tag == "object" && PlayerData.Instance.timeslot >=
