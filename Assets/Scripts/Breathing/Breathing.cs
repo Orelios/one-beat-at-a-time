@@ -25,10 +25,6 @@ public class Breathing : MonoBehaviour
     void Start()
     {
         /*
-         * NOTE: when new sprite for HOLD (both up and down AT THE SAME TIME) are added
-         * put them in _correctArrowSprites[3]
-         * (and maybe incorrect version as well, in which case _incorrectArrowSprites[3])
-         * 
          * NOTE: incorrect sprites are not used because UI just resets back to Inhale
          * can maybe later add a pulse coroutine where incorrect arrows are shown briefly
         */
@@ -373,10 +369,10 @@ public class Breathing : MonoBehaviour
 
     private void SetHoldUI()
     {
-        ui.transform.GetChild(1).GetComponent<Image>().sprite = _instructionArrowSprites[2];
+        ui.transform.GetChild(1).GetComponent<Image>().sprite = _instructionArrowSprites[3];
         ui.transform.GetChild(2).GetComponent<Image>().sprite = _instructionArrowSprites[2];
         ui.transform.GetChild(3).GetComponent<Image>().sprite = _instructionArrowSprites[2];
-        ui.transform.GetChild(4).GetComponent<Image>().sprite = _instructionArrowSprites[2];
+        ui.transform.GetChild(4).GetComponent<Image>().sprite = _instructionArrowSprites[3];
         ui.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = "Hold";
     }
 
