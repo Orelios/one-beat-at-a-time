@@ -20,6 +20,8 @@ public class EnableAndDisableScript2 : MonoBehaviour
     {
         dialogue2.gameObject.SetActive(false);
         dialogue3.gameObject.SetActive(false);
+        PlayerData.Instance.IncrementOverworldScene();
+        PlayerData.Instance.Save();
         scene.LoadNextScene();
     }
 

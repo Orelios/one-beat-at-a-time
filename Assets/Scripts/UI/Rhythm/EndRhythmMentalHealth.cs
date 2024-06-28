@@ -28,7 +28,7 @@ public class EndRhythmMentalHealth : MonoBehaviour
 
     private void ChangeIcons()
     {
-        if (valueToAdd <= -25)
+        if (valueToAdd <= -6)
         {
             transform.GetChild(0).gameObject.SetActive(true);
             transform.GetChild(1).gameObject.SetActive(true);
@@ -42,7 +42,7 @@ public class EndRhythmMentalHealth : MonoBehaviour
             transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         }
-        else if (valueToAdd <= -15)
+        else if (valueToAdd <= -4)
         {
             transform.GetChild(0).gameObject.SetActive(true);
             transform.GetChild(1).gameObject.SetActive(true);
@@ -56,7 +56,7 @@ public class EndRhythmMentalHealth : MonoBehaviour
             transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
         }
-        else if (valueToAdd <= -9)
+        else if (valueToAdd <= -2)
         {
             transform.GetChild(0).gameObject.SetActive(true);
             transform.GetChild(1).gameObject.SetActive(true);
@@ -70,7 +70,7 @@ public class EndRhythmMentalHealth : MonoBehaviour
             transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
             transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
         }
-        else if (valueToAdd <= 9)
+        else if (valueToAdd <= 2)
         {
             transform.GetChild(3).gameObject.SetActive(true);
             transform.GetChild(4).gameObject.SetActive(true);
@@ -84,7 +84,7 @@ public class EndRhythmMentalHealth : MonoBehaviour
             transform.GetChild(4).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
             transform.GetChild(5).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
         }
-        else if (valueToAdd <= 15)
+        else if (valueToAdd <= 4)
         {
             transform.GetChild(3).gameObject.SetActive(true);
             transform.GetChild(4).gameObject.SetActive(true);
@@ -98,7 +98,7 @@ public class EndRhythmMentalHealth : MonoBehaviour
             transform.GetChild(4).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             transform.GetChild(5).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
         }
-        else if (valueToAdd <= 25)
+        else if (valueToAdd <= 6)
         {
             transform.GetChild(3).gameObject.SetActive(true);
             transform.GetChild(4).gameObject.SetActive(true);

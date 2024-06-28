@@ -4,26 +4,31 @@ using UnityEngine;
 
 public class ECloseWindow : MonoBehaviour
 {
-    public GameObject dayChange;
-    private bool whileEventActive = false; 
+    public GameObject bed;
+
+    private void Start()
+    {
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        bed.GetComponent<Collider>().enabled = false;
+    }
     void Update()
     {
-        if (!dayChange.activeSelf){ whileEventActive = true; }
-
-        if(whileEventActive == true){Time.timeScale = 0.0f;}
 
         if (Input.GetKeyDown(KeyCode.E)) 
         {
-            whileEventActive = false;
-            gameObject.SetActive(false);
-            Time.timeScale = 1.0f; 
+            StartCoroutine(TurnOnCollider());
         }
     }
 
     public void SetObjectToFalse() 
     {
-        whileEventActive = false;
-        gameObject.SetActive(false);
-        Time.timeScale = 1.0f;
+        StartCoroutine(TurnOnCollider());
+    }
+
+    IEnumerator TurnOnCollider() 
+    {
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        yield return new WaitForSeconds(1);
+        bed.GetComponent<Collider>().enabled = true;
     }
 }
