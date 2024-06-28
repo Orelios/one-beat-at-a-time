@@ -19,7 +19,7 @@ public class CutsceneChangeDay : MonoBehaviour
             {
                 AnimateChangeDay(previousDay, currentDay);
                 PlayerData.Instance.day1Loaded = 1;
-                PlayerData.Instance.AddProductivity(1);
+                PlayerData.Instance.AddProductivity(6);
                 PlayerData.Instance.Save();
             }
             else //day1 already loaded, for example going into a rhythm scene and returning
@@ -33,7 +33,7 @@ public class CutsceneChangeDay : MonoBehaviour
             {
                 AnimateChangeDay(previousDay, currentDay);
                 PlayerData.Instance.day3Loaded = 1;
-                PlayerData.Instance.AddProductivity(1);
+                PlayerData.Instance.AddProductivity(6);
                 PlayerData.Instance.Save();
             }
             else
@@ -47,7 +47,7 @@ public class CutsceneChangeDay : MonoBehaviour
             {
                 AnimateChangeDay(previousDay, currentDay);
                 PlayerData.Instance.day5Loaded = 1;
-                PlayerData.Instance.AddProductivity(1);
+                PlayerData.Instance.AddProductivity(6);
                 PlayerData.Instance.Save();
             }
             else
