@@ -10,16 +10,22 @@ public class PlayerArrowInputCombo : MonoBehaviour
     private Arrows arrows;
     public UnityEvent playerPressEvent;
     public UnityEvent playerPressSpaceEvent;
+    public float inputCooldown;
     void Update()
     {
         DetectArrowInput();
+        if (Player.Instance.inputCooldown != 0)
+        {
+            Player.Instance.inputCooldown -= Time.deltaTime;
+            if (Player.Instance.inputCooldown < 0) { Player.Instance.inputCooldown = 0; }
+        }
     }
 
     public void DetectArrowInput() //Need to figure out the whole space bar thing
     {
         if (Input.anyKey)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow) && Player.Instance.inputCooldown == 0)
             {
                 SendPlayerArrowInput(Arrows.Up, 0);
                 playerPressEvent.Invoke(); //change this because it deletes notes 

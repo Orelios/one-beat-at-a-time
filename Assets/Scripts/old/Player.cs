@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public static Player Instance { get; private set; }
 
     public bool canPress = false;
+    public float inputCooldown; 
 
     void Awake()
     {
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
         }
 
         canPress = false;
+        inputCooldown = 0; 
     }
 
     void Update()
