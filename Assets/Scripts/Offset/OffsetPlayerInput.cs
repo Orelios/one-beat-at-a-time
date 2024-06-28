@@ -36,6 +36,11 @@ public class OffsetPlayerInput : MonoBehaviour
             {
                 playerPressEvent.Invoke();
             }
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                playerPressEvent.Invoke();
+            }
+
         }
         else if (Player.Instance.canPress == false && offsetSettings.activeSelf) // miss == pressed arrow when not in early/perfect/late timings
         {
@@ -52,6 +57,10 @@ public class OffsetPlayerInput : MonoBehaviour
                 playerPressMissEvent.Invoke();
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                playerPressMissEvent.Invoke();
+            }
+            else if (Input.GetKeyDown(KeyCode.Space))
             {
                 playerPressMissEvent.Invoke();
             }
