@@ -13,6 +13,7 @@ public class PlayerData : Singleton<PlayerData>
     public float startProductivity;
     public float productivity;
     public float maxProductivity;
+    public float startAcademics;
     public float academics;
     public float maxAcademics;
     public float timeslot;
@@ -34,6 +35,7 @@ public class PlayerData : Singleton<PlayerData>
         playerDataJson.Add("keyStartProductivity", startProductivity);
         playerDataJson.Add("keyProductivity", productivity);
         playerDataJson.Add("keyMaxProductivity", maxProductivity);
+        playerDataJson.Add("keyStartAcademics", startAcademics);
         playerDataJson.Add("keyAcademics", academics);
         playerDataJson.Add("keyMaxAcademics", maxAcademics);
         playerDataJson.Add("keyTimeslot", timeslot);
@@ -72,6 +74,7 @@ public class PlayerData : Singleton<PlayerData>
         startProductivity = playerDataJson["keyStartProductivity"];
         productivity = playerDataJson["keyProductivity"];
         maxProductivity = playerDataJson["keyMaxProductivity"];
+        startAcademics = playerDataJson["keyStartAcademics"];
         academics = playerDataJson["keyAcademics"];
         maxAcademics = playerDataJson["keyMaxAcademics"];
         timeslot = playerDataJson["keyTimeslot"];

@@ -31,11 +31,11 @@ public class EndOfDayScreen : MonoBehaviour
 
     private void GetProd()
     {
-        if (PlayerData.Instance.productivity <= 30)
+        if (PlayerData.Instance.productivity <= 6)
         {
             prod = prod1;
         }
-        else if (PlayerData.Instance.productivity <= 60)
+        else if (PlayerData.Instance.productivity <= 12)
         {
             prod = prod2;
         }
@@ -43,11 +43,11 @@ public class EndOfDayScreen : MonoBehaviour
 
     private void GetMental()
     {
-        if (PlayerData.Instance.mentalHealth <= 20)
+        if (PlayerData.Instance.mentalHealth <= 5)
         {
             mental = mental1;
         }
-        else if (PlayerData.Instance.mentalHealth <= 50)
+        else if (PlayerData.Instance.mentalHealth <= 10)
         {
             mental = mental2;
         }
@@ -55,23 +55,23 @@ public class EndOfDayScreen : MonoBehaviour
 
     private void GetStartMental()
     {
-        if (PlayerData.Instance.startMentalHealth >= 41)
+        if (PlayerData.Instance.startMentalHealth >= 9)
         {
             startMental.GetComponent<Image>().sprite = mentalSprites[4];
         }
-        else if (PlayerData.Instance.startMentalHealth >= 31)
+        else if (PlayerData.Instance.startMentalHealth >= 7)
         {
             startMental.GetComponent<Image>().sprite = mentalSprites[3];
         }
-        else if (PlayerData.Instance.startMentalHealth >= 21)
+        else if (PlayerData.Instance.startMentalHealth >= 5)
         {
             startMental.GetComponent<Image>().sprite = mentalSprites[2];
         }
-        else if (PlayerData.Instance.startMentalHealth >= 11)
+        else if (PlayerData.Instance.startMentalHealth >= 3)
         {
             startMental.GetComponent<Image>().sprite = mentalSprites[1];
         }
-        else if (PlayerData.Instance.startMentalHealth <= 10)
+        else if (PlayerData.Instance.startMentalHealth <= 2)
         {
             startMental.GetComponent<Image>().sprite = mentalSprites[0];
         }
@@ -79,23 +79,23 @@ public class EndOfDayScreen : MonoBehaviour
 
     private void GetStartProductivity()
     {
-        if (PlayerData.Instance.startProductivity >= 51)
+        if (PlayerData.Instance.startProductivity >= 11)
         {
             startProductivity.GetComponent<Image>().sprite = productivitySprites[6];
         }
-        else if (PlayerData.Instance.startProductivity >= 41)
+        else if (PlayerData.Instance.startProductivity >= 9)
         {
             startProductivity.GetComponent<Image>().sprite = productivitySprites[5];
         }
-        else if (PlayerData.Instance.startProductivity >= 31)
+        else if (PlayerData.Instance.startProductivity >= 7)
         {
             startProductivity.GetComponent<Image>().sprite = productivitySprites[4];
         }
-        else if (PlayerData.Instance.startProductivity >= 21)
+        else if (PlayerData.Instance.startProductivity >= 5)
         {
             startProductivity.GetComponent<Image>().sprite = productivitySprites[3];
         }
-        else if (PlayerData.Instance.startProductivity >= 11)
+        else if (PlayerData.Instance.startProductivity >= 3)
         {
             startProductivity.GetComponent<Image>().sprite = productivitySprites[2];
         }
@@ -103,7 +103,7 @@ public class EndOfDayScreen : MonoBehaviour
         {
             startProductivity.GetComponent<Image>().sprite = productivitySprites[1];
         }
-        else if (PlayerData.Instance.startProductivity == 0)
+        else if (PlayerData.Instance.startProductivity <= 0)
         {
             startProductivity.GetComponent<Image>().sprite = productivitySprites[0];
         }
@@ -111,23 +111,23 @@ public class EndOfDayScreen : MonoBehaviour
 
     private void GetEndMental()
     {
-        if (PlayerData.Instance.mentalHealth >= 41)
+        if (PlayerData.Instance.mentalHealth >= 9)
         {
             endMental.GetComponent<Image>().sprite = mentalSprites[4];
         }
-        else if (PlayerData.Instance.mentalHealth >= 31)
+        else if (PlayerData.Instance.mentalHealth >= 7)
         {
             endMental.GetComponent<Image>().sprite = mentalSprites[3];
         }
-        else if (PlayerData.Instance.mentalHealth >= 21)
+        else if (PlayerData.Instance.mentalHealth >= 5)
         {
             endMental.GetComponent<Image>().sprite = mentalSprites[2];
         }
-        else if (PlayerData.Instance.mentalHealth >= 11)
+        else if (PlayerData.Instance.mentalHealth >= 3)
         {
             endMental.GetComponent<Image>().sprite = mentalSprites[1];
         }
-        else if (PlayerData.Instance.mentalHealth <= 10)
+        else if (PlayerData.Instance.mentalHealth <= 2)
         {
             endMental.GetComponent<Image>().sprite = mentalSprites[0];
         }
@@ -135,23 +135,23 @@ public class EndOfDayScreen : MonoBehaviour
 
     private void GetEndProductivity()
     {
-        if (PlayerData.Instance.productivity >= 51)
+        if (PlayerData.Instance.productivity >= 11)
         {
             endProductivity.GetComponent<Image>().sprite = productivitySprites[6];
         }
-        else if (PlayerData.Instance.productivity >= 41)
+        else if (PlayerData.Instance.productivity >= 9)
         {
             endProductivity.GetComponent<Image>().sprite = productivitySprites[5];
         }
-        else if (PlayerData.Instance.productivity >= 31)
+        else if (PlayerData.Instance.productivity >= 7)
         {
             endProductivity.GetComponent<Image>().sprite = productivitySprites[4];
         }
-        else if (PlayerData.Instance.productivity >= 21)
+        else if (PlayerData.Instance.productivity >= 5)
         {
             endProductivity.GetComponent<Image>().sprite = productivitySprites[3];
         }
-        else if (PlayerData.Instance.productivity >= 11)
+        else if (PlayerData.Instance.productivity >= 3)
         {
             endProductivity.GetComponent<Image>().sprite = productivitySprites[2];
         }
@@ -159,7 +159,7 @@ public class EndOfDayScreen : MonoBehaviour
         {
             endProductivity.GetComponent<Image>().sprite = productivitySprites[1];
         }
-        else if (PlayerData.Instance.productivity == 0)
+        else if (PlayerData.Instance.productivity <= 0)
         {
             endProductivity.GetComponent<Image>().sprite = productivitySprites[0];
         }
