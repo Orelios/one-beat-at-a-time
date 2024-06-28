@@ -3349,6 +3349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253520d56d1f21946bc4c5cecb023554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  perfects: 0
 --- !u!1 &386477999
 GameObject:
   m_ObjectHideFlags: 0
@@ -21549,8 +21550,24 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: maxAcademics
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: mentalHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: overworldScene
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: maxMentalHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: maxProductivity
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

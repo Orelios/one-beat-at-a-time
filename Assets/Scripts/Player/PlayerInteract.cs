@@ -92,6 +92,8 @@ public class PlayerInteract : MonoBehaviour
                             PlayerData.Instance.AddMentalHealth(-1);
                             PlayerData.Instance.IncrementSkipCount();
                         }
+                        PlayerData.Instance.academics += PlayerData.Instance.productivity; //productivity is added to academics
+                        PlayerData.Instance.productivity = 0; // reset at end of day
                         PlayerData.Instance.IncrementOverworldScene();
                         PlayerData.Instance.Save();
                         scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
@@ -124,6 +126,8 @@ public class PlayerInteract : MonoBehaviour
                             PlayerData.Instance.AddMentalHealth(-1);
                             PlayerData.Instance.IncrementSkipCount();
                         }
+                        PlayerData.Instance.academics += PlayerData.Instance.productivity; //productivity is added to academics
+                        PlayerData.Instance.productivity = 0; // reset at end of day
                         PlayerData.Instance.IncrementOverworldScene();
                         PlayerData.Instance.Save();
                         scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);

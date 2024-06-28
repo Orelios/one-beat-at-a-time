@@ -1128,6 +1128,22 @@ PrefabInstance:
       propertyPath: isNewGame
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: maxAcademics
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: mentalHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: maxMentalHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819891002339070008, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
+      propertyPath: maxProductivity
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8111532214138149449, guid: 2ddcbab6ef905264dab27500c3facc4d, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -19,6 +19,8 @@ public class PlayerData : Singleton<PlayerData>
     public int day;
     public int overworldScene;
     public int skipCount;
+    public int day1Loaded = 0, day3Loaded = 0, day5Loaded = 0; //should be remade into a list of bools later
+    //public List<bool> daysLoaded = new List<bool> {new bool ;
     //public float defaultNoteSpeed;
     //public float offsetPos;
     //public float offsetNoteSpeed;
@@ -38,6 +40,9 @@ public class PlayerData : Singleton<PlayerData>
         playerDataJson.Add("keyDay", day);
         playerDataJson.Add("keyOverworldScene", overworldScene);
         playerDataJson.Add("keySkipCount", skipCount);
+        playerDataJson.Add("keyDay1Loaded", day1Loaded);
+        playerDataJson.Add("keyDay3Loaded", day3Loaded);
+        playerDataJson.Add("keyDay5Loaded", day5Loaded);
         //playerDataJson.Add("keyDefaultNoteSpeed", defaultNoteSpeed);
         //playerDataJson.Add("keyOffsetPos", offsetPos);
         //playerDataJson.Add("keyOffsetNoteSpeed", offsetNoteSpeed);
@@ -73,6 +78,9 @@ public class PlayerData : Singleton<PlayerData>
         day = playerDataJson["keyDay"];
         overworldScene = playerDataJson["keyOverworldScene"];
         skipCount = playerDataJson["keySkipCount"];
+        day1Loaded = playerDataJson["keyDay1Loaded"];
+        day3Loaded = playerDataJson["keyDay3Loaded"];
+        day5Loaded = playerDataJson["keyDay5Loaded"];
         //defaultNoteSpeed = playerDataJson["keyDefaultNoteSpeed"];
         //offsetPos = playerDataJson["keyOffsetPos"];
         //offsetNoteSpeed = playerDataJson["keyOffsetNoteSpeed"];
