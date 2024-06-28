@@ -8,9 +8,12 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private TMP_Text popupPlayerInteractText; 
     public ScreenManager scene;
     public DialogueManager dialogueManager;
+    public GameObject confirmationScreen; 
+
     private bool isDialogueBoxActive = false;
     private void Start()
     {
+        confirmationScreen.gameObject.SetActive(true);
         popupPlayerInteractText.enabled = true;
         isDialogueBoxActive = true;
     }
@@ -85,18 +88,22 @@ public class PlayerInteract : MonoBehaviour
 
                     if (other.gameObject.tag == "Teleport")
                     {
-                        PlayerData.Instance.ResetTimeSlot();
-                        PlayerData.Instance.AddTimeslot(1);
-                        if (PlayerData.Instance.timeslot > 0)
+                        if (confirmationScreen.activeSelf)
                         {
-                            PlayerData.Instance.AddMentalHealth(-1);
-                            PlayerData.Instance.IncrementSkipCount();
+                            PlayerData.Instance.ResetTimeSlot();
+                            PlayerData.Instance.AddTimeslot(1);
+                            if (PlayerData.Instance.timeslot > 0)
+                            {
+                                PlayerData.Instance.AddMentalHealth(-1);
+                                PlayerData.Instance.IncrementSkipCount();
+                            }
+                            PlayerData.Instance.academics += PlayerData.Instance.productivity; //productivity is added to academics
+                            PlayerData.Instance.productivity = 0; // reset at end of day
+                            PlayerData.Instance.IncrementOverworldScene();
+                            PlayerData.Instance.Save();
+                            scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
                         }
-                        PlayerData.Instance.academics += PlayerData.Instance.productivity; //productivity is added to academics
-                        PlayerData.Instance.productivity = 0; // reset at end of day
-                        PlayerData.Instance.IncrementOverworldScene();
-                        PlayerData.Instance.Save();
-                        scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                        confirmationScreen.gameObject.SetActive(true);
                     }
                 }
             }
@@ -119,18 +126,22 @@ public class PlayerInteract : MonoBehaviour
 
                     if (other.gameObject.tag == "Teleport")
                     {
-                        PlayerData.Instance.ResetTimeSlot();
-                        PlayerData.Instance.AddTimeslot(1);
-                        if (PlayerData.Instance.timeslot > 0)
+                        if (confirmationScreen.activeSelf)
                         {
-                            PlayerData.Instance.AddMentalHealth(-1);
-                            PlayerData.Instance.IncrementSkipCount();
+                            PlayerData.Instance.ResetTimeSlot();
+                            PlayerData.Instance.AddTimeslot(1);
+                            if (PlayerData.Instance.timeslot > 0)
+                            {
+                                PlayerData.Instance.AddMentalHealth(-1);
+                                PlayerData.Instance.IncrementSkipCount();
+                            }
+                            PlayerData.Instance.academics += PlayerData.Instance.productivity; //productivity is added to academics
+                            PlayerData.Instance.productivity = 0; // reset at end of day
+                            PlayerData.Instance.IncrementOverworldScene();
+                            PlayerData.Instance.Save();
+                            scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
                         }
-                        PlayerData.Instance.academics += PlayerData.Instance.productivity; //productivity is added to academics
-                        PlayerData.Instance.productivity = 0; // reset at end of day
-                        PlayerData.Instance.IncrementOverworldScene();
-                        PlayerData.Instance.Save();
-                        scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                        confirmationScreen.gameObject.SetActive(true); 
                     }
                 }
             }
@@ -140,24 +151,10 @@ public class PlayerInteract : MonoBehaviour
             //PlayerData.Instance.Save();
         }
     }
-
-    /*
-    private void OnTriggerStay(Collider other)
-    {
-        if (Input.GetKey(KeyCode.E) && other.gameObject.tag == "object")
-        {
-            ConfirmationScreen.Instance.EnableChildren();
-            ConfirmName.Instance.SetAsReference(other.gameObject); //set interacted object as reference for Confirmation Screen
-            ConfirmDetails.Instance.SetAsReference(other.gameObject);
-            //ConfirmButton.Instance.SetAsReference(other.GetComponent<SceneNumber>());
-            //ConfirmButton.Instance.canConfirm = true;
-        }
-    }
-    */
-
     private void OnTriggerExit(Collider other)
     {
         isDialogueBoxActive = true;
+        confirmationScreen.gameObject.SetActive(false);
         InteractReference.Instance.NotInteracting();
         popupPlayerInteractText.enabled = false;
         if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport")
