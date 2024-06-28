@@ -16,7 +16,7 @@ public class PlayAudio : MonoBehaviour
             if (progressBar.GetProgress() >= progressLevels[i])
             {
                 //audios[i].time = audioTime;
-                audios[i].volume = 0.05f;
+                audios[i].volume = 1f;
             }
             if (progressBar.GetProgress() < progressLevels[i])
             {
