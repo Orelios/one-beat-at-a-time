@@ -8582,10 +8582,10 @@ PrefabInstance:
     - target: {fileID: 1148555450815177418, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ce13ea1991b42f646a0949fb2298fa9c, type: 3}
+      objectReference: {fileID: 8300000, guid: 9d65a31032e265b4d8f86b11b99dc645, type: 3}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: _bpm
-      value: 80
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4245468589255465711, guid: f353d3ff13eb9bb4381ff39d03b216c2, type: 3}
       propertyPath: audioSource
