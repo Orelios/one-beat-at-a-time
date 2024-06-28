@@ -710,7 +710,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5362333}
         m_TargetAssemblyTypeName: MessagePopup, Assembly-CSharp
-        m_MethodName: MissCombo
+        m_MethodName: ComboHit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -762,7 +762,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5362333}
         m_TargetAssemblyTypeName: MessagePopup, Assembly-CSharp
-        m_MethodName: ComboHit
+        m_MethodName: MissCombo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2845,6 +2845,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPresist: 0
   offsetPosValue: 0
+  offsetPosDisplay: 0
+  multiplier: 0.1
   inputField: {fileID: 613414654}
 --- !u!114 &613414654
 MonoBehaviour:
@@ -4915,6 +4917,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPresist: 0
   offsetSpeedValue: 0
+  offsetSpeedDisplay: 0
+  multiplier: 0.1
   inputField: {fileID: 1237467799}
 --- !u!114 &1237467799
 MonoBehaviour:

@@ -32,7 +32,7 @@ public class MessagePopup : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
         }
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2.5f);
 
         for (int x = 0; x < 3; x++)
         {
@@ -48,7 +48,7 @@ public class MessagePopup : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
         }
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2.5f);
 
         for (int x = 0; x < 2; x++)
         {
