@@ -5,7 +5,8 @@ using UnityEngine;
 public class ButtonNextScene : MonoBehaviour
 {
     public ScreenManager scene;
-    public int sceneNum; 
+    public int sceneNum;
+
     public void AdvanceTheDay()
     {
         PlayerData.Instance.ResetTimeSlot();
@@ -20,5 +21,10 @@ public class ButtonNextScene : MonoBehaviour
         PlayerData.Instance.IncrementOverworldScene();
         PlayerData.Instance.Save();
         scene.LoadLevel(sceneNum);
+    }
+
+    public void CloseConfirmationScreen()
+    {
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 }

@@ -13,7 +13,7 @@ public class PlayerInteract : MonoBehaviour
     private bool isDialogueBoxActive = false;
     private void Start()
     {
-        confirmationScreen.gameObject.SetActive(true);
+        confirmationScreen.transform.GetChild(0).gameObject.SetActive(false);
         popupPlayerInteractText.enabled = true;
         isDialogueBoxActive = true;
     }
@@ -88,7 +88,11 @@ public class PlayerInteract : MonoBehaviour
 
                     if (other.gameObject.tag == "Teleport")
                     {
-                        if (confirmationScreen.activeSelf)
+                        if (!confirmationScreen.transform.GetChild(0).gameObject.activeSelf)
+                        {
+                            confirmationScreen.transform.GetChild(0).gameObject.SetActive(true);
+                        }
+                        else if (Input.GetKeyDown(KeyCode.E) && confirmationScreen.transform.GetChild(0).gameObject.activeSelf)
                         {
                             PlayerData.Instance.ResetTimeSlot();
                             PlayerData.Instance.AddTimeslot(1);
@@ -102,8 +106,8 @@ public class PlayerInteract : MonoBehaviour
                             PlayerData.Instance.IncrementOverworldScene();
                             PlayerData.Instance.Save();
                             scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
+                            confirmationScreen.transform.GetChild(0).gameObject.SetActive(false);
                         }
-                        confirmationScreen.gameObject.SetActive(true);
                     }
                 }
             }
@@ -126,7 +130,12 @@ public class PlayerInteract : MonoBehaviour
 
                     if (other.gameObject.tag == "Teleport")
                     {
-                        if (confirmationScreen.activeSelf)
+                        if (!confirmationScreen.transform.GetChild(0).gameObject.activeSelf)
+                        {
+                            StartCoroutine(ContinueConfirmation());
+                        }
+                      
+                        if (confirmationScreen.transform.GetChild(0).gameObject.activeSelf)
                         {
                             PlayerData.Instance.ResetTimeSlot();
                             PlayerData.Instance.AddTimeslot(1);
@@ -140,8 +149,8 @@ public class PlayerInteract : MonoBehaviour
                             PlayerData.Instance.IncrementOverworldScene();
                             PlayerData.Instance.Save();
                             scene.LoadLevel(other.GetComponent<SceneNumber>().sceneNumber);
-                        }
-                        confirmationScreen.gameObject.SetActive(true); 
+                            confirmationScreen.transform.GetChild(0).gameObject.SetActive(false);
+                        }                        
                     }
                 }
             }
@@ -154,7 +163,7 @@ public class PlayerInteract : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         isDialogueBoxActive = true;
-        confirmationScreen.gameObject.SetActive(false);
+        confirmationScreen.transform.GetChild(0).gameObject.SetActive(false);
         InteractReference.Instance.NotInteracting();
         popupPlayerInteractText.enabled = false;
         if (other.gameObject.tag == "object" || other.gameObject.tag == "Teleport")
@@ -167,5 +176,11 @@ public class PlayerInteract : MonoBehaviour
     public void MakeDialogueBoxInactive()
     {
         isDialogueBoxActive = false; 
+    }
+
+    IEnumerator ContinueConfirmation()
+    {
+        yield return new WaitForSeconds(0.3f);
+        confirmationScreen.transform.GetChild(0).gameObject.SetActive(true);
     }
 }
