@@ -71,7 +71,7 @@ public class ProductivityBar : Singleton<ProductivityBar>
             bar.transform.GetChild(5).gameObject.SetActive(false);
             bar.transform.GetChild(6).gameObject.SetActive(false);
         }
-        else if (PlayerData.Instance.productivity <= 11)
+        else if (PlayerData.Instance.productivity <= 12)
         {
             bar.transform.GetChild(0).gameObject.SetActive(false);
             bar.transform.GetChild(1).gameObject.SetActive(false);
@@ -81,7 +81,7 @@ public class ProductivityBar : Singleton<ProductivityBar>
             bar.transform.GetChild(5).gameObject.SetActive(true);
             bar.transform.GetChild(6).gameObject.SetActive(false);
         }
-        else if (PlayerData.Instance.productivity <= 12)
+        else if (PlayerData.Instance.productivity <= 13)
         {
             bar.transform.GetChild(0).gameObject.SetActive(false);
             bar.transform.GetChild(1).gameObject.SetActive(false);
