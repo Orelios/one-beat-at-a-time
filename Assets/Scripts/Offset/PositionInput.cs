@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PositionInput : Singleton<PositionInput>
 {
-    public float offsetPosValue;
+    public float offsetPosValue, offsetPosDisplay, multiplier = 0.1f; // offsetPosDisplay is 1/10th of actual value
     //public string inputValue;
     public InputField inputField;
 
@@ -13,7 +13,13 @@ public class PositionInput : Singleton<PositionInput>
     {
         offsetPosValue = PlayerPrefs.GetFloat("offsetPos");
         //inputField = GetComponent<TMP_InputField>();
-        inputField.text = offsetPosValue.ToString();
+        DisplayConverted();
+    }
+
+    public void DisplayConverted()
+    {
+        offsetPosDisplay = (offsetPosValue * multiplier);
+        inputField.text = offsetPosDisplay.ToString();
     }
 
     public void SaveOffset()
@@ -24,7 +30,32 @@ public class PositionInput : Singleton<PositionInput>
 
     public void ApplyOffset()
     {
-        offsetPosValue = float.Parse(inputField.text);
+        offsetPosDisplay = float.Parse(inputField.text);
+        offsetPosValue = (offsetPosDisplay / multiplier);
+    }
+
+    public void IncreaseBig()
+    {
+        offsetPosValue += 10f;
+        DisplayConverted();
+    }
+
+    public void IncreaseSmall()
+    {
+        offsetPosValue += 1f;
+        DisplayConverted();
+    }
+
+    public void DecreaseBig()
+    {
+        offsetPosValue -= 10f;
+        DisplayConverted();
+    }
+
+    public void DecreaseSmall()
+    {
+        offsetPosValue -= 1f;
+        DisplayConverted();
     }
 
     /*

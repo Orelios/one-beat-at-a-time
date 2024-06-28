@@ -17,7 +17,12 @@ public class PlayerInteract : MonoBehaviour
         popupPlayerInteractText.enabled = true;
         isDialogueBoxActive = true;
     }
-  
+
+    private void Awake()
+    {
+        isDialogueBoxActive = true;
+    }
+
     private void OnTriggerStay(Collider other)
     {
         //Debug.Log(other.gameObject.tag); 
