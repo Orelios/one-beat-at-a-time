@@ -331,7 +331,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  inputCooldownAmount: 0.3
+  inputCooldownAmount: 0.1
 --- !u!114 &5362333
 MonoBehaviour:
   m_ObjectHideFlags: 0
