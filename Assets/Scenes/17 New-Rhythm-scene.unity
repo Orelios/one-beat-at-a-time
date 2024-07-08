@@ -208,8 +208,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa5b6e92ff0d51b44843f1cc6a743cb0, type: 2}
   - {fileID: 11400000, guid: d64e7b8e1a669cd4db7ab74e1c100efb, type: 2}
   - {fileID: 11400000, guid: 4a2453262b29ba94f98a08678e72f665, type: 2}
-  _slideDuration: 0.5
-  _pulseDuration: 0.5
+  _slideDuration: 0.01
+  _pulseDuration: 0.01
   _pulseSizeMultiplier: 1.15
   addToComboEvent:
     m_PersistentCalls:
