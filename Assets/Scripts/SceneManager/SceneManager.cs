@@ -6,18 +6,23 @@ using UnityEngine.SceneManagement;
 public class ScreenManager : MonoBehaviour
 {
     [SerializeField] private int titleScreen;
-    [SerializeField] private int introScreen;
-    [SerializeField] private int mainScene;
+    [SerializeField] private int overworldScene;
+    [SerializeField] private int nextScene;
     [SerializeField] private int endScreen;
 
-    public void LoadMainScene()
+    private void Start()
     {
-        SceneManager.LoadScene(mainScene);
+        overworldScene = PlayerData.Instance.overworldScene;
+    }
+
+    public void LoadNextScene() //tutorial to rhythm AND Unique Event to next Overworld Scene
+    {
+        SceneManager.LoadScene(nextScene);
         Time.timeScale = 1.0f;
     }
-    public void LoadIntroScreen()
+    public void ReturnToOverworld()
     {
-        SceneManager.LoadScene(introScreen);
+        SceneManager.LoadScene(overworldScene);
         Time.timeScale = 1.0f;
     }
     public void LoadTitleScreen()

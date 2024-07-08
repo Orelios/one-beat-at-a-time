@@ -15,7 +15,7 @@ public class ButtonPressE : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            manager.LoadIntroScreen();
+            manager.LoadNextScene();
         }
     }
 }

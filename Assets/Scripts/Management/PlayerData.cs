@@ -13,10 +13,15 @@ public class PlayerData : Singleton<PlayerData>
     public float startProductivity;
     public float productivity;
     public float maxProductivity;
+    public float startAcademics;
     public float academics;
     public float maxAcademics;
     public float timeslot;
     public int day;
+    public int overworldScene;
+    public int skipCount;
+    public int day1Loaded = 0, day3Loaded = 0, day5Loaded = 0; //should be remade into a list of bools later
+    //public List<bool> daysLoaded = new List<bool> {new bool ;
     //public float defaultNoteSpeed;
     //public float offsetPos;
     //public float offsetNoteSpeed;
@@ -30,10 +35,16 @@ public class PlayerData : Singleton<PlayerData>
         playerDataJson.Add("keyStartProductivity", startProductivity);
         playerDataJson.Add("keyProductivity", productivity);
         playerDataJson.Add("keyMaxProductivity", maxProductivity);
+        playerDataJson.Add("keyStartAcademics", startAcademics);
         playerDataJson.Add("keyAcademics", academics);
         playerDataJson.Add("keyMaxAcademics", maxAcademics);
         playerDataJson.Add("keyTimeslot", timeslot);
         playerDataJson.Add("keyDay", day);
+        playerDataJson.Add("keyOverworldScene", overworldScene);
+        playerDataJson.Add("keySkipCount", skipCount);
+        playerDataJson.Add("keyDay1Loaded", day1Loaded);
+        playerDataJson.Add("keyDay3Loaded", day3Loaded);
+        playerDataJson.Add("keyDay5Loaded", day5Loaded);
         //playerDataJson.Add("keyDefaultNoteSpeed", defaultNoteSpeed);
         //playerDataJson.Add("keyOffsetPos", offsetPos);
         //playerDataJson.Add("keyOffsetNoteSpeed", offsetNoteSpeed);
@@ -63,10 +74,16 @@ public class PlayerData : Singleton<PlayerData>
         startProductivity = playerDataJson["keyStartProductivity"];
         productivity = playerDataJson["keyProductivity"];
         maxProductivity = playerDataJson["keyMaxProductivity"];
+        startAcademics = playerDataJson["keyStartAcademics"];
         academics = playerDataJson["keyAcademics"];
         maxAcademics = playerDataJson["keyMaxAcademics"];
         timeslot = playerDataJson["keyTimeslot"];
         day = playerDataJson["keyDay"];
+        overworldScene = playerDataJson["keyOverworldScene"];
+        skipCount = playerDataJson["keySkipCount"];
+        day1Loaded = playerDataJson["keyDay1Loaded"];
+        day3Loaded = playerDataJson["keyDay3Loaded"];
+        day5Loaded = playerDataJson["keyDay5Loaded"];
         //defaultNoteSpeed = playerDataJson["keyDefaultNoteSpeed"];
         //offsetPos = playerDataJson["keyOffsetPos"];
         //offsetNoteSpeed = playerDataJson["keyOffsetNoteSpeed"];
@@ -143,5 +160,15 @@ public class PlayerData : Singleton<PlayerData>
     public void ResetTimeSlot()
     {
         timeslot = 0;
+    }
+
+    public void IncrementOverworldScene()
+    {
+        overworldScene += 1;
+    }
+
+    public void IncrementSkipCount()
+    {
+        skipCount += 1;
     }
 }

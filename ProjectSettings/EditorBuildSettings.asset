@@ -6,33 +6,57 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
+    path: Assets/Scenes/00 TitleScreen.unity
     guid: 836f1dc302d85db48ac88611df42debf
   - enabled: 1
-    path: Assets/Scenes/Saturday-0-New Texture.unity
-    guid: 1d0024f9efe73474eb1855534079b494
+    path: Assets/Scenes/01 Monday-1.unity
+    guid: 642e4084711eef840bb65996f87e6c87
   - enabled: 1
-    path: Assets/Scenes/Saturday-2.unity
-    guid: 041a418076aa0fd4c85ba271def30468
+    path: Assets/Scenes/02 Monday-3.unity
+    guid: 4361fc2d1ed848a43a3e0b13737fde3c
   - enabled: 1
-    path: Assets/Scenes/Tutorial-Study-Sat-2.unity
+    path: Assets/Scenes/03 Tuesday-1.unity
+    guid: cb297147d7eca514fbad603f0d7f2efb
+  - enabled: 1
+    path: Assets/Scenes/04 Tuesday-3.unity
+    guid: 34cb7ffd95b1c904499b1e5b7e1e0985
+  - enabled: 1
+    path: Assets/Scenes/05 Wednesday-1.unity
+    guid: 5bd5f2a6aabc0da498312e4feb7b31d3
+  - enabled: 1
+    path: Assets/Scenes/06 Wednesday-3.unity
+    guid: 6bef2376a2a964845a9137967d813233
+  - enabled: 1
+    path: Assets/Scenes/07 Thursday-2.unity
+    guid: ddc931a5e47bf8140be0e3788ae153cc
+  - enabled: 1
+    path: Assets/Scenes/08 Thursday-3.unity
+    guid: e63b30870679bd1499a96ea126609a34
+  - enabled: 1
+    path: Assets/Scenes/09 Friday-1.unity
+    guid: 9138857bbad69f343a3c792057ed3aff
+  - enabled: 1
+    path: Assets/Scenes/10 Friday-3.unity
+    guid: feaeab149fe2e7c45b7ad5996683f7f4
+  - enabled: 1
+    path: Assets/Scenes/11 Saturday.unity
+    guid: fb443ecf247c37941b10a8af7b46cf5e
+  - enabled: 1
+    path: Assets/Scenes/12 Tutorial-Study-Sat-2.unity
     guid: 89634ed15393f284ba324824ab85951e
   - enabled: 1
-    path: Assets/Scenes/Self-Study-Sat-2.unity
-    guid: a5c8a3554e6f2394ab0fb061b20b4597
+    path: Assets/Scenes/13 Self-Study.unity
+    guid: 513de4e8635d36f4882e46bd1540761c
   - enabled: 1
-    path: Assets/Scenes/Saturday-3.unity
-    guid: 984cc2e87e37b4e429029c7c7e8943bb
-  - enabled: 1
-    path: Assets/Scenes/Tutorial-PetCat.unity
+    path: Assets/Scenes/14 Tutorial-PetCat.unity
     guid: f5930706cf9597f48a570a360fb7e218
   - enabled: 1
-    path: Assets/Scenes/Petting-The-Cat.unity
+    path: Assets/Scenes/15 Petting-The-Cat.unity
     guid: c32bb2b14f06e4543851283584ffb175
   - enabled: 1
-    path: Assets/Scenes/EndOfDay.unity
-    guid: 5ac37664be8fbca46af2bdde476941e7
+    path: Assets/Scenes/16 Breathing.unity
+    guid: f376ea947f02a024ea9270caab36af74
   - enabled: 1
-    path: Assets/Scenes/Self-Study-Sat-3.unity
-    guid: a14fc68ad7551fd48b6eea7e29a326d5
+    path: Assets/Scenes/17 New-Rhythm-scene.unity
+    guid: 616cefffc699e7140bd703c2296d4cd4
   m_configObjects: {}

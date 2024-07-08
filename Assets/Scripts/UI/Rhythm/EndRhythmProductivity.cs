@@ -25,25 +25,25 @@ public class EndRhythmProductivity : MonoBehaviour
     }
     private void ChangeIcons()
     {
-        if (valueToAdd == 0)
+        if (valueToAdd == 4)
         {
             transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+            transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+            transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+        }
+        else if (valueToAdd <= 7)
+        {
+            transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
             transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
         }
         else if (valueToAdd <= 10)
         {
             transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-            transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
-            transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
-        }
-        else if (valueToAdd <= 20)
-        {
-            transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
         }
-        else if (valueToAdd <= 30)
+        else if (valueToAdd <= 13)
         {
             transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);

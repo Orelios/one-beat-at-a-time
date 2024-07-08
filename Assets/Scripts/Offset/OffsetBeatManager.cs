@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class OffsetBeatManager : MonoBehaviour
+public class OffsetBeatManager : Singleton<OffsetBeatManager>
 {
     [SerializeField] private float startTime;
     [SerializeField] private float _bpm;

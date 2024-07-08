@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class OffsetIndicatorImage : Singleton<IndicatorAboveImage>
 {
     public Sprite[] aboveImageIndicator;
     public float returnDelay;
+    public UnityEvent playerPerfectEvent, playerNotPerfectEvent;
     //public bool preserveAspect
     public void Start()
     {
@@ -21,6 +23,7 @@ public class OffsetIndicatorImage : Singleton<IndicatorAboveImage>
             SoundEffectManager.Instance.PlayEarlySound();
             //CatSpriteChanger.Instance.CatEarlyOrLate();
             //GetComponent<SpriteRenderer>().color = Color.red;
+            playerNotPerfectEvent.Invoke();
         }
         else if (OffsetNoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 2)
         {
@@ -29,6 +32,7 @@ public class OffsetIndicatorImage : Singleton<IndicatorAboveImage>
             SoundEffectManager.Instance.PlayPerfectSound();
             //CatSpriteChanger.Instance.CatPerfect();
             //GetComponent<SpriteRenderer>().color = Color.green;
+            playerPerfectEvent.Invoke();
         }
         else if (OffsetNoteDetection.Instance.noteInDetector.GetComponent<NoteTiming>().timingValue == 3)
         {
@@ -37,6 +41,7 @@ public class OffsetIndicatorImage : Singleton<IndicatorAboveImage>
             SoundEffectManager.Instance.PlayLateSound();
             //CatSpriteChanger.Instance.CatEarlyOrLate();
             //GetComponent<SpriteRenderer>().color = Color.blue;
+            playerNotPerfectEvent.Invoke();
         }
         StartCoroutine(RetrunToOriginal());
     }
@@ -54,6 +59,7 @@ public class OffsetIndicatorImage : Singleton<IndicatorAboveImage>
         GetComponent<Image>().sprite = aboveImageIndicator[3];
         GetComponent<Image>().preserveAspect = true;
         //GetComponent<SpriteRenderer>().color = Color.red;
+        playerNotPerfectEvent.Invoke();
         StartCoroutine(RetrunToOriginal());
     }
 }

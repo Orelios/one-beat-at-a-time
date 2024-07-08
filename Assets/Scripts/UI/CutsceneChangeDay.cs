@@ -13,7 +13,52 @@ public class CutsceneChangeDay : MonoBehaviour
 
     void Start()
     {
-        AnimateChangeDay(previousDay, currentDay);
+        if (currentDay == 1)
+        {
+            if (PlayerData.Instance.day1Loaded == 0) // day1 not yet loaded
+            {
+                AnimateChangeDay(previousDay, currentDay);
+                PlayerData.Instance.day1Loaded = 1;
+                PlayerData.Instance.AddProductivity(6);
+                PlayerData.Instance.Save();
+            }
+            else //day1 already loaded, for example going into a rhythm scene and returning
+            {
+                this.gameObject.SetActive(false); // no custscene
+            }
+        }
+        else if (currentDay == 3)
+        {
+            if (PlayerData.Instance.day3Loaded == 0)
+            {
+                AnimateChangeDay(previousDay, currentDay);
+                PlayerData.Instance.day3Loaded = 1;
+                PlayerData.Instance.AddProductivity(6);
+                PlayerData.Instance.Save();
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
+            }
+        }
+        else if (currentDay == 5)
+        {
+            if (PlayerData.Instance.day5Loaded == 0)
+            {
+                AnimateChangeDay(previousDay, currentDay);
+                PlayerData.Instance.day5Loaded = 1;
+                PlayerData.Instance.AddProductivity(6);
+                PlayerData.Instance.Save();
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            AnimateChangeDay(previousDay, currentDay);
+        }
     }
 
 

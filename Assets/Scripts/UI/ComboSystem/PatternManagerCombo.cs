@@ -85,6 +85,7 @@ public class PatternManagerCombo : Singleton<PatternManagerCombo>
                                                         //NextPatternSequence is called after pulse finishes inside Pulse coroutine
                                                         //Debug.Log("incorrect");
                 ResetComboEvent.Invoke();
+                spaceMissPressEvent.Invoke();
             }
             else //last pattern wrong arrow pressed
             {
@@ -94,6 +95,7 @@ public class PatternManagerCombo : Singleton<PatternManagerCombo>
                 if (_patterns[_patternIndex].arrowsPattern[_arrowIndex] != arrow) { checkTimingValueDec(); }
                 LoopPatternArray();
                 ResetComboEvent.Invoke();
+                spaceMissPressEvent.Invoke();
             }
         }
         

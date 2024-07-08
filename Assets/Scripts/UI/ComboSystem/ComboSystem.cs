@@ -12,7 +12,7 @@ public class ComboSystem : Singleton<ComboSystem>
    
     private void Start()
     {
-        comboScoreText.text = "Combos: " + comboScore + "X"; 
+        comboScoreText.text = comboScore + "X"; 
     }
     public void AddToCombo()
     {
@@ -26,7 +26,7 @@ public class ComboSystem : Singleton<ComboSystem>
 
     public void UpdateScore()
     {
-        if(comboScore != comboScoreLimit) { comboScoreText.text = "Combos: " + comboScore + "X"; }
-        else { comboScoreText.text = "Max Combo: " + comboScore + "X"; }
+        if(comboScore != comboScoreLimit) { comboScoreText.text = comboScore + "X"; }
+        else { comboScoreText.text = comboScore + "X"; }
     }
 }
