@@ -6,6 +6,7 @@ public class CutsceneChangeDay : MonoBehaviour
 {
     public GameObject dayIndicator;
     [SerializeField] private int previousDay, currentDay;
+    public GameObject uniqueEventScreen; //must reference the unique event if any
     [SerializeField] private float _moveDuration = 1f, _waitDuration = 1f;
     [SerializeField] private List<Vector3> dayIndicatorPositions = new List<Vector3>() { new Vector3(-450, -100, 0), new Vector3(-300, -100, 0), new Vector3(-150, -100, 0), new Vector3(0, -100, 0), new Vector3(150, -100, 0), new Vector3(300, -100, 0), new Vector3(450, -100, 0) };
     private float _moveElapsedTime, _waitElapsedTime;
@@ -25,6 +26,22 @@ public class CutsceneChangeDay : MonoBehaviour
             else //day1 already loaded, for example going into a rhythm scene and returning
             {
                 this.gameObject.SetActive(false); // no custscene
+                if (uniqueEventScreen != null) { uniqueEventScreen.SetActive(false); }
+            }
+        }
+        else if (currentDay == 2)
+        {
+            if (PlayerData.Instance.day2Loaded == 0)
+            {
+                AnimateChangeDay(previousDay, currentDay);
+                PlayerData.Instance.day2Loaded = 1;
+                //PlayerData.Instance.AddProductivity(6); not actually counted as school day
+                PlayerData.Instance.Save();
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
+                if (uniqueEventScreen != null) { uniqueEventScreen.SetActive(false); }
             }
         }
         else if (currentDay == 3)
@@ -39,6 +56,22 @@ public class CutsceneChangeDay : MonoBehaviour
             else
             {
                 this.gameObject.SetActive(false);
+                if (uniqueEventScreen != null) { uniqueEventScreen.SetActive(false); }
+            }
+        }
+        else if (currentDay == 4)
+        {
+            if (PlayerData.Instance.day4Loaded == 0)
+            {
+                AnimateChangeDay(previousDay, currentDay);
+                PlayerData.Instance.day4Loaded = 1;
+                PlayerData.Instance.AddProductivity(6);
+                PlayerData.Instance.Save();
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
+                if (uniqueEventScreen != null) { uniqueEventScreen.SetActive(false); }
             }
         }
         else if (currentDay == 5)
@@ -53,11 +86,13 @@ public class CutsceneChangeDay : MonoBehaviour
             else
             {
                 this.gameObject.SetActive(false);
+                uniqueEventScreen.SetActive(false);
             }
         }
         else
         {
             AnimateChangeDay(previousDay, currentDay);
+            if (uniqueEventScreen != null) { uniqueEventScreen.SetActive(false); }
         }
     }
 
