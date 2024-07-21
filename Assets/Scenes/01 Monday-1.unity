@@ -2175,6 +2175,7 @@ MonoBehaviour:
   dayIndicator: {fileID: 296623304}
   previousDay: 0
   currentDay: 1
+  uniqueEventScreen: {fileID: 1818010118}
   _moveDuration: 1
   _waitDuration: 1
   dayIndicatorPositions:

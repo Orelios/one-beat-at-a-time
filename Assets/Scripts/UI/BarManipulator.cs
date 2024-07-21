@@ -17,6 +17,7 @@ public class BarManipulator : Singleton<BarManipulator>
     private Color visible, invisible;
     private float fadeElapsedTime = 0f;
     public float fadeDuration = 0.5f;
+    private float inputCooldown = 1; 
     //[SerializeField] private bool perArrow = false;
     //[SerializeField] private bool perPattern = false;
     private void Awake()
@@ -26,13 +27,19 @@ public class BarManipulator : Singleton<BarManipulator>
     }
     private void Update()
     {
-        ChangeBar(); 
+        if (Player.Instance.inputCooldown != 0)
+        {
+            Player.Instance.inputCooldown -= Time.deltaTime;
+            if (Player.Instance.inputCooldown < 0) { Player.Instance.inputCooldown = 0; }
+        }
+        ChangeBar();
     }
 
     public void ChangeBar()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && Player.Instance.inputCooldown == 0)
         {
+            AddInputCoolDown();
             if (PatternManager.Instance._patternIndex >= PatternManager.Instance._patterns.Length - 1)
             {
                 PatternManager.Instance.LoopPatternArray();
@@ -136,4 +143,5 @@ public class BarManipulator : Singleton<BarManipulator>
             yield return null;
         }
     }
+    private void AddInputCoolDown() { Player.Instance.inputCooldown = inputCooldown; }
 }
