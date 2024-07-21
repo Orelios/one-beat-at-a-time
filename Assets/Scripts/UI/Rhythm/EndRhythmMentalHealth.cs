@@ -21,6 +21,7 @@ public class EndRhythmMentalHealth : MonoBehaviour
 
         //change PlayerData value
         Mathf.Round(valueToAdd);
+        Debug.Log(valueToAdd);
         PlayerData.Instance.AddMentalHealth(valueToAdd);
         ChangeIcons();
         
@@ -28,7 +29,7 @@ public class EndRhythmMentalHealth : MonoBehaviour
 
     private void ChangeIcons()
     {
-        if (valueToAdd <= -2)
+        if (valueToAdd <= 0)
         {
             transform.GetChild(0).gameObject.SetActive(true);
             transform.GetChild(1).gameObject.SetActive(true);

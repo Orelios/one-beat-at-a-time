@@ -19,31 +19,32 @@ public class EndRhythmProductivity : MonoBehaviour
 
         //change PlayerData value
         Mathf.Round(valueToAdd);
+        Debug.Log(valueToAdd); 
         PlayerData.Instance.AddProductivity(valueToAdd);
         ChangeIcons();
         
     }
     private void ChangeIcons()
     {
-        if (valueToAdd == 4)
+        if(valueToAdd <= 0)
         {
             transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
             transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
             transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
         }
-        else if (valueToAdd <= 7)
+        else if (valueToAdd <= 2)
         {
             transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
             transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
         }
-        else if (valueToAdd <= 10)
+        else if (valueToAdd <= 4)
         {
             transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
         }
-        else if (valueToAdd <= 13)
+        else if (valueToAdd <= 6)
         {
             transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
