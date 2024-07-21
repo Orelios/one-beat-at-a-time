@@ -54,12 +54,15 @@ EditorBuildSettings:
     path: Assets/Scenes/15 Petting-The-Cat.unity
     guid: c32bb2b14f06e4543851283584ffb175
   - enabled: 1
-    path: Assets/Scenes/16 Breathing.unity
+    path: Assets/Scenes/16 Tutorial Meditate.unity
+    guid: b4827ce64abbb8445a4bf340d5268585
+  - enabled: 1
+    path: Assets/Scenes/17 Breathing.unity
     guid: f376ea947f02a024ea9270caab36af74
   - enabled: 1
-    path: Assets/Scenes/17 Tutorial-Venting.unity
+    path: Assets/Scenes/18 Tutorial-Venting.unity
     guid: 0a3aab096e5685948a68272dbc48e190
   - enabled: 1
-    path: Assets/Scenes/18 New-Rhythm-scene.unity
+    path: Assets/Scenes/19 New-Rhythm-scene.unity
     guid: 616cefffc699e7140bd703c2296d4cd4
   m_configObjects: {}
